@@ -1,0 +1,43 @@
+@import "https://deploy-preview-13--agri-component.netlify.app/css/components.css";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-items {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  background-color: var(--silver-color);
+  max-width: 100%;
+  padding: 1rem;
+  left: 0;
+  bottom: 0rem;
+  position: fixed;
+  width: 100%;
+}
+
+.social-media-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 2rem;
+  background-color: var(--silver-color);
+  max-width: 100%;
+  font-size: 1.5rem;
+}
+
+.fa {
+  margin: 0.5rem;
+}
+
+.search-panel {
+  display: flex;
+}
+
+.navmtrl {
+  font-size: 2rem;
+}

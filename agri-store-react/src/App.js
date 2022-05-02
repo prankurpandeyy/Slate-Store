@@ -1,5 +1,11 @@
+import Homepage from "./Pages/Homepage";
+
 function App() {
-  return <div>SLATE ECOMEERCE REACT APP</div>;
+  return (
+    <div>
+      <Homepage />
+    </div>
+  );
 }
 
 export default App;
