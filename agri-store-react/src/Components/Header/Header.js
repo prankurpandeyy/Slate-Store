@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 function Header() {
@@ -8,11 +9,15 @@ function Header() {
         <div class="navigation__left">
           <div class="navigation__logo">Agri UI</div>
         </div>
+        <Link to="/LoginPage">
+          <button class="btn btn-warning">Login</button>
+        </Link>
         <input
           type="search"
           class="navigation__input"
           placeholder="search item"
         />
+
         <div class="navigation__right">
           <span class="material-icons navigationmi"> store </span>
 
