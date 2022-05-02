@@ -8,15 +8,16 @@
 .footer-items {
   display: flex;
   align-items: center;
-  flex-direction: column;
-  height: auto;
-  background-color: var(--silver-color);
+  justify-content: space-between;
+  flex-direction: row;
+  height: 4rem;
+  background-color: rgb(63, 112, 245);
   max-width: 100%;
   padding: 1rem;
-  left: 0;
-  bottom: 0rem;
+  bottom: 0;
   position: fixed;
   width: 100%;
+  font-size: 1.2rem;
 }
 
 .social-media-links {
@@ -25,19 +26,13 @@
   align-items: center;
   flex-direction: row;
   height: 2rem;
-  background-color: var(--silver-color);
   max-width: 100%;
+  font-size: 1.5rem;
+}
+.h4 {
   font-size: 1.5rem;
 }
 
 .fa {
   margin: 0.5rem;
-}
-
-.search-panel {
-  display: flex;
-}
-
-.navmtrl {
-  font-size: 2rem;
 }

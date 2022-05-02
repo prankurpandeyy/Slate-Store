@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div>
       <footer class="footer-items">
-        <div class="h4">
+        <div class="h3">
           Made with <code> ❤️ </code>by Prankur Pandey
         </div>
 
