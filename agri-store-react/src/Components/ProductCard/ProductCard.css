@@ -1,0 +1,12 @@
+@import url("https://deploy-preview-13--agri-component.netlify.app/css/components.css");
+.productscard-in-productpage {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+  margin-left: 4rem;
+  margin-bottom: 5rem;
+}
+.horizontal-card {
+  background-color: rgb(193, 241, 241);
+  border: 1px solid black;
+}
