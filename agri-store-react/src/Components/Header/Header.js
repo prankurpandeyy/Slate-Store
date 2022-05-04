@@ -7,7 +7,9 @@ function Header() {
     <div>
       <nav class="navigation-menu">
         <div class="navigation__left">
-          <div class="navigation__logo">Agri UI</div>
+          <Link to="/">
+            <div class="navigation__logo">Agri UI</div>
+          </Link>
         </div>
         <Link to="/LoginPage">
           <button class="btn btn-warning">Login</button>
@@ -19,7 +21,9 @@ function Header() {
         />
 
         <div class="navigation__right">
-          <span class="material-icons navigationmi"> store </span>
+          <Link to="/ProductListingPage">
+            <span class="material-icons navigationmi"> store </span>
+          </Link>
 
           <div class="navbadge">
             <span class="material-icons navigationmi"> favorite</span>
