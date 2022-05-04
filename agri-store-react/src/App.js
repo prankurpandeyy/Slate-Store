@@ -3,6 +3,7 @@ import Homepage from "./Pages/Homepage";
 import LoginPage from "./Pages/LoginPage";
 import ProductlistingPage from "./Pages/ProductlistingPage";
 import SignupPage from "./Pages/SignupPage";
+import "./App.css";
 
 function App() {
   return (
