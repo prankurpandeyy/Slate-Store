@@ -5,28 +5,33 @@ export const ProductListingPagecontext = createContext();
 
 function ProductListingPage({ children }) {
   const [productdata, setProductData] = useState([]);
+  const [isLoading, setisLoading] = useState(false);
 
   async function getProdcutsData() {
     try {
+      setisLoading(true);
       await axios({
         method: "GET",
         url: `/api/products`,
       }).then((response) => setProductData(response.data.products));
+      setisLoading(false);
     } catch (erorr) {
       console.log(`Server is encountering some issues:`, erorr);
     }
   }
 
   useEffect(() => {
-    console.log(`inside set time out `, setTimeout(getProdcutsData(), 5000));
-  }, []);
+    const timer = setTimeout(() => {
+      getProdcutsData();
+    }, 5000);
 
-  // console.log(`this is card :`, productdata);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div>
       <ProductListingPagecontext.Provider
-        value={{ productdata, setProductData }}
+        value={{ productdata, setProductData, isLoading }}
       >
         {children}
       </ProductListingPagecontext.Provider>
