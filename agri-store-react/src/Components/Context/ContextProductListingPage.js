@@ -23,7 +23,7 @@ function ProductListingPage({ children }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       getProdcutsData();
-    }, 5000);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
