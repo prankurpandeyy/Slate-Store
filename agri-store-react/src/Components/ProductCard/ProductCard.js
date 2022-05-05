@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ProductListingPagecontext } from "../Context/ContextProductListingPage";
 import "./ProductCard.css";
+
 function ProductCard({ productCardData }) {
   const { _id, image, title, price, rating, inStock } = productCardData;
-  console.log(`this is product card data`, productCardData);
-
+  const { addToWishlist, addToCart, cart, setCart, wish, setWish } = useContext(
+    ProductListingPagecontext
+  );
+  // console.log(`this is product card data`, productCardData);
+  console.log(`this is cart data : `, cart);
   return (
     <div class="horizontal-card" key={_id}>
       <img class="horizontal-card__image" src={image} alt="image_ecom" />
@@ -18,7 +23,10 @@ function ProductCard({ productCardData }) {
       </div>
       <div class="horizontal-card__action-button">
         <div class="horizontal-card__add-to-cart">
-          <button class="btn btn-success icon">
+          <button
+            class="btn btn-success icon"
+            onClick={() => addToCart(productCardData, setCart)}
+          >
             Cart
             <span class="material-icons buttonmi"> shopping_cart </span>
           </button>

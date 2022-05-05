@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ProductListingPagecontext } from "../Context/ContextProductListingPage";
 import "./Header.css";
 
 function Header() {
+  const { cart } = useContext(ProductListingPagecontext);
   return (
     <div>
       <nav class="navigation-menu">
@@ -30,8 +32,10 @@ function Header() {
             <span class="nav__number-badge">5</span>
           </div>
           <div class="navbadge">
-            <span class="material-icons navigationmi"> shopping_cart </span>
-            <span class="nav__number-badge">5</span>
+            <Link to="/CartPage">
+              <span class="material-icons navigationmi"> shopping_cart </span>
+            </Link>
+            <span class="nav__number-badge">{cart.length}</span>
           </div>
           <span class="material-icons navigationmi"> account_circle</span>
         </div>
