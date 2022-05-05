@@ -4,15 +4,21 @@ import LoginPage from "./Pages/LoginPage";
 import ProductlistingPage from "./Pages/ProductlistingPage";
 import SignupPage from "./Pages/SignupPage";
 import "./App.css";
+import { CartPage } from "./Pages/CartPage";
 
 function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="LoginPage" element={<LoginPage />} />
-        <Route path="SignupPage" element={<SignupPage />} />
-        <Route path="ProductListingPage" element={<ProductlistingPage />} />
+        <Route exact path="/" element={<Homepage />} />
+        <Route exact path="/LoginPage" element={<LoginPage />} />
+        <Route exact path="/SignupPage" element={<SignupPage />} />
+        <Route
+          exact
+          path="ProductListingPage"
+          element={<ProductlistingPage />}
+        />
+        <Route exact path="/CartPage" element={<CartPage />} />
       </Routes>
     </div>
   );
