@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Hero.css";
 function Hero() {
   return (
@@ -14,7 +15,9 @@ function Hero() {
 
           <div class="subtext-image">All in one Market Place for Farmers</div>
           <div class="btn btn-outline">
-            <button class="btn btn-success-outline">Shop Now</button>
+            <Link to="/ProductListingPage">
+              <button class="btn btn-success-outline">Shop Now</button>
+            </Link>
           </div>
         </div>
       </main>

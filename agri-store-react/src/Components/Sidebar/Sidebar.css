@@ -1,0 +1,27 @@
+.catagory-items-page {
+  background-color: rgb(243, 123, 179);
+  width: 15rem;
+  height: 100vh;
+  padding: 0.5rem;
+  position: fixed;
+  left: 0;
+  font-size: 1rem;
+}
+
+hr {
+  margin: 0.7rem;
+  border: 1px solid rgb(79, 13, 145);
+}
+input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0 0.1rem;
+}
+
+input[type="radio"] {
+  background-color: #fff;
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 0.2rem solid black;
+  margin: 0 0.2rem;
+}

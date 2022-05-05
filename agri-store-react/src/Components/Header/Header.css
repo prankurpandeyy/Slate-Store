@@ -1,1 +1,5 @@
-@import "https://deploy-preview-13--agri-component.netlify.app/css/components.css";
+.navigation-menu {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
