@@ -1,6 +1,5 @@
 import React, { createContext, useEffect, useReducer, useState } from "react";
 import axios from "axios";
-import { InfinitySpin } from "react-loader-spinner";
 export const ProductListingPagecontext = createContext();
 
 function ProductListingPage({ children }) {
@@ -8,8 +7,8 @@ function ProductListingPage({ children }) {
   const [isLoading, setisLoading] = useState(false);
 
   async function getProdcutsData() {
+    setisLoading(true);
     try {
-      setisLoading(true);
       await axios({
         method: "GET",
         url: `/api/products`,
@@ -21,11 +20,9 @@ function ProductListingPage({ children }) {
   }
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       getProdcutsData();
-    }, 2000);
-
-    return () => clearTimeout(timer);
+    }, 3000);
   }, []);
 
   return (
