@@ -1,14 +1,22 @@
 import React, { useContext } from "react";
 import { ProductListingPagecontext } from "../Context/ContextProductListingPage";
 import "./ProductCard.css";
-
+import { MdRemoveShoppingCart } from "react-icons/md";
 function ProductCard({ productCardData }) {
   const { _id, image, title, price, rating, inStock } = productCardData;
-  const { addToWishlist, addToCart, cart, setCart, wish, setWish } = useContext(
-    ProductListingPagecontext
-  );
-  // console.log(`this is product card data`, productCardData);
+  const {
+    addToWishlist,
+    addToCart,
+    cart,
+    setCart,
+    wish,
+    deleteQty,
+    setWish,
+    deleteWishList,
+  } = useContext(ProductListingPagecontext);
+
   console.log(`this is cart data : `, cart);
+  console.log(`this is wishlist data : `, wish);
   return (
     <div class="horizontal-card" key={_id}>
       <img class="horizontal-card__image" src={image} alt="image_ecom" />
@@ -23,19 +31,62 @@ function ProductCard({ productCardData }) {
       </div>
       <div class="horizontal-card__action-button">
         <div class="horizontal-card__add-to-cart">
-          <button
-            class="btn btn-success icon"
-            onClick={() => addToCart(productCardData, setCart)}
-          >
-            Cart
-            <span class="material-icons buttonmi"> shopping_cart </span>
-          </button>
+          {cart.some((prod) => prod._id === productCardData._id) ? (
+            <button
+              class="btn btn-success icon"
+              onClick={(_id) => deleteQty(productCardData._id)}
+            >
+              <span class="material-icons buttonmi">
+                {" "}
+                remove_shopping_cart{" "}
+              </span>
+            </button>
+          ) : (
+            <button
+              class="btn btn-success icon"
+              onClick={() => addToCart(productCardData, setCart)}
+            >
+              {console.log("remove from cart", _id)}
+              <span class="material-icons buttonmi"> shopping_cart</span>
+            </button>
+          )}
         </div>
+
+        {/* add to wishlist */}
         <div class="horizontal-card__add-to-wishlist">
-          <button class="btn btn-danger icon">
+          {wish.some((wishlist) => wishlist._id === productCardData._id) ? (
+            <button
+              class="btn btn-danger icon"
+              onClick={(_id) => deleteWishList(productCardData._id)}
+            >
+              Remove
+              <span class="material-icons buttonmi"> favorite_border </span>
+            </button>
+          ) : (
+            <button
+              class="btn btn-danger icon"
+              onClick={() => addToWishlist(productCardData, setWish)}
+            >
+              Wishlist
+              <span class="material-icons buttonmi"> favorite_border </span>
+            </button>
+          )}
+          {/* <button
+            class="btn btn-danger icon"
+            onClick={() => addToWishlist(productCardData, setWish)}
+          >
             Wishlist
             <span class="material-icons buttonmi"> favorite_border </span>
-          </button>
+          </button> */}
+
+          {/* remove wishlist */}
+          {/* <button
+            class="btn btn-danger icon"
+            onClick={() => addToWishlist(productCardData, setWish)}
+          >
+            Remove
+            <span class="material-icons buttonmi"> favorite_border </span>
+          </button> */}
         </div>
       </div>
     </div>

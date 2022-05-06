@@ -4,7 +4,7 @@ import { ProductListingPagecontext } from "../Context/ContextProductListingPage"
 import "./Header.css";
 
 function Header() {
-  const { cart } = useContext(ProductListingPagecontext);
+  const { cart, wish } = useContext(ProductListingPagecontext);
   return (
     <div>
       <nav class="navigation-menu">
@@ -28,8 +28,10 @@ function Header() {
           </Link>
 
           <div class="navbadge">
-            <span class="material-icons navigationmi"> favorite</span>
-            <span class="nav__number-badge">5</span>
+            <Link to="/WishlistPage">
+              <span class="material-icons navigationmi"> favorite</span>
+            </Link>
+            <span class="nav__number-badge">{wish.length}</span>
           </div>
           <div class="navbadge">
             <Link to="/CartPage">

@@ -5,6 +5,7 @@ import ProductlistingPage from "./Pages/ProductlistingPage";
 import SignupPage from "./Pages/SignupPage";
 import "./App.css";
 import { CartPage } from "./Pages/CartPage";
+import WishlistPage from "./Pages/WishlistPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           element={<ProductlistingPage />}
         />
         <Route exact path="/CartPage" element={<CartPage />} />
+        <Route exact path="/WishlistPage" element={<WishlistPage />} />
       </Routes>
     </div>
   );

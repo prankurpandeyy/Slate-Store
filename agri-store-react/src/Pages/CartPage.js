@@ -9,6 +9,7 @@ function CartPage() {
   );
   const [totalprice, setTotalPrice] = useState();
 
+  console.log(cart);
   useEffect(() => {
     setTotalPrice(
       cart.reduce((acc, item) => acc + Number(item.qty) * Number(item.price), 0)
@@ -54,7 +55,6 @@ function CartPage() {
                       <span class="material-icons">add</span>
                     </button>
                     {prod.qty}
-                    {console.log(prod.qty)}
                     <button
                       class="hcard decrease"
                       onClick={() => updateQty("decrement", prod._id)}

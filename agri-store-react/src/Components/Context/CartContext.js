@@ -5,25 +5,31 @@ function CartContext() {
   const { productdata, setProductData } = useContext(ProductListingPagecontext);
 
   const addToCart = async (productdata, setCart) => {
-    const response = await axios({
-      method: "POST",
-      url: `/api/user/cart`,
-      headers: { authorization: localStorage.getItem("token") },
-      data: { product: productdata },
-    });
-    console.log(response.data.cart);
-    setCart(response.data.cart);
+    try {
+      const response = await axios({
+        method: "POST",
+        url: `/api/user/cart`,
+        headers: { authorization: localStorage.getItem("token") },
+        data: { product: productdata },
+      });
+      setCart(response.data.cart);
+    } catch (error) {
+      console.log(`Cart is facing some issues`, error);
+    }
   };
 
   const addToWishlist = async (productdata, setWish) => {
-    const response = await axios({
-      method: "POST",
-      url: `/api/user/wishlist`,
-      headers: { authorization: localStorage.getItem("token") },
-      data: { product: productdata },
-    });
-    console.log(response.data.wishlist);
-    setWish(response.data.wishlist);
+    try {
+      const response = await axios({
+        method: "POST",
+        url: `/api/user/wishlist`,
+        headers: { authorization: localStorage.getItem("token") },
+        data: { product: productdata },
+      });
+      setWish(response.data.wishlist);
+    } catch (error) {
+      console.log(`Wishlist is facing some issues`, error);
+    }
   };
 
   return <div>cart context</div>;

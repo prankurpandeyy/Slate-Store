@@ -45,6 +45,17 @@ function ProductListingPage({ children }) {
     setCart(response.data.cart);
   }
 
+  const deleteWishList = async (_id) => {
+    const response = await axios({
+      method: "DELETE",
+      url: `/api/user/wishlist/${_id}`,
+      headers: { authorization: localStorage.getItem("token") },
+      data: { product: setWish },
+    });
+    console.log(response.data.wishlist);
+    setWish(response.data.wishlist);
+  };
+
   async function updateQty(actionType, _id) {
     const response = await axios({
       method: "POST",
@@ -82,6 +93,7 @@ function ProductListingPage({ children }) {
           productdata,
           setProductData,
           isLoading,
+          deleteWishList,
           addToWishlist,
           addToCart,
           cart,
