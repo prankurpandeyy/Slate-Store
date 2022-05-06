@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ProductListingPagecontext } from "../Context/ContextProductListingPage";
 import "./ProductCard.css";
-import { MdRemoveShoppingCart } from "react-icons/md";
+
 function ProductCard({ productCardData }) {
   const { _id, image, title, price, rating, inStock } = productCardData;
   const {
@@ -15,8 +15,6 @@ function ProductCard({ productCardData }) {
     deleteWishList,
   } = useContext(ProductListingPagecontext);
 
-  console.log(`this is cart data : `, cart);
-  console.log(`this is wishlist data : `, wish);
   return (
     <div class="horizontal-card" key={_id}>
       <img class="horizontal-card__image" src={image} alt="image_ecom" />
@@ -46,7 +44,6 @@ function ProductCard({ productCardData }) {
               class="btn btn-success icon"
               onClick={() => addToCart(productCardData, setCart)}
             >
-              {console.log("remove from cart", _id)}
               <span class="material-icons buttonmi"> shopping_cart</span>
             </button>
           )}

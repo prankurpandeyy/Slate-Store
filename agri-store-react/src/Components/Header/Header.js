@@ -13,9 +13,7 @@ function Header() {
             <div class="navigation__logo">Agri UI</div>
           </Link>
         </div>
-        <Link to="/LoginPage">
-          <button class="btn btn-warning">Login</button>
-        </Link>
+
         <input
           type="search"
           class="navigation__input"
@@ -39,7 +37,9 @@ function Header() {
             </Link>
             <span class="nav__number-badge">{cart.length}</span>
           </div>
-          <span class="material-icons navigationmi"> account_circle</span>
+          <Link to="/LoginPage">
+            <button class="btn btn-warning">LogIn</button>
+          </Link>
         </div>
       </nav>
     </div>

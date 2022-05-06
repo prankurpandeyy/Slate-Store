@@ -8,7 +8,6 @@ import "./Wishlist.css";
 function WishlistPage() {
   const { wish } = useContext(ProductListingPagecontext);
 
-  console.log(`wishlist page `, wish);
   return (
     <div>
       <Header />

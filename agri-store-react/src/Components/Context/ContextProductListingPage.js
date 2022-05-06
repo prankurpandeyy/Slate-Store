@@ -31,7 +31,6 @@ function ProductListingPage({ children }) {
       headers: { authorization: localStorage.getItem("token") },
       data: { product: productdata },
     });
-    console.log(response.data.cart);
     setCart(response.data.cart);
   };
 
@@ -52,7 +51,6 @@ function ProductListingPage({ children }) {
       headers: { authorization: localStorage.getItem("token") },
       data: { product: setWish },
     });
-    console.log(response.data.wishlist);
     setWish(response.data.wishlist);
   };
 
@@ -76,7 +74,6 @@ function ProductListingPage({ children }) {
       headers: { authorization: localStorage.getItem("token") },
       data: { product: productdata },
     });
-    console.log(response.data.wishlist);
     setWish(response.data.wishlist);
   };
 
