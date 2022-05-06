@@ -1,15 +1,12 @@
 import { useContext, useEffect, useState } from "react";
-import axios from "axios";
 import "./CartPage.css";
 import { ProductListingPagecontext } from "../Components/Context/ContextProductListingPage";
 import { Header } from "../Components/Header/Header";
+import { Footer } from "../Components/Footer/Footer";
 function CartPage() {
-  const { cart, setCart, deleteQty, updateQty } = useContext(
-    ProductListingPagecontext
-  );
+  const { cart, deleteQty, updateQty } = useContext(ProductListingPagecontext);
   const [totalprice, setTotalPrice] = useState();
 
-  console.log(cart);
   useEffect(() => {
     setTotalPrice(
       cart.reduce((acc, item) => acc + Number(item.qty) * Number(item.price), 0)
@@ -84,6 +81,7 @@ function CartPage() {
         <hr />
         <h6> Total Amount : {totalprice} </h6>
       </div>
+      <Footer />
     </div>
   );
 }
