@@ -68,22 +68,6 @@ function ProductCard({ productCardData }) {
               <span class="material-icons buttonmi"> favorite_border </span>
             </button>
           )}
-          {/* <button
-            class="btn btn-danger icon"
-            onClick={() => addToWishlist(productCardData, setWish)}
-          >
-            Wishlist
-            <span class="material-icons buttonmi"> favorite_border </span>
-          </button> */}
-
-          {/* remove wishlist */}
-          {/* <button
-            class="btn btn-danger icon"
-            onClick={() => addToWishlist(productCardData, setWish)}
-          >
-            Remove
-            <span class="material-icons buttonmi"> favorite_border </span>
-          </button> */}
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ function WishlistPage() {
     <div>
       <Header />
       {wish.length === 0 ? (
-        <div className="cart-mesg"> there are no items in cart </div>
+        <div className="cart-mesg"> there are no items in Wishlist </div>
       ) : (
         <div className="wishlist-cards">
           {wish.map((wishlistpagedata) => {
