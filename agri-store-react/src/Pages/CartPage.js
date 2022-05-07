@@ -74,6 +74,7 @@ function CartPage() {
           </div>
         ))}
       </div>
+
       <div className="total-price">
         <h4 style={{ fontWeight: "bold" }}> Invoice </h4>
         <hr />
