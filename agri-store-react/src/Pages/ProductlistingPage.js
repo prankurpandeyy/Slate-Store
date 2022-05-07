@@ -6,7 +6,6 @@ import Spinner from "../Components/LoadingSpinner/Spinner";
 import ProductCard from "../Components/ProductCard/ProductCard";
 import { Sidebar } from "../Components/Sidebar/Sidebar";
 import "./ProductlistingPage.css";
-
 function ProductlistingPage() {
   const { productdata, isLoading } = useContext(ProductListingPagecontext);
   return (

@@ -1,10 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { ProductListingPagecontext } from "../Context/ContextProductListingPage";
 import "./Header.css";
 
 function Header() {
-  const { cart, wish } = useContext(ProductListingPagecontext);
   return (
     <div>
       <nav class="navigation-menu">
@@ -13,7 +11,9 @@ function Header() {
             <div class="navigation__logo">Agri UI</div>
           </Link>
         </div>
-
+        <Link to="/LoginPage">
+          <button class="btn btn-warning">Login</button>
+        </Link>
         <input
           type="search"
           class="navigation__input"
@@ -26,20 +26,14 @@ function Header() {
           </Link>
 
           <div class="navbadge">
-            <Link to="/WishlistPage">
-              <span class="material-icons navigationmi"> favorite</span>
-            </Link>
-            <span class="nav__number-badge">{wish.length}</span>
+            <span class="material-icons navigationmi"> favorite</span>
+            <span class="nav__number-badge">5</span>
           </div>
           <div class="navbadge">
-            <Link to="/CartPage">
-              <span class="material-icons navigationmi"> shopping_cart </span>
-            </Link>
-            <span class="nav__number-badge">{cart.length}</span>
+            <span class="material-icons navigationmi"> shopping_cart </span>
+            <span class="nav__number-badge">5</span>
           </div>
-          <Link to="/LoginPage">
-            <button class="btn btn-warning">LogIn</button>
-          </Link>
+          <span class="material-icons navigationmi"> account_circle</span>
         </div>
       </nav>
     </div>
