@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import "./CartPage.css";
-import { ProductListingPagecontext } from "../Components/Context/ContextProductListingPage";
 import { Header } from "../Components/Header/Header";
 import { Footer } from "../Components/Footer/Footer";
+import { CartAndWishlistContext } from "../Components/Context/CartAndWishlistPageContext";
 function CartPage() {
   const {
     cart,
@@ -12,7 +12,7 @@ function CartPage() {
     addToWishlist,
     setWish,
     wish,
-  } = useContext(ProductListingPagecontext);
+  } = useContext(CartAndWishlistContext);
   const [totalprice, setTotalPrice] = useState();
 
   useEffect(() => {
