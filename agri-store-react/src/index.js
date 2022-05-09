@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
-import { ProductListingPage } from "./Components/Context/ContextProductListingPage";
+import CatagoriesFilter from "./Components/CatagoriesFilter";
+import { CartAndWishlistPage } from "./Components/Context/CartAndWishlistPageContext";
 
 // Call make Server
 makeServer();
@@ -11,9 +12,11 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ProductListingPage>
-        <App />
-      </ProductListingPage>
+      <CartAndWishlistPage>
+        <CatagoriesFilter>
+          <App />
+        </CatagoriesFilter>
+      </CartAndWishlistPage>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
