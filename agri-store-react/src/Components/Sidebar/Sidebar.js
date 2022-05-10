@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { filterContext } from "../CatagoriesFilter";
 
 import { CartAndWishlistContext } from "../Context/CartAndWishlistPageContext";
@@ -7,7 +7,7 @@ import Rating from "../Rating";
 import "./Sidebar.css";
 
 function Sidebar() {
-  const { rate, setRate } = useContext(CartAndWishlistContext);
+  const { rate, setRate, productCarddata } = useContext(CartAndWishlistContext);
   const {
     sort,
     setSort,
@@ -18,7 +18,10 @@ function Sidebar() {
     priceRange,
     setPriceRange,
     category,
+    slider,
+    setSlider,
     setCategory,
+    finalCategoryData,
   } = useContext(filterContext);
 
   function clearState() {
@@ -45,14 +48,14 @@ function Sidebar() {
           <hr />
           <div className="price-range">
             <h3 className="Price-sort-by">Sort by Price : </h3>
-            {/* {105}
+            {105}
             <input
               type="range"
               max="120"
-              min="105"
-              onChange={(e) => setPriceRange(e.target.value)}
+              min="106"
+              onChange={(e) => setSlider(e.target.value)}
             />{" "}
-            {priceRange} */}
+            {120}
           </div>
           <hr />
           <div className="price-range">
