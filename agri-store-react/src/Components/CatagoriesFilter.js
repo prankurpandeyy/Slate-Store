@@ -7,6 +7,7 @@ export const filterContext = createContext();
 
 function CatagoriesFilter({ children }) {
   const [sort, setSort] = useState(true);
+  const [slider, setSlider] = useState([]);
   const [rating, setRating] = useState({
     1: false,
     2: false,
@@ -59,7 +60,6 @@ function CatagoriesFilter({ children }) {
   //sort by category
   const categoryFunction = (productdata, category) => {
     const sortedproductdata = [...productdata];
-
     if (category.men && category.women && category.baby) {
       return sortedproductdata;
     }
@@ -107,10 +107,22 @@ function CatagoriesFilter({ children }) {
     }
   };
 
+  // slider function range slider
+  function sliderFunction(productdata, slider) {
+    const sortedproductdata = [...productdata];
+    if (slider) {
+      return sortedproductdata.filter((data1) => data1.price >= slider);
+    } else {
+      return sortedproductdata;
+    }
+  }
+  // demo playing one
   const sortedData = sortFunction(productdata, sort);
   const finalData = ratingFunction(sortedData, rating);
   const stockData = stockFunction(finalData, stock);
   const finalCategoryData = categoryFunction(stockData, category);
+  const sliderData = sliderFunction(finalCategoryData, slider);
+
   return (
     <div>
       <filterContext.Provider
@@ -124,8 +136,11 @@ function CatagoriesFilter({ children }) {
           priceRange,
           setPriceRange,
           category,
+          slider,
+          setSlider,
           setCategory,
           finalCategoryData,
+          sliderData,
         }}
       >
         {children}
