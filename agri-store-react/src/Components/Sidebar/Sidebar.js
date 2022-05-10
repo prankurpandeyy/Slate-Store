@@ -31,6 +31,7 @@ function Sidebar() {
     setSort("");
     setStock("");
     setRating("");
+    setSlider("");
   }
   return (
     <div>
@@ -60,13 +61,13 @@ function Sidebar() {
           <hr />
           <div className="price-range">
             Sort by Rating : <br />
-            {/* <Rating
+            <Rating
               rating={rate}
               onClick={(i) => setRate(i + 1)}
               onChange={(e) =>
                 setRating({ ...rating, rating: e.target.checked })
               }
-            /> */}
+            />
             <input
               type="checkbox"
               name="rating"
