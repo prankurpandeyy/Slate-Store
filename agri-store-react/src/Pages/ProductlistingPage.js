@@ -10,7 +10,7 @@ import "./ProductlistingPage.css";
 
 function ProductlistingPage() {
   const { isLoading } = useContext(CartAndWishlistContext);
-  const { finalCategoryData } = useContext(filterContext);
+  const { sliderData } = useContext(filterContext);
   return (
     <div>
       <Header />
@@ -19,7 +19,7 @@ function ProductlistingPage() {
         {isLoading ? (
           <Spinner />
         ) : (
-          finalCategoryData.map((productCardData) => {
+          sliderData.map((productCardData) => {
             return (
               <ProductCard
                 productCardData={productCardData}
