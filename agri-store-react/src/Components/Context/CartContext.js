@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
-import { ProductListingPagecontext } from "./ContextProductListingPage";
+
 import axios from "axios";
+import { CartAndWishlistContext } from "./CartAndWishlistPageContext";
 function CartContext() {
-  const { productdata, setProductData } = useContext(ProductListingPagecontext);
+  const { productdata, setProductData } = useContext(CartAndWishlistContext);
 
   const addToCart = async (productdata, setCart) => {
     try {

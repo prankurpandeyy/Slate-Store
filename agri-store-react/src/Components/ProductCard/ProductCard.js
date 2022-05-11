@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { ProductListingPagecontext } from "../Context/ContextProductListingPage";
+import { CartAndWishlistContext } from "../Context/CartAndWishlistPageContext";
+import Rating from "../Rating";
 import "./ProductCard.css";
-
 function ProductCard({ productCardData }) {
   const { _id, image, title, price, rating, inStock } = productCardData;
   const {
@@ -13,7 +13,7 @@ function ProductCard({ productCardData }) {
     deleteQty,
     setWish,
     deleteWishList,
-  } = useContext(ProductListingPagecontext);
+  } = useContext(CartAndWishlistContext);
 
   return (
     <div class="horizontal-card" key={_id}>
@@ -22,7 +22,7 @@ function ProductCard({ productCardData }) {
         <h2 class="horizontal-card__title">{title}</h2>
         <h3 class="horizontal-card__price">Price : ${price}</h3>
         <p class="horizontal-card__description"></p>
-        <h3 class="horizontal-card__ratings">Rating: {rating}</h3>
+        <h3 class="horizontal-card__ratings">Rating:{rating} </h3>
         <h4 class="horizontal-card__stock">
           Stock :{inStock ? `inStock` : ` out of stock`}
         </h4>
@@ -34,10 +34,7 @@ function ProductCard({ productCardData }) {
               class="btn btn-success icon"
               onClick={(_id) => deleteQty(productCardData._id)}
             >
-              <span class="material-icons buttonmi">
-                {" "}
-                remove_shopping_cart{" "}
-              </span>
+              <span class="material-icons buttonmi">remove_shopping_cart </span>
             </button>
           ) : (
             <button

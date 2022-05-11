@@ -1,12 +1,14 @@
 import React, { createContext, useEffect, useReducer, useState } from "react";
 import axios from "axios";
-export const ProductListingPagecontext = createContext();
+export const CartAndWishlistContext = createContext();
 
-function ProductListingPage({ children }) {
+function CartAndWishlistPage({ children }) {
   const [productdata, setProductData] = useState([]);
   const [isLoading, setisLoading] = useState(false);
   const [cart, setCart] = useState([]);
   const [wish, setWish] = useState([]);
+  const [rate, setRate] = useState(0);
+
   localStorage.setItem(
     "token",
     `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJlMzIzZmY2MC1hMTUzLTQ0MTYtYmEyNS0zNDQ0ZGI1NjliOWMiLCJlbWFpbCI6ImFkYXJzaGJhbGlrYUBnbWFpbC5jb20ifQ._-fah2UEuueLmRHHl5uV4CYhiQdODX6neUkGbfTvtFM`
@@ -85,7 +87,7 @@ function ProductListingPage({ children }) {
 
   return (
     <div>
-      <ProductListingPagecontext.Provider
+      <CartAndWishlistContext.Provider
         value={{
           productdata,
           setProductData,
@@ -96,15 +98,17 @@ function ProductListingPage({ children }) {
           cart,
           setCart,
           wish,
+          rate,
+          setRate,
           setWish,
           updateQty,
           deleteQty,
         }}
       >
         {children}
-      </ProductListingPagecontext.Provider>
+      </CartAndWishlistContext.Provider>
     </div>
   );
 }
 
-export { ProductListingPage };
+export { CartAndWishlistPage };

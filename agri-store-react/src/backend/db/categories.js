@@ -8,20 +8,102 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "fiction",
-    description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+    title: "Shirt ",
+    categoryName: "men",
   },
   {
     _id: uuid(),
-    categoryName: "non-fiction",
-    description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
+    title: "Mens Slim ",
+    categoryName: "women",
   },
   {
     _id: uuid(),
-    categoryName: "horror",
-    description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+    title: "Mens Cotton",
+    categoryName: "baby",
+  },
+  {
+    _id: uuid(),
+    title: "Mens Casual",
+    categoryName: "men",
+  },
+  {
+    _id: uuid(),
+    title: " Women's ",
+    categoryName: "women",
+  },
+  {
+    _id: uuid(),
+    title: "Solid Gold ",
+    categoryName: "baby",
+  },
+  {
+    _id: uuid(),
+    title: "White Gold  ",
+    categoryName: "men",
+  },
+  {
+    _id: uuid(),
+    title: "Pierced Owl ",
+    categoryName: "baby",
+  },
+  {
+    _id: uuid(),
+    title: "WD 2TB",
+    categoryName: "women",
+  },
+  {
+    _id: uuid(),
+    title: "SanDisk",
+    categoryName: "women",
+  },
+  {
+    _id: uuid(),
+    title: "Silicon Power  ",
+    categoryName: "baby",
+  },
+  {
+    _id: uuid(),
+    title: "WD 4TB ",
+    categoryName: "men",
+  },
+  {
+    _id: uuid(),
+    title: "Acer ",
+    categoryName: "men",
+  },
+  {
+    _id: uuid(),
+    title: "Samsung 49 ",
+    categoryName: "women",
+  },
+  {
+    _id: uuid(),
+    title: "BIYLACLESEN",
+    categoryName: "baby",
+  },
+  {
+    _id: uuid(),
+    title: "Lock ",
+    categoryName: "men",
+  },
+  {
+    _id: uuid(),
+    title: "Rain Jacket ",
+    categoryName: "baby",
+  },
+  {
+    _id: uuid(),
+    title: "MBJ Women's   ",
+    categoryName: "women",
+  },
+  {
+    _id: uuid(),
+    title: "Opna Women's ",
+    categoryName: "baby",
+  },
+  {
+    _id: uuid(),
+    title: "DANVOUY ",
+    categoryName: "men",
   },
 ];

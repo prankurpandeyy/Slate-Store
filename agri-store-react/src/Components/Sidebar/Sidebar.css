@@ -1,11 +1,15 @@
 .catagory-items-page {
-  background-color: rgb(243, 123, 179);
+  background-color: rgb(255, 255, 255);
   width: 15rem;
-  height: 100vh;
+  height: auto;
   padding: 0.5rem;
+  margin-top: 4rem;
+  margin-left: 1rem;
   position: fixed;
   left: 0;
   font-size: 1rem;
+  border-radius: 0.3rem;
+  box-shadow: 1px 1px 1px 1px black;
 }
 
 hr {
@@ -24,4 +28,8 @@ input[type="radio"] {
   height: 1.1rem;
   border: 0.2rem solid black;
   margin: 0 0.2rem;
+}
+
+.filtered-card {
+  display: flex;
 }
