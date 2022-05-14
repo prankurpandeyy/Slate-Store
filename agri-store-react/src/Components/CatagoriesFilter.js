@@ -1,13 +1,14 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
-import { CartAndWishlistContext } from "./Context/CartAndWishlistPageContext";
-import { Sidebar } from "./Sidebar/Sidebar";
-import ProductCard from "./ProductCard/ProductCard";
-import Rating from "./Rating";
+import React, { createContext, useContext, useState } from "react";
+import { productDataContext } from "./Context/ProductListingPageContext";
+
 export const filterContext = createContext();
 
 function CatagoriesFilter({ children }) {
+  const { productdata } = useContext(productDataContext);
   const [sort, setSort] = useState(true);
   const [slider, setSlider] = useState([]);
+  const [priceRange, setPriceRange] = useState(true);
+  const [stock, setStock] = useState(false);
   const [rating, setRating] = useState({
     1: false,
     2: false,
@@ -15,15 +16,11 @@ function CatagoriesFilter({ children }) {
     4: false,
     5: false,
   });
-  const [priceRange, setPriceRange] = useState(true);
-  const [stock, setStock] = useState(false);
   const [category, setCategory] = useState({
     men: false,
     women: false,
     baby: false,
   });
-
-  const { productdata } = useContext(CartAndWishlistContext);
 
   const sortFunction = (productdata, sort) => {
     const sortedproductdata = [...productdata];
