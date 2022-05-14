@@ -1,19 +1,13 @@
 import React, { useContext } from "react";
-import { CartAndWishlistContext } from "../Context/CartAndWishlistPageContext";
-import Rating from "../Rating";
+import { cartContext } from "../Context/CartPageContext";
+import { wishlistContext } from "../Context/WishlistPageContext";
 import "./ProductCard.css";
 function ProductCard({ productCardData }) {
   const { _id, image, title, price, rating, inStock } = productCardData;
-  const {
-    addToWishlist,
-    addToCart,
-    cart,
-    setCart,
-    wish,
-    deleteQty,
-    setWish,
-    deleteWishList,
-  } = useContext(CartAndWishlistContext);
+  const { addToWishlist, wish, setWish, deleteWishList } =
+    useContext(wishlistContext);
+
+  const { deleteQty, cart, setCart, addToCart } = useContext(cartContext);
 
   return (
     <div class="horizontal-card" key={_id}>
@@ -24,7 +18,7 @@ function ProductCard({ productCardData }) {
         <p class="horizontal-card__description"></p>
         <h3 class="horizontal-card__ratings">Rating:{rating} </h3>
         <h4 class="horizontal-card__stock">
-          Stock :{inStock ? `inStock` : ` out of stock`}
+          Stock :{inStock ? `inStock` : ` No stock`}
         </h4>
       </div>
       <div class="horizontal-card__action-button">
