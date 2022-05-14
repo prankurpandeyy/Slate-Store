@@ -1,10 +1,8 @@
 .catagory-items-page {
   background-color: rgb(255, 255, 255);
   width: 15rem;
-  height: auto;
+  height: 100vh;
   padding: 0.5rem;
-  margin-top: 4rem;
-  margin-left: 1rem;
   position: fixed;
   left: 0;
   font-size: 1rem;

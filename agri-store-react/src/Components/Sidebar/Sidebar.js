@@ -1,44 +1,36 @@
 import React, { useContext, useState } from "react";
 import { filterContext } from "../CatagoriesFilter";
-
-import { CartAndWishlistContext } from "../Context/CartAndWishlistPageContext";
-import ProductCard from "../ProductCard/ProductCard";
 import Rating from "../Rating";
 import "./Sidebar.css";
 
 function Sidebar() {
-  const { rate, setRate, productCarddata } = useContext(CartAndWishlistContext);
+  const { rate, setRate } = useState();
   const {
-    sort,
     setSort,
-    stock,
     setStock,
     rating,
     setRating,
-    priceRange,
-    setPriceRange,
     category,
-    slider,
-    setSlider,
     setCategory,
-    finalCategoryData,
+    setPriceRange,
+    setSlider,
   } = useContext(filterContext);
 
   function clearState() {
     setCategory("");
     setPriceRange("");
-    setRate("");
     setSort("");
     setStock("");
     setRating("");
     setSlider("");
+    console.log("clicked");
   }
   return (
     <div>
       <div className="catagory-items-page">
         <nav className="side-item-container">
           <button className="btn btn-warning" onClick={() => clearState()}>
-            Clear All{" "}
+            Clear All
           </button>
           <hr />
           <h3 className="Price-sort-by">Sort by Price : </h3>
