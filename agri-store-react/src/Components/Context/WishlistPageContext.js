@@ -1,32 +1,39 @@
 import axios from "axios";
-import React, { createContext, useState } from "react";
+import React, { createContext } from "react";
+import { useProductContext } from "./ProductContextReducer";
 export const wishlistContext = createContext();
 function WishlistPageContext({ children }) {
-  const [wish, setWish] = useState([]);
-  const deleteWishList = async (_id) => {
-    const response = await axios({
-      method: "DELETE",
-      url: `/api/user/wishlist/${_id}`,
-      headers: { authorization: localStorage.getItem("token") },
-      data: { product: setWish },
-    });
-    setWish(response.data.wishlist);
-  };
+  const { state, dispatch } = useProductContext();
+  const { wish } = state;
 
   // add to wishlist
-  const addToWishlist = async (productdata, setWish) => {
+  const addToWishlist = async (productdata, dispatch) => {
     const response = await axios({
       method: "POST",
       url: `/api/user/wishlist`,
       headers: { authorization: localStorage.getItem("token") },
       data: { product: productdata },
     });
-    setWish(response.data.wishlist);
+    dispatch({ type: "WISH", payload: response.data.wishlist });
+    // setWish(response.data.wishlist);
   };
+
+  // delete wishist
+  const deleteWishList = async (_id) => {
+    const response = await axios({
+      method: "DELETE",
+      url: `/api/user/wishlist/${_id}`,
+      headers: { authorization: localStorage.getItem("token") },
+      data: { product: dispatch },
+    });
+    dispatch({ type: "WISH", payload: response.data.wishlist });
+    // setWish(response.data.wishlist);
+  };
+
   return (
     <div>
       <wishlistContext.Provider
-        value={{ wish, setWish, deleteWishList, addToWishlist }}
+        value={{ wish, dispatch, deleteWishList, addToWishlist }}
       >
         {children}
       </wishlistContext.Provider>
