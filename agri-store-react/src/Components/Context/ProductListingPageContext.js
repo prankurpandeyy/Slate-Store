@@ -20,9 +20,8 @@ function ProductListingPageContext({ children }) {
   }
   // API Call
   useEffect(() => {
-    setTimeout(() => {
-      getProdcutsData();
-    }, 3000);
+    setisLoading(true);
+    getProdcutsData();
   }, []);
 
   console.log(`this is product data`, productdata);
@@ -38,3 +37,4 @@ function ProductListingPageContext({ children }) {
 }
 
 export default ProductListingPageContext;
+// naming convetons on classed in csss
