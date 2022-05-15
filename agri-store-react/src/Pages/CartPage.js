@@ -4,11 +4,12 @@ import { Header } from "../Components/Header/Header";
 import { Footer } from "../Components/Footer/Footer";
 import { cartContext } from "../Components/Context/CartPageContext";
 import { wishlistContext } from "../Components/Context/WishlistPageContext";
+
 function CartPage() {
   const { deleteWishList, addToWishlist, setWish, wish } =
     useContext(wishlistContext);
   const { updateQty, deleteQty, cart } = useContext(cartContext);
-  console.log(cartContext);
+
   const [totalprice, setTotalPrice] = useState();
 
   useEffect(() => {

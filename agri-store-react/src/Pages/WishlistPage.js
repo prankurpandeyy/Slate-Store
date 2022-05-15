@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { ProductContext } from "../Components/Context/ProductContextReducer";
 import { wishlistContext } from "../Components/Context/WishlistPageContext";
 import { Footer } from "../Components/Footer/Footer";
 import { Header } from "../Components/Header/Header";

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+
 function Rating({ rating, onClick, style }) {
   return (
     <div>
@@ -11,7 +12,6 @@ function Rating({ rating, onClick, style }) {
           )}
         </span>
       ))}
-      {console.log(rating)}
     </div>
   );
 }

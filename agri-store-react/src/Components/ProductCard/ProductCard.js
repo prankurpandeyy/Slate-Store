@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useReducer } from "react";
 import { cartContext } from "../Context/CartPageContext";
 import { wishlistContext } from "../Context/WishlistPageContext";
 import "./ProductCard.css";
@@ -6,7 +6,6 @@ function ProductCard({ productCardData }) {
   const { _id, image, title, price, rating, inStock } = productCardData;
   const { addToWishlist, wish, setWish, deleteWishList } =
     useContext(wishlistContext);
-
   const { deleteQty, cart, setCart, addToCart } = useContext(cartContext);
 
   return (

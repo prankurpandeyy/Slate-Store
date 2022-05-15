@@ -1,8 +1,10 @@
 import axios from "axios";
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
+
 export const cartContext = createContext();
 function CartPageContext({ children }) {
   const [cart, setCart] = useState([]);
+  const app = 123;
   // token
   localStorage.setItem(
     "token",
@@ -46,7 +48,7 @@ function CartPageContext({ children }) {
   return (
     <div>
       <cartContext.Provider
-        value={{ updateQty, deleteQty, cart, setCart, addToCart }}
+        value={{ updateQty, deleteQty, cart, setCart, addToCart, app }}
       >
         {children}
       </cartContext.Provider>

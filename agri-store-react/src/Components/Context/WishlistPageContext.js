@@ -1,7 +1,14 @@
 import axios from "axios";
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
+import CartPageContext, { cartContext } from "./CartPageContext";
+import { ProductContext } from "./ProductContextReducer";
+
 export const wishlistContext = createContext();
+
 function WishlistPageContext({ children }) {
+  // const { productstate } = useContext(ProductContext);
+  // console.log(`reducer cart data`, productstate);
+
   const [wish, setWish] = useState([]);
   const deleteWishList = async (_id) => {
     const response = await axios({
@@ -21,6 +28,7 @@ function WishlistPageContext({ children }) {
       headers: { authorization: localStorage.getItem("token") },
       data: { product: productdata },
     });
+    // dispatch({ type: "WISHLIST", payload: response.data.wishlist });
     setWish(response.data.wishlist);
   };
   return (

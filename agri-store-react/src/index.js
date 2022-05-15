@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import { makeServer } from "./server";
@@ -7,6 +7,7 @@ import CatagoriesFilter from "./Components/CatagoriesFilter";
 import CartPageContext from "./Components/Context/CartPageContext";
 import ProductListingPageContext from "./Components/Context/ProductListingPageContext";
 import WishlistPageContext from "./Components/Context/WishlistPageContext";
+import { ProductContextReducer } from "./Components/Context/ProductContextReducer";
 
 // Call make Server
 makeServer();
@@ -18,7 +19,9 @@ ReactDOM.render(
         <ProductListingPageContext>
           <WishlistPageContext>
             <CatagoriesFilter>
-              <App />
+              <ProductContextReducer>
+                <App />
+              </ProductContextReducer>
             </CatagoriesFilter>
           </WishlistPageContext>
         </ProductListingPageContext>
