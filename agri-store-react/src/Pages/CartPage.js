@@ -5,10 +5,10 @@ import { Footer } from "../Components/Footer/Footer";
 import { cartContext } from "../Components/Context/CartPageContext";
 import { wishlistContext } from "../Components/Context/WishlistPageContext";
 function CartPage() {
-  const { deleteWishList, addToWishlist, setWish, wish } =
+  const { deleteWishList, addToWishlist, dispatch, wish } =
     useContext(wishlistContext);
   const { updateQty, deleteQty, cart } = useContext(cartContext);
-  console.log(cartContext);
+
   const [totalprice, setTotalPrice] = useState();
 
   useEffect(() => {
@@ -81,7 +81,7 @@ function CartPage() {
                   ) : (
                     <button
                       class="hcard decrease"
-                      onClick={() => addToWishlist(prod, setWish)}
+                      onClick={() => addToWishlist(prod, dispatch)}
                     >
                       <span class="material-icons buttonmi">
                         {" "}

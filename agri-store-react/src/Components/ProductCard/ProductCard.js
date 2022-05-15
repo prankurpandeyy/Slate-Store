@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { cartContext } from "../Context/CartPageContext";
+import { useProductContext } from "../Context/ProductContextReducer";
 import { wishlistContext } from "../Context/WishlistPageContext";
 import "./ProductCard.css";
 function ProductCard({ productCardData }) {
   const { _id, image, title, price, rating, inStock } = productCardData;
-  const { addToWishlist, wish, setWish, deleteWishList } =
-    useContext(wishlistContext);
-
-  const { deleteQty, cart, setCart, addToCart } = useContext(cartContext);
+  const { addToWishlist, wish, deleteWishList } = useContext(wishlistContext);
+  const { dispatch } = useProductContext();
+  const { deleteQty, cart, addToCart } = useContext(cartContext);
 
   return (
     <div class="horizontal-card" key={_id}>
@@ -33,7 +33,7 @@ function ProductCard({ productCardData }) {
           ) : (
             <button
               class="btn btn-success icon"
-              onClick={() => addToCart(productCardData, setCart)}
+              onClick={() => addToCart(productCardData, dispatch)}
             >
               <span class="material-icons buttonmi"> shopping_cart</span>
             </button>
@@ -53,7 +53,7 @@ function ProductCard({ productCardData }) {
           ) : (
             <button
               class="btn btn-danger icon"
-              onClick={() => addToWishlist(productCardData, setWish)}
+              onClick={() => addToWishlist(productCardData, dispatch)}
             >
               Wishlist
               <span class="material-icons buttonmi"> favorite_border </span>
