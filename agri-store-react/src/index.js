@@ -4,7 +4,10 @@ import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
 import CatagoriesFilter from "./Components/CatagoriesFilter";
-import { CartAndWishlistPage } from "./Components/Context/CartAndWishlistPageContext";
+import CartPageContext from "./Components/Context/CartPageContext";
+import ProductListingPageContext from "./Components/Context/ProductListingPageContext";
+import WishlistPageContext from "./Components/Context/WishlistPageContext";
+import { ProductContextReducer } from "./Components/Context/ProductContextReducer";
 
 // Call make Server
 makeServer();
@@ -12,11 +15,17 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <CartAndWishlistPage>
-        <CatagoriesFilter>
-          <App />
-        </CatagoriesFilter>
-      </CartAndWishlistPage>
+      <ProductContextReducer>
+        <CartPageContext>
+          <ProductListingPageContext>
+            <WishlistPageContext>
+              <CatagoriesFilter>
+                <App />
+              </CatagoriesFilter>
+            </WishlistPageContext>
+          </ProductListingPageContext>
+        </CartPageContext>
+      </ProductContextReducer>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

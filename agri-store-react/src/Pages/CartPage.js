@@ -2,17 +2,13 @@ import { useContext, useEffect, useState } from "react";
 import "./CartPage.css";
 import { Header } from "../Components/Header/Header";
 import { Footer } from "../Components/Footer/Footer";
-import { CartAndWishlistContext } from "../Components/Context/CartAndWishlistPageContext";
+import { cartContext } from "../Components/Context/CartPageContext";
+import { wishlistContext } from "../Components/Context/WishlistPageContext";
 function CartPage() {
-  const {
-    cart,
-    deleteQty,
-    updateQty,
-    deleteWishList,
-    addToWishlist,
-    setWish,
-    wish,
-  } = useContext(CartAndWishlistContext);
+  const { deleteWishList, addToWishlist, dispatch, wish } =
+    useContext(wishlistContext);
+  const { updateQty, deleteQty, cart } = useContext(cartContext);
+
   const [totalprice, setTotalPrice] = useState();
 
   useEffect(() => {
@@ -85,7 +81,7 @@ function CartPage() {
                   ) : (
                     <button
                       class="hcard decrease"
-                      onClick={() => addToWishlist(prod, setWish)}
+                      onClick={() => addToWishlist(prod, dispatch)}
                     >
                       <span class="material-icons buttonmi">
                         {" "}

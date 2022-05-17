@@ -1,19 +1,13 @@
 import React, { useContext } from "react";
-import { CartAndWishlistContext } from "../Context/CartAndWishlistPageContext";
-import Rating from "../Rating";
+import { cartContext } from "../Context/CartPageContext";
+import { useProductContext } from "../Context/ProductContextReducer";
+import { wishlistContext } from "../Context/WishlistPageContext";
 import "./ProductCard.css";
 function ProductCard({ productCardData }) {
   const { _id, image, title, price, rating, inStock } = productCardData;
-  const {
-    addToWishlist,
-    addToCart,
-    cart,
-    setCart,
-    wish,
-    deleteQty,
-    setWish,
-    deleteWishList,
-  } = useContext(CartAndWishlistContext);
+  const { addToWishlist, wish, deleteWishList } = useContext(wishlistContext);
+  const { dispatch } = useProductContext();
+  const { deleteQty, cart, addToCart } = useContext(cartContext);
 
   return (
     <div class="horizontal-card" key={_id}>
@@ -24,7 +18,7 @@ function ProductCard({ productCardData }) {
         <p class="horizontal-card__description"></p>
         <h3 class="horizontal-card__ratings">Rating:{rating} </h3>
         <h4 class="horizontal-card__stock">
-          Stock :{inStock ? `inStock` : ` out of stock`}
+          Stock :{inStock ? `inStock` : ` No stock`}
         </h4>
       </div>
       <div class="horizontal-card__action-button">
@@ -39,7 +33,7 @@ function ProductCard({ productCardData }) {
           ) : (
             <button
               class="btn btn-success icon"
-              onClick={() => addToCart(productCardData, setCart)}
+              onClick={() => addToCart(productCardData, dispatch)}
             >
               <span class="material-icons buttonmi"> shopping_cart</span>
             </button>
@@ -59,7 +53,7 @@ function ProductCard({ productCardData }) {
           ) : (
             <button
               class="btn btn-danger icon"
-              onClick={() => addToWishlist(productCardData, setWish)}
+              onClick={() => addToWishlist(productCardData, dispatch)}
             >
               Wishlist
               <span class="material-icons buttonmi"> favorite_border </span>
