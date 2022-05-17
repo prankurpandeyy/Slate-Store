@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
-import { cartContext } from "../Context/CartPageContext";
+import React from "react";
+import { useCartContext } from "../Context/CartPageContext";
 import { useProductContext } from "../Context/ProductContextReducer";
-import { wishlistContext } from "../Context/WishlistPageContext";
+import { useWishlistContext } from "../Context/WishlistPageContext";
 import "./ProductCard.css";
 function ProductCard({ productCardData }) {
   const { _id, image, title, price, rating, inStock } = productCardData;
-  const { addToWishlist, wish, deleteWishList } = useContext(wishlistContext);
+  const { addToWishlist, wish, deleteWishList } = useWishlistContext();
   const { dispatch } = useProductContext();
-  const { deleteQty, cart, addToCart } = useContext(cartContext);
+  const { deleteQty, cart, addToCart } = useCartContext();
 
   return (
     <div class="horizontal-card" key={_id}>

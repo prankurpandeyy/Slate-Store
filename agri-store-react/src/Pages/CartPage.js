@@ -2,12 +2,12 @@ import { useContext, useEffect, useState } from "react";
 import "./CartPage.css";
 import { Header } from "../Components/Header/Header";
 import { Footer } from "../Components/Footer/Footer";
-import { cartContext } from "../Components/Context/CartPageContext";
-import { wishlistContext } from "../Components/Context/WishlistPageContext";
+import { useCartContext } from "../Components/Context/CartPageContext";
+import { useWishlistContext } from "../Components/Context/WishlistPageContext";
 function CartPage() {
   const { deleteWishList, addToWishlist, dispatch, wish } =
-    useContext(wishlistContext);
-  const { updateQty, deleteQty, cart } = useContext(cartContext);
+    useWishlistContext();
+  const { updateQty, deleteQty, cart } = useCartContext();
 
   const [totalprice, setTotalPrice] = useState();
 

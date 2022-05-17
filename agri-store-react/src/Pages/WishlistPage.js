@@ -1,12 +1,15 @@
 import { useContext } from "react";
-import { wishlistContext } from "../Components/Context/WishlistPageContext";
+import {
+  useWishlistContext,
+  wishlistContext,
+} from "../Components/Context/WishlistPageContext";
 import { Footer } from "../Components/Footer/Footer";
 import { Header } from "../Components/Header/Header";
 import ProductCard from "../Components/ProductCard/ProductCard";
 
 import "./Wishlist.css";
 function WishlistPage() {
-  const { wish } = useContext(wishlistContext);
+  const { wish } = useWishlistContext();
 
   return (
     <div>
