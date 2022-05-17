@@ -6,6 +6,7 @@ import SignupPage from "./Pages/SignupPage";
 import "./App.css";
 import { CartPage } from "./Pages/CartPage";
 import WishlistPage from "./Pages/WishlistPage";
+import Toast from "./Components/Toast/Toast";
 
 function App() {
   return (
