@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import "./Sidebar/Sidebar.css";
 function Rating({ rating, onClick, style }) {
   return (
     <div>

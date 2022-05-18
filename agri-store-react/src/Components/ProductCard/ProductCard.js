@@ -2,6 +2,7 @@ import React from "react";
 import { useCartContext } from "../Context/CartPageContext";
 import { useProductContext } from "../Context/ProductContextReducer";
 import { useWishlistContext } from "../Context/WishlistPageContext";
+import Rating from "../Rating";
 import "./ProductCard.css";
 function ProductCard({ productCardData }) {
   const { _id, image, title, price, rating, inStock } = productCardData;
@@ -16,7 +17,9 @@ function ProductCard({ productCardData }) {
         <h2 class="horizontal-card__title">{title}</h2>
         <h3 class="horizontal-card__price">Price : ${price}</h3>
         <p class="horizontal-card__description"></p>
-        <h3 class="horizontal-card__ratings">Rating:{rating} </h3>
+        <h3 class="horizontal-card__ratings">
+          <Rating rating={rating} />
+        </h3>
         <h4 class="horizontal-card__stock">
           Stock :{inStock ? `inStock` : ` No stock`}
         </h4>

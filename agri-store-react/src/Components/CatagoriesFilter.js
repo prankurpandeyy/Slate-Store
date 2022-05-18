@@ -23,34 +23,18 @@ function CatagoriesFilter({ children }) {
   // sort by product rating
   const ratingFunction = (productdata, rating) => {
     const sortedproductdata = [...productdata];
-    sortedproductdata.filter((f) => f.rating === console.log(rating));
-
-    // if (rating === 1) {
-    //   return sortedproductdata.filter((product) => product.rating === 1);
-    // }
-    // if (rating === 2) {
-    //   return sortedproductdata.filter((product) => product.rating === 2);
-    // }
-    // if (rating === 3) {
-    //   return sortedproductdata.filter((product) => product.rating === 3);
-    // }
-    // if (rating === 4) {
-    //   return sortedproductdata.filter((product) => product.rating === 4);
-    // }
-    // if (rating === 5) {
-    //   return sortedproductdata.filter((product) => product.rating === 5);
-    // }
+    if (rating) {
+      return sortedproductdata.filter((f) => f.rating === rating);
+    }
     return sortedproductdata;
   };
 
   //sort by category
   const categoryFunction = (productdata, category) => {
     const sortedproductdata = [...productdata];
-
     if (category.men && category.women && category.baby) {
       return sortedproductdata;
     }
-
     if (category.men && category.women) {
       return sortedproductdata.filter(
         (product) => product.categoryName !== "baby"

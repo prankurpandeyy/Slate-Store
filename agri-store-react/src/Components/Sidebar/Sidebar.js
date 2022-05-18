@@ -12,6 +12,12 @@ function Sidebar() {
   function clearState() {
     dispatch({ type: "SORT", payload: true });
     dispatch({ type: "SLIDER", payload: 106 });
+    dispatch({ type: "STOCK", payload: false });
+    dispatch({ type: "RATING", payload: false });
+    dispatch({
+      type: "CATEGORY",
+      payload: { men: false, women: false, baby: false },
+    });
   }
   return (
     <div>
@@ -52,46 +58,12 @@ function Sidebar() {
           <hr />
           <div className="price-range">
             Sort by Rating :(Above than) <br />
-            {/* <Rating
-              rating={rate}
-              onClick={(i) => setRate(i + 1)}
-              onChange={() => dispatch({ type: "RATING", payload: 1 })}
-            /> */}
-            <input
-              type="radio"
-              name="rating"
-              value="1"
-              onChange={() => dispatch({ type: "RATING", payload: 1 })}
-            />{" "}
-            1-Star <br />
-            <input
-              type="radio"
-              name="rating"
-              value="2"
-              onChange={() => dispatch({ type: "RATING", payload: 2 })}
+            <Rating
+              rating={rating}
+              onClick={(i) => dispatch({ type: "RATING", payload: i + 1 })}
+              style={{ cursor: "pointer" }}
             />
-            2-Star <br />
-            <input
-              type="radio"
-              name="rating"
-              value="3"
-              onChange={() => dispatch({ type: "RATING", payload: 3 })}
-            />
-            3-Star <br />
-            <input
-              type="radio"
-              name="rating"
-              value="4"
-              onChange={() => dispatch({ type: "RATING", payload: 4 })}
-            />
-            4-Star <br />
-            <input
-              type="radio"
-              name="rating"
-              value="5"
-              onChange={() => dispatch({ type: "RATING", payload: 5 })}
-            />
-            5-Star <br />
+            <br />
           </div>
           <hr />
           <h3 className="catagories-sort-by">Catagories sort by : </h3>
