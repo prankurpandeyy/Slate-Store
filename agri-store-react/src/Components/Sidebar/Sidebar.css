@@ -1,5 +1,5 @@
 .catagory-items-page {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(108, 170, 251);
   width: 15rem;
   height: 100vh;
   padding: 0.5rem;
@@ -30,4 +30,10 @@ input[type="radio"] {
 
 .filtered-card {
   display: flex;
+}
+span.material-icons.ratingmi {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  font-weight: 800;
 }

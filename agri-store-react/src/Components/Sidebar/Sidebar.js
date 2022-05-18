@@ -1,103 +1,69 @@
 import React, { useContext, useState } from "react";
 import { filterContext } from "../CatagoriesFilter";
+import { useFilterContext } from "../Context/FilterContextReducer";
 import Rating from "../Rating";
 import "./Sidebar.css";
 
 function Sidebar() {
   const { rate, setRate } = useState();
-  const {
-    setSort,
-    setStock,
-    rating,
-    setRating,
-    category,
-    setCategory,
-    setPriceRange,
-    setSlider,
-  } = useContext(filterContext);
+  const { state, dispatch } = useFilterContext();
+  const { rating } = state;
 
   function clearState() {
-    setCategory("");
-    setPriceRange("");
-    setSort("");
-    setStock("");
-    setRating("");
-    setSlider("");
-    console.log("clicked");
+    dispatch({ type: "SORT", payload: true });
+    dispatch({ type: "SLIDER", payload: 106 });
+    dispatch({ type: "STOCK", payload: false });
+    dispatch({ type: "RATING", payload: false });
+    dispatch({
+      type: "CATEGORY",
+      payload: { men: false, women: false, baby: false },
+    });
   }
   return (
     <div>
       <div className="catagory-items-page">
         <nav className="side-item-container">
           <button className="btn btn-warning" onClick={() => clearState()}>
-            Clear All
+            Clear All{" "}
           </button>
           <hr />
           <h3 className="Price-sort-by">Sort by Price : </h3>
-          <input type="radio" name="high" onChange={() => setSort(false)} />
+          <input
+            type="radio"
+            name="high"
+            onChange={() => dispatch({ type: "SORT", payload: false })}
+          />
           High to Low <br />
-          <input type="radio" name="high" onChange={() => setSort(true)} />
+          <input
+            type="radio"
+            name="high"
+            onChange={() => dispatch({ type: "SORT", payload: true })}
+          />
           Low to High <br />
           <hr />
           <div className="price-range">
             <h3 className="Price-sort-by">Sort by Price : </h3>
             {105}
+            <br />
             <input
               type="range"
               max="120"
               min="106"
-              onChange={(e) => setSlider(e.target.value)}
-            />{" "}
+              onChange={(e) =>
+                dispatch({ type: "SLIDER", payload: e.target.value })
+              }
+            />
             {120}
           </div>
           <hr />
           <div className="price-range">
-            Sort by Rating : <br />
+            Sort by Rating :(Above than) <br />
             <Rating
-              rating={rate}
-              onClick={(i) => setRate(i + 1)}
-              onChange={(e) =>
-                setRating({ ...rating, rating: e.target.checked })
-              }
+              rating={rating}
+              onClick={(i) => dispatch({ type: "RATING", payload: i + 1 })}
+              style={{ cursor: "pointer" }}
             />
-            <input
-              type="checkbox"
-              name="rating"
-              value="1"
-              rating={rate}
-              onChange={(e) => setRating({ ...rating, one: e.target.checked })}
-            />{" "}
-            1-Star <br />
-            <input
-              type="checkbox"
-              name="rating"
-              value="2"
-              onChange={(e) => setRating({ ...rating, two: e.target.checked })}
-            />
-            2-Star <br />
-            <input
-              type="checkbox"
-              name="rating"
-              value="3"
-              onChange={(e) =>
-                setRating({ ...rating, three: e.target.checked })
-              }
-            />
-            3-Star <br />
-            <input
-              type="checkbox"
-              name="4"
-              value="4"
-              onChange={(e) => setRating({ ...rating, four: e.target.checked })}
-            />
-            4-Star <br />
-            <input
-              type="checkbox"
-              name="rating"
-              value="5"
-              onChange={(e) => setRating({ ...rating, five: e.target.checked })}
-            />
-            5-Star <br />
+            <br />
           </div>
           <hr />
           <h3 className="catagories-sort-by">Catagories sort by : </h3>
@@ -106,7 +72,9 @@ function Sidebar() {
             name="women"
             value="women"
             onChange={(e) =>
-              setCategory({ ...category, women: e.target.checked })
+              dispatch({
+                type: "women",
+              })
             }
           />
           women <br />
@@ -114,8 +82,10 @@ function Sidebar() {
             type="checkbox"
             name="men"
             value="men"
-            onChange={(e) =>
-              setCategory({ ...category, men: e.target.checked })
+            onChange={() =>
+              dispatch({
+                type: "men",
+              })
             }
           />
           men <br />
@@ -123,14 +93,17 @@ function Sidebar() {
             type="checkbox"
             name="baby"
             value="baby"
-            onChange={(e) =>
-              setCategory({ ...category, baby: e.target.checked })
-            }
+            onChange={() => dispatch({ type: "baby" })}
           />
           baby <br />
           <hr />
           <h3 className="rating-sort-by">Filters : </h3>
-          <input type="checkbox" onChange={(e) => setStock(e.target.checked)} />
+          <input
+            type="checkbox"
+            onChange={(e) =>
+              dispatch({ type: "STOCK", payload: e.target.checked })
+            }
+          />
           Exclude Out of Stock <br />
           <hr />
         </nav>

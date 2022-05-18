@@ -1,13 +1,12 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { cartContext } from "../Context/CartPageContext";
-import { wishlistContext } from "../Context/WishlistPageContext";
-
+import { useCartContext } from "../Context/CartPageContext";
+import { useWishlistContext } from "../Context/WishlistPageContext";
 import "./Header.css";
 
 function Header() {
-  const { cart } = useContext(cartContext);
-  const { wish } = useContext(wishlistContext);
+  const { cart } = useCartContext();
+  const { wish } = useWishlistContext();
   return (
     <div>
       <nav class="navigation-menu">

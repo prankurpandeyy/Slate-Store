@@ -1,17 +1,20 @@
 import axios from "axios";
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext } from "react";
+import Toast from "../Toast/Toast";
 import { useProductContext } from "./ProductContextReducer";
-export const cartContext = createContext();
+const cartContext = createContext();
+export const useCartContext = () => useContext(cartContext);
+
 function CartPageContext({ children }) {
-  // const [cart, setCart] = useState([]);
   const { state, dispatch } = useProductContext();
   const { cart } = state;
 
-  // token
+  // auth token
   localStorage.setItem(
     "token",
     `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJlMzIzZmY2MC1hMTUzLTQ0MTYtYmEyNS0zNDQ0ZGI1NjliOWMiLCJlbWFpbCI6ImFkYXJzaGJhbGlrYUBnbWFpbC5jb20ifQ._-fah2UEuueLmRHHl5uV4CYhiQdODX6neUkGbfTvtFM`
   );
+
   // add data to cart
   const addToCart = async (productdata, dispatch) => {
     const response = await axios({
@@ -21,7 +24,9 @@ function CartPageContext({ children }) {
       data: { product: productdata },
     });
     dispatch({ type: "CART", payload: response.data.cart });
+    Toast({ type: "success", mesg: "added to cart" });
   };
+
   // delete data from cart
   async function deleteQty(_id) {
     const response = await axios({
@@ -31,9 +36,10 @@ function CartPageContext({ children }) {
       data: { product: dispatch },
     });
     dispatch({ type: "CART", payload: response.data.cart });
+    Toast({ type: "info", mesg: "item removed from cart" });
   }
-  // increment /decrement quantity in cart
 
+  // increment /decrement quantity in cart
   async function updateQty(actionType, _id) {
     const response = await axios({
       method: "POST",
@@ -46,8 +52,10 @@ function CartPageContext({ children }) {
       },
     });
     dispatch({ type: "CART", payload: response.data.cart });
-    // setCart(response.data.cart);
+    Toast({ type: "success", mesg: "quantity updated in cart" });
   }
+
+  // returning the satate with data
   return (
     <div>
       <cartContext.Provider

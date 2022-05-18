@@ -1,26 +1,15 @@
-import React, { createContext, useContext, useState } from "react";
-import { productDataContext } from "./Context/ProductListingPageContext";
+import React, { createContext, useState } from "react";
+import { useFilterContext } from "./Context/FilterContextReducer";
+import { useProductDataContext } from "./Context/ProductListingPageContext";
 
 export const filterContext = createContext();
 
 function CatagoriesFilter({ children }) {
-  const { productdata } = useContext(productDataContext);
-  const [sort, setSort] = useState(true);
-  const [slider, setSlider] = useState([]);
-  const [priceRange, setPriceRange] = useState(true);
-  const [stock, setStock] = useState(false);
-  const [rating, setRating] = useState({
-    1: false,
-    2: false,
-    3: false,
-    4: false,
-    5: false,
-  });
-  const [category, setCategory] = useState({
-    men: false,
-    women: false,
-    baby: false,
-  });
+  const { state, dispatch } = useFilterContext();
+  const { sort, slider, category, rating, stock } = state;
+  const { men, women, baby } = category;
+
+  const { productdata } = useProductDataContext();
 
   const sortFunction = (productdata, sort) => {
     const sortedproductdata = [...productdata];
@@ -32,24 +21,10 @@ function CatagoriesFilter({ children }) {
   };
 
   // sort by product rating
-
   const ratingFunction = (productdata, rating) => {
     const sortedproductdata = [...productdata];
-    if (rating.one) {
-      return sortedproductdata.filter((product) => product.rating === 1);
-    }
-
-    if (rating.two) {
-      return sortedproductdata.filter((product) => product.rating === 2);
-    }
-    if (rating.three) {
-      return sortedproductdata.filter((product) => product.rating === 3);
-    }
-    if (rating.four) {
-      return sortedproductdata.filter((product) => product.rating === 4);
-    }
-    if (rating.five) {
-      return sortedproductdata.filter((product) => product.rating === 5);
+    if (rating) {
+      return sortedproductdata.filter((f) => f.rating === rating);
     }
     return sortedproductdata;
   };
@@ -60,7 +35,6 @@ function CatagoriesFilter({ children }) {
     if (category.men && category.women && category.baby) {
       return sortedproductdata;
     }
-
     if (category.men && category.women) {
       return sortedproductdata.filter(
         (product) => product.categoryName !== "baby"
@@ -113,7 +87,7 @@ function CatagoriesFilter({ children }) {
       return sortedproductdata;
     }
   }
-  // demo playing one
+  // function chaining
   const sortedData = sortFunction(productdata, sort);
   const finalData = ratingFunction(sortedData, rating);
   const stockData = stockFunction(finalData, stock);
@@ -125,17 +99,10 @@ function CatagoriesFilter({ children }) {
       <filterContext.Provider
         value={{
           sort,
-          setSort,
-          stock,
-          setStock,
           rating,
-          setRating,
-          priceRange,
-          setPriceRange,
-          category,
+          stock,
           slider,
-          setSlider,
-          setCategory,
+          category,
           finalCategoryData,
           sliderData,
         }}

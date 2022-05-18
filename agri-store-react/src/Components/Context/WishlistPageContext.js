@@ -1,7 +1,11 @@
 import axios from "axios";
-import React, { createContext } from "react";
+import React, { createContext, useContext } from "react";
+import Toast from "../Toast/Toast";
 import { useProductContext } from "./ProductContextReducer";
-export const wishlistContext = createContext();
+
+const wishlistContext = createContext();
+export const useWishlistContext = () => useContext(wishlistContext);
+
 function WishlistPageContext({ children }) {
   const { state, dispatch } = useProductContext();
   const { wish } = state;
@@ -15,7 +19,7 @@ function WishlistPageContext({ children }) {
       data: { product: productdata },
     });
     dispatch({ type: "WISH", payload: response.data.wishlist });
-    // setWish(response.data.wishlist);
+    Toast({ type: "success", mesg: "added to wishlist" });
   };
 
   // delete wishist
@@ -27,7 +31,7 @@ function WishlistPageContext({ children }) {
       data: { product: dispatch },
     });
     dispatch({ type: "WISH", payload: response.data.wishlist });
-    // setWish(response.data.wishlist);
+    Toast({ type: "info", mesg: "removed from wishlist" });
   };
 
   return (
