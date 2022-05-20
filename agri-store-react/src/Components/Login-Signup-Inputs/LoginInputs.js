@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useLoginContext } from "../Context/LoginPageContext";
 import "./LoginInputs.css";
+
 function LoginInputs() {
+  const { setEmail, setPassword, loginHandler } = useLoginContext();
+
   return (
     <div>
       <div className="Login-Form">
         <h3> Login Page</h3>
-        <form>
+        <form onSubmit={loginHandler}>
           <label>
             <input
               class="input__field"
@@ -14,6 +18,7 @@ function LoginInputs() {
               name="email"
               placeholder="Email"
               required
+              onChange={(e) => setEmail(e.target.value)}
             />
           </label>
 
@@ -25,6 +30,7 @@ function LoginInputs() {
               placeholder="Password"
               required
               minlength="6"
+              onChange={(e) => setPassword(e.target.value)}
             />
           </label>
 

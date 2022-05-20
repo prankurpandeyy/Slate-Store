@@ -1,0 +1,30 @@
+h1 {
+  display: flex;
+  justify-content: center;
+  margin: 5rem;
+  align-items: center;
+}
+
+tr {
+  text-align: center;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  margin-left: 15rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

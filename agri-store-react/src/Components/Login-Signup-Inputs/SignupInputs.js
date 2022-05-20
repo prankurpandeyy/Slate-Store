@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useLoginContext } from "../Context/LoginPageContext";
 import "./SignupInputs.css";
 function SignupInputs() {
+  const { setEmail, setName, setPassword, setNumber, signUpHandler } =
+    useLoginContext();
+
   return (
     <div>
       <div className="Signup-Form">
         <h3> Signup Page</h3>
-        <form>
+        <form onSubmit={signUpHandler}>
           <label>
             <input
               class="input__field"
@@ -14,6 +18,7 @@ function SignupInputs() {
               name="name"
               placeholder="Name"
               required
+              onChange={(e) => setName(e.target.value)}
             />
           </label>
 
@@ -24,6 +29,7 @@ function SignupInputs() {
               name="email"
               placeholder="Email"
               required
+              onChange={(e) => setEmail(e.target.value)}
             />
           </label>
           <label>
@@ -35,6 +41,7 @@ function SignupInputs() {
               pattern="[0-9]*"
               placeholder="Phone Number"
               required
+              onChange={(e) => setNumber(e.target.value)}
             />
           </label>
           <label>
@@ -45,6 +52,7 @@ function SignupInputs() {
               placeholder="Password"
               required
               minlength="6"
+              onChange={(e) => setPassword(e.target.value)}
             />
           </label>
 

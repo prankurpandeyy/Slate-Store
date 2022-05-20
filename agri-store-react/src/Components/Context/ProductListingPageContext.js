@@ -25,8 +25,6 @@ function ProductListingPageContext({ children }) {
     setisLoading(true);
     getProdcutsData();
   }, []);
-
-  console.log(`this is product data`, productdata);
   return (
     <div>
       <productDataContext.Provider
