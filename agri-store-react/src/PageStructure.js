@@ -7,23 +7,30 @@ import ProductListingPageContext from "./Components/Context/ProductListingPageCo
 import WishlistPageContext from "./Components/Context/WishlistPageContext";
 import Toast from "./Components/Toast/Toast";
 import { ToastContainer } from "react-toastify";
+import LoginPageContext from "./Components/Context/LoginPageContext";
+import Address from "./Components/Login-Signup-Inputs/Address";
+import AddressContext from "./Components/Context/AddressContext";
 
 export function PageStructure() {
   return (
     <div>
-      <ProductContextReducer>
-        <FilterContextReducer>
-          <CartPageContext>
-            <ProductListingPageContext>
-              <WishlistPageContext>
-                <CatagoriesFilter>
-                  <App />
-                </CatagoriesFilter>
-              </WishlistPageContext>
-            </ProductListingPageContext>
-          </CartPageContext>
-        </FilterContextReducer>
-      </ProductContextReducer>
+      <AddressContext>
+        <LoginPageContext>
+          <ProductContextReducer>
+            <FilterContextReducer>
+              <CartPageContext>
+                <ProductListingPageContext>
+                  <WishlistPageContext>
+                    <CatagoriesFilter>
+                      <App />
+                    </CatagoriesFilter>
+                  </WishlistPageContext>
+                </ProductListingPageContext>
+              </CartPageContext>
+            </FilterContextReducer>
+          </ProductContextReducer>
+        </LoginPageContext>
+      </AddressContext>
       <ToastContainer position="top-right" />
     </div>
   );
