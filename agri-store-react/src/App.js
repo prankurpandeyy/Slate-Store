@@ -7,6 +7,9 @@ import "./App.css";
 import { CartPage } from "./Pages/CartPage";
 import WishlistPage from "./Pages/WishlistPage";
 import Toast from "./Components/Toast/Toast";
+import AccountPage from "./Pages/AccountPage";
+import PageNotFound from "./Components/PageNotFound";
+import Authantication from "./Components/Authantication";
 
 function App() {
   return (
@@ -20,8 +23,34 @@ function App() {
           path="ProductListingPage"
           element={<ProductlistingPage />}
         />
-        <Route exact path="/CartPage" element={<CartPage />} />
-        <Route exact path="/WishlistPage" element={<WishlistPage />} />
+
+        <Route
+          path="/CartPage"
+          element={
+            <Authantication>
+              <CartPage />
+            </Authantication>
+          }
+        />
+        <Route
+          exact
+          path="/WishlistPage"
+          element={
+            <Authantication>
+              <WishlistPage />
+            </Authantication>
+          }
+        />
+        <Route
+          exact
+          path="/AccountPage"
+          element={
+            <Authantication>
+              <AccountPage />
+            </Authantication>
+          }
+        />
+        <Route exact path="*" element={<PageNotFound />} />
       </Routes>
     </div>
   );

@@ -8,7 +8,10 @@
   padding: 3rem;
   margin: 1rem;
   height: auto;
-  width: 30%;
+  width: 60%;
   margin: 0 auto;
   margin-top: 10rem;
+}
+input {
+  margin: 1rem;
 }

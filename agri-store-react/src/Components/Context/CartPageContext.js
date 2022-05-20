@@ -9,12 +9,6 @@ function CartPageContext({ children }) {
   const { state, dispatch } = useProductContext();
   const { cart } = state;
 
-  // auth token
-  localStorage.setItem(
-    "token",
-    `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJlMzIzZmY2MC1hMTUzLTQ0MTYtYmEyNS0zNDQ0ZGI1NjliOWMiLCJlbWFpbCI6ImFkYXJzaGJhbGlrYUBnbWFpbC5jb20ifQ._-fah2UEuueLmRHHl5uV4CYhiQdODX6neUkGbfTvtFM`
-  );
-
   // add data to cart
   const addToCart = async (productdata, dispatch) => {
     const response = await axios({
