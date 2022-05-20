@@ -1,5 +1,5 @@
 import React from "react";
-import { useAdressContext } from "../Context/AddressContext";
+import { useAdressContext } from "./Context/AddressContext";
 
 function Address() {
   const { submitAdress, state, dispatch } = useAdressContext();

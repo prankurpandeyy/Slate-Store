@@ -2,7 +2,6 @@ import React from "react";
 import { useLoginContext } from "../Components/Context/LoginPageContext";
 import { Footer } from "../Components/Footer/Footer";
 import { Header } from "../Components/Header/Header";
-import Address from "../Components/Login-Signup-Inputs/Address";
 
 import "./AccountPage.css";
 
