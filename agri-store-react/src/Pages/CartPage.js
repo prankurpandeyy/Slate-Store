@@ -4,12 +4,15 @@ import { Header } from "../Components/Header/Header";
 import { Footer } from "../Components/Footer/Footer";
 import { useCartContext } from "../Components/Context/CartPageContext";
 import { useWishlistContext } from "../Components/Context/WishlistPageContext";
+import GooglePayButton from "@google-pay/button-react";
+import GooglePay from "../Components/GooglePay";
+import TotalPrice from "../Components/TotalPrice /TotalPrice";
+
 function CartPage() {
   const { deleteWishList, addToWishlist, dispatch, wish } =
     useWishlistContext();
-  const { updateQty, deleteQty, cart } = useCartContext();
-
-  const [totalprice, setTotalPrice] = useState();
+  const { updateQty, deleteQty, cart, totalprice, setTotalPrice } =
+    useCartContext();
 
   useEffect(() => {
     setTotalPrice(
@@ -97,16 +100,9 @@ function CartPage() {
       )}
 
       <div className="total-price">
-        <h4 style={{ fontWeight: "bold" }}> Invoice </h4>
-        <hr />
-        <h6> Total Item in cart : {cart.length} </h6>
-        <hr />
-        <h6>Price Items: {totalprice} </h6>
-        <h6> Discount : {totalprice} </h6>
-        <h6> Delivery Charges : {totalprice} </h6>
-        <hr />
-        <h6> Total Amount : {totalprice} </h6>
+        <TotalPrice />
       </div>
+
       <Footer />
     </div>
   );

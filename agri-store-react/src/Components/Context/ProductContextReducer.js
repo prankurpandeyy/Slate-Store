@@ -9,6 +9,8 @@ function ProductContextReducer({ children }) {
         return { ...state, cart: action.payload };
       case "WISH":
         return { ...state, wish: action.payload };
+      case "COUPON":
+        return { ...state, coupon: action.payload };
       default:
         return state;
     }
@@ -17,6 +19,7 @@ function ProductContextReducer({ children }) {
   const [state, dispatch] = useReducer(productReducer, {
     cart: [],
     wish: [],
+    coupon: "",
   });
 
   return (

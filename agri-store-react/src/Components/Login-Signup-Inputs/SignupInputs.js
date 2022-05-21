@@ -32,6 +32,7 @@ function SignupInputs() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </label>
+
           <label>
             <input
               class="input__field"
