@@ -5,7 +5,6 @@ import FilterContextReducer from "./Components/Context/FilterContextReducer";
 import { ProductContextReducer } from "./Components/Context/ProductContextReducer";
 import ProductListingPageContext from "./Components/Context/ProductListingPageContext";
 import WishlistPageContext from "./Components/Context/WishlistPageContext";
-import Toast from "./Components/Toast/Toast";
 import { ToastContainer } from "react-toastify";
 import LoginPageContext from "./Components/Context/LoginPageContext";
 import AddressContext from "./Components/Context/AddressContext";
