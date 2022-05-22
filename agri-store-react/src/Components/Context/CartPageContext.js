@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext } from "react";
 import Toast from "../Toast/Toast";
 import { useProductContext } from "./ProductContextReducer";
 const cartContext = createContext();
@@ -7,8 +7,7 @@ export const useCartContext = () => useContext(cartContext);
 
 function CartPageContext({ children }) {
   const { state, dispatch } = useProductContext();
-  const { cart, coupon } = state;
-  const [totalprice, setTotalPrice] = useState();
+  const { cart, coupon, totalprice } = state;
 
   // add data to cart
   const addToCart = async (productdata, dispatch) => {
@@ -49,14 +48,16 @@ function CartPageContext({ children }) {
     dispatch({ type: "CART", payload: response.data.cart });
     Toast({ type: "success", mesg: "quantity updated in cart" });
   }
+
+  // coupon
   let discount = (totalprice * 25) / 100;
   let newTotalPrice = totalprice - discount;
   function applyCoupon(coupon) {
     if (coupon === "TANAY123") {
-      console.log("featire coming soon");
       Toast({ type: "info", mesg: "this feature coming soon" });
     } else {
       console.log(coupon);
+      Toast({ type: "info", mesg: "this feature coming soon" });
     }
   }
 
@@ -69,11 +70,10 @@ function CartPageContext({ children }) {
           cart,
           dispatch,
           addToCart,
-          totalprice,
-          setTotalPrice,
           applyCoupon,
           newTotalPrice,
           discount,
+          totalprice,
         }}
       >
         {children}
