@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { useLoginContext } from "../Context/LoginPageContext";
 import "./SignupInputs.css";
 function SignupInputs() {
-  const { setEmail, setName, setPassword, setNumber, signUpHandler } =
-    useLoginContext();
+  const { state, dispatch, signUpHandler } = useLoginContext();
 
   return (
     <div>
@@ -18,7 +17,9 @@ function SignupInputs() {
               name="name"
               placeholder="Name"
               required
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) =>
+                dispatch({ type: "NAME", payload: e.target.value })
+              }
             />
           </label>
 
@@ -29,7 +30,9 @@ function SignupInputs() {
               name="email"
               placeholder="Email"
               required
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) =>
+                dispatch({ type: "EMAIL", payload: e.target.value })
+              }
             />
           </label>
 
@@ -42,7 +45,9 @@ function SignupInputs() {
               pattern="[0-9]*"
               placeholder="Phone Number"
               required
-              onChange={(e) => setNumber(e.target.value)}
+              onChange={(e) =>
+                dispatch({ type: "NUMBER", payload: e.target.value })
+              }
             />
           </label>
           <label>
@@ -53,7 +58,9 @@ function SignupInputs() {
               placeholder="Password"
               required
               minlength="6"
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) =>
+                dispatch({ type: "PASSWORD", payload: e.target.value })
+              }
             />
           </label>
 
