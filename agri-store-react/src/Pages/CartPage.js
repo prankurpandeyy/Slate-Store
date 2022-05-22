@@ -1,23 +1,25 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./CartPage.css";
 import { Header } from "../Components/Header/Header";
 import { Footer } from "../Components/Footer/Footer";
 import { useCartContext } from "../Components/Context/CartPageContext";
 import { useWishlistContext } from "../Components/Context/WishlistPageContext";
-import GooglePayButton from "@google-pay/button-react";
-import GooglePay from "../Components/GooglePay";
+
 import TotalPrice from "../Components/TotalPrice /TotalPrice";
 
 function CartPage() {
   const { deleteWishList, addToWishlist, dispatch, wish } =
     useWishlistContext();
-  const { updateQty, deleteQty, cart, totalprice, setTotalPrice } =
-    useCartContext();
+  const { updateQty, deleteQty, cart, state, totalprice } = useCartContext();
 
   useEffect(() => {
-    setTotalPrice(
-      cart.reduce((acc, item) => acc + Number(item.qty) * Number(item.price), 0)
-    );
+    dispatch({
+      type: "TOTALPRICE",
+      payload: cart.reduce(
+        (acc, item) => acc + Number(item.qty) * Number(item.price),
+        0
+      ),
+    });
   }, [cart]);
 
   return (
@@ -41,7 +43,7 @@ function CartPage() {
             <tr>
               <td>{prod.title}</td>
               <td>
-                <img src={prod.image} alt="image_text" />
+                <img src={prod.image} alt="image_text" className="cart-image" />
               </td>
               <td>
                 <h3> ₹ {prod.price}</h3>
