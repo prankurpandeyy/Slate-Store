@@ -1,4 +1,6 @@
 import React, { createContext, useContext, useReducer } from "react";
+import { filterContext } from "../CatagoriesFilter";
+
 const filterContext1 = createContext();
 export const useFilterContext = () => useContext(filterContext1);
 
@@ -13,6 +15,8 @@ function FilterContextReducer({ children }) {
         return { ...state, stock: action.payload };
       case "RATING":
         return { ...state, rating: action.payload };
+      case "SEARCHBAR":
+        return { ...state, search: action.payload };
       case "CATEGORY":
         return { ...state, category: action.payload };
       case "men":
@@ -41,6 +45,7 @@ function FilterContextReducer({ children }) {
             baby: !state.category.baby,
           },
         };
+
       default:
         return state;
     }
@@ -51,6 +56,7 @@ function FilterContextReducer({ children }) {
     slider: true,
     stock: false,
     rating: false,
+    search: "",
     category: {
       men: false,
       women: false,

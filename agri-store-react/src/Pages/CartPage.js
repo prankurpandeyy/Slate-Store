@@ -1,20 +1,25 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./CartPage.css";
 import { Header } from "../Components/Header/Header";
 import { Footer } from "../Components/Footer/Footer";
 import { useCartContext } from "../Components/Context/CartPageContext";
 import { useWishlistContext } from "../Components/Context/WishlistPageContext";
+
+import TotalPrice from "../Components/TotalPrice /TotalPrice";
+
 function CartPage() {
   const { deleteWishList, addToWishlist, dispatch, wish } =
     useWishlistContext();
-  const { updateQty, deleteQty, cart } = useCartContext();
-
-  const [totalprice, setTotalPrice] = useState();
+  const { updateQty, deleteQty, cart, state, totalprice } = useCartContext();
 
   useEffect(() => {
-    setTotalPrice(
-      cart.reduce((acc, item) => acc + Number(item.qty) * Number(item.price), 0)
-    );
+    dispatch({
+      type: "TOTALPRICE",
+      payload: cart.reduce(
+        (acc, item) => acc + Number(item.qty) * Number(item.price),
+        0
+      ),
+    });
   }, [cart]);
 
   return (
@@ -38,7 +43,7 @@ function CartPage() {
             <tr>
               <td>{prod.title}</td>
               <td>
-                <img src={prod.image} alt="image_text" />
+                <img src={prod.image} alt="image_text" className="cart-image" />
               </td>
               <td>
                 <h3> ₹ {prod.price}</h3>
@@ -97,16 +102,9 @@ function CartPage() {
       )}
 
       <div className="total-price">
-        <h4 style={{ fontWeight: "bold" }}> Invoice </h4>
-        <hr />
-        <h6> Total Item in cart : {cart.length} </h6>
-        <hr />
-        <h6>Price Items: {totalprice} </h6>
-        <h6> Discount : {totalprice} </h6>
-        <h6> Delivery Charges : {totalprice} </h6>
-        <hr />
-        <h6> Total Amount : {totalprice} </h6>
+        <TotalPrice />
       </div>
+
       <Footer />
     </div>
   );

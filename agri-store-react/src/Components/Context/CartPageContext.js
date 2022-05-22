@@ -7,7 +7,7 @@ export const useCartContext = () => useContext(cartContext);
 
 function CartPageContext({ children }) {
   const { state, dispatch } = useProductContext();
-  const { cart } = state;
+  const { cart, coupon, totalprice } = state;
 
   // add data to cart
   const addToCart = async (productdata, dispatch) => {
@@ -49,11 +49,32 @@ function CartPageContext({ children }) {
     Toast({ type: "success", mesg: "quantity updated in cart" });
   }
 
-  // returning the satate with data
+  // coupon
+  let discount = (totalprice * 25) / 100;
+  let newTotalPrice = totalprice - discount;
+  function applyCoupon(coupon) {
+    if (coupon === "TANAY123") {
+      Toast({ type: "info", mesg: "this feature coming soon" });
+    } else {
+      console.log(coupon);
+      Toast({ type: "info", mesg: "this feature coming soon" });
+    }
+  }
+
   return (
     <div>
       <cartContext.Provider
-        value={{ updateQty, deleteQty, cart, dispatch, addToCart }}
+        value={{
+          updateQty,
+          deleteQty,
+          cart,
+          dispatch,
+          addToCart,
+          applyCoupon,
+          newTotalPrice,
+          discount,
+          totalprice,
+        }}
       >
         {children}
       </cartContext.Provider>

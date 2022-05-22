@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import Toast from "../Toast/Toast";
 
@@ -8,12 +8,34 @@ export const useLoginContext = () => useContext(loginContext);
 
 function LoginPageContext({ children }) {
   const navigate = useNavigate();
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [number, setNumber] = useState();
-  const [password, setPassword] = useState();
-  const [loginData, setLoginData] = useState([]);
 
+  const [state, dispatch] = useReducer(reducerFn, {
+    name: "",
+    email: "",
+    number: "",
+    password: "",
+    loginData: [],
+  });
+  function reducerFn(state, action) {
+    switch (action.type) {
+      case "NAME":
+        return { ...state, name: action.payload };
+      case "EMAIL":
+        return { ...state, email: action.payload };
+      case "NUMBER":
+        return { ...state, number: action.payload };
+      case "PASSWORD":
+        return { ...state, password: action.payload };
+      case "LOGINDATA":
+        return { ...state, loginData: action.payload };
+
+      default:
+        return state;
+    }
+  }
+  const { loginData } = state;
+
+  const { name, email, password, number } = state;
   const loginHandler = async (e) => {
     e.preventDefault();
     try {
@@ -22,12 +44,12 @@ function LoginPageContext({ children }) {
         password: password,
       });
       // saving the encodedToken in the localStorage
-      setLoginData(response.data.foundUser);
-      const token = localStorage.getItem(`token`, response.data.encodedToken);
+      dispatch({ type: "LOGINDATA", payload: response.data.foundUser });
+      localStorage.getItem(`token`, response.data.encodedToken);
 
       Toast({
         type: "success",
-        mesg: `Hi ${loginData.name} , logged in `,
+        mesg: `welcome ! `,
       });
 
       navigate("/AccountPage");
@@ -60,6 +82,7 @@ function LoginPageContext({ children }) {
       type: "info",
       mesg: ` you had been logged out `,
     });
+    window.location.reload(false);
     navigate("/");
   };
 
@@ -67,16 +90,8 @@ function LoginPageContext({ children }) {
     <div>
       <loginContext.Provider
         value={{
-          name,
-          number,
-          email,
-          password,
-          setEmail,
-          loginData,
-          setLoginData,
-          setName,
-          setPassword,
-          setNumber,
+          state,
+          dispatch,
           signUpHandler,
           loginHandler,
           logoutHandler,

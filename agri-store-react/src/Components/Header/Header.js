@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../Context/CartPageContext";
+import { useFilterContext } from "../Context/FilterContextReducer";
 import { useLoginContext } from "../Context/LoginPageContext";
 import { useWishlistContext } from "../Context/WishlistPageContext";
 import "./Header.css";
@@ -9,6 +10,8 @@ function Header() {
   const { cart } = useCartContext();
   const { wish } = useWishlistContext();
   const { logoutHandler } = useLoginContext();
+  const { state, dispatch } = useFilterContext();
+  const { search } = state;
 
   const token = window.localStorage.getItem("token");
   return (
@@ -31,12 +34,15 @@ function Header() {
             </button>
           </Link>
         )}
-
+        {/* 
         <input
           type="search"
           class="navigation__input"
           placeholder="search item"
-        />
+          onChange={(e) =>
+            dispatch({ type: "SEARCHBAR", payload: e.target.value })
+          }
+        /> */}
 
         <div class="navigation__right">
           <Link to="/ProductListingPage">

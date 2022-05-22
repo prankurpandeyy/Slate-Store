@@ -1,31 +1,41 @@
-import React, { useContext, useState } from "react";
-import { filterContext } from "../CatagoriesFilter";
+import React from "react";
 import { useFilterContext } from "../Context/FilterContextReducer";
 import Rating from "../Rating";
 import "./Sidebar.css";
 
 function Sidebar() {
-  const { rate, setRate } = useState();
   const { state, dispatch } = useFilterContext();
-  const { rating } = state;
+  console.log(state);
+  const { rating, search, stock } = state;
 
-  function clearState() {
+  function clearState(e) {
     dispatch({ type: "SORT", payload: true });
-    dispatch({ type: "SLIDER", payload: 106 });
-    dispatch({ type: "STOCK", payload: false });
+    dispatch({ type: "SLIDER", payload: (e.target.value = 105) });
+    dispatch({ type: "STOCK", payload: "" });
     dispatch({ type: "RATING", payload: false });
     dispatch({
       type: "CATEGORY",
       payload: { men: false, women: false, baby: false },
     });
   }
+
   return (
     <div>
       <div className="catagory-items-page">
         <nav className="side-item-container">
-          <button className="btn btn-warning" onClick={() => clearState()}>
+          <button className="btn btn-warning" onClick={clearState}>
             Clear All{" "}
           </button>
+          <hr />
+          <input
+            type="search"
+            class="navigation__input"
+            placeholder="search item"
+            search={search}
+            onChange={(e) =>
+              dispatch({ type: "SEARCHBAR", payload: e.target.value })
+            }
+          />
           <hr />
           <h3 className="Price-sort-by">Sort by Price : </h3>
           <input
@@ -100,6 +110,7 @@ function Sidebar() {
           <h3 className="rating-sort-by">Filters : </h3>
           <input
             type="checkbox"
+            checked={stock}
             onChange={(e) =>
               dispatch({ type: "STOCK", payload: e.target.checked })
             }

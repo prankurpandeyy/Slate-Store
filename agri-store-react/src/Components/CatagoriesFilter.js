@@ -1,14 +1,14 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext } from "react";
 import { useFilterContext } from "./Context/FilterContextReducer";
 import { useProductDataContext } from "./Context/ProductListingPageContext";
 
-export const filterContext = createContext();
+const catagoriesFilterContext = createContext();
+export const useCatagoriesFilterContext = () =>
+  useContext(catagoriesFilterContext);
 
 function CatagoriesFilter({ children }) {
-  const { state, dispatch } = useFilterContext();
-  const { sort, slider, category, rating, stock } = state;
-  const { men, women, baby } = category;
-
+  const { state } = useFilterContext();
+  const { sort, slider, category, rating, stock, search } = state;
   const { productdata } = useProductDataContext();
 
   const sortFunction = (productdata, sort) => {
@@ -87,28 +87,45 @@ function CatagoriesFilter({ children }) {
       return sortedproductdata;
     }
   }
-  // function chaining
+
+  // searchbar
+
+  function searchData(productdata, search) {
+    const sortedproductdata = [...productdata];
+    console.log(`sortedproductdata`, sortedproductdata);
+    console.log(`search`, search);
+    if (search) {
+      return sortedproductdata.filter((s) =>
+        s.title.toLowerCase().includes(search)
+      );
+    } else {
+      return sortedproductdata;
+    }
+  }
+
+  // function chaining (working)
   const sortedData = sortFunction(productdata, sort);
   const finalData = ratingFunction(sortedData, rating);
   const stockData = stockFunction(finalData, stock);
   const finalCategoryData = categoryFunction(stockData, category);
   const sliderData = sliderFunction(finalCategoryData, slider);
+  const searchbarData = searchData(sliderData, search);
 
   return (
     <div>
-      <filterContext.Provider
+      <catagoriesFilterContext.Provider
         value={{
           sort,
           rating,
           stock,
+          search,
           slider,
           category,
-          finalCategoryData,
-          sliderData,
+          searchbarData,
         }}
       >
         {children}
-      </filterContext.Provider>
+      </catagoriesFilterContext.Provider>
     </div>
   );
 }
