@@ -2,9 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 70vh;
   height: 50vh;
   width: 80%;
-  border: 2px solid black;
+
   width: auto;
+  margin-top: 4rem;
 }

@@ -12,7 +12,7 @@
   margin: 0.5rem;
 }
 
-img {
+img.cart-image {
   height: 7rem;
   width: 7rem;
   border-radius: 0.4rem;
