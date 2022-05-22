@@ -4,7 +4,7 @@ import { useLoginContext } from "../Context/LoginPageContext";
 import "./LoginInputs.css";
 
 function LoginInputs() {
-  const { setEmail, setPassword, loginHandler } = useLoginContext();
+  const { state, dispatch, loginHandler } = useLoginContext();
 
   return (
     <div>
@@ -18,7 +18,9 @@ function LoginInputs() {
               name="email"
               placeholder="Email"
               required
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) =>
+                dispatch({ type: "EMAIL", payload: e.target.value })
+              }
             />
           </label>
 
@@ -30,7 +32,9 @@ function LoginInputs() {
               placeholder="Password"
               required
               minlength="6"
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) =>
+                dispatch({ type: "PASSWORD", payload: e.target.value })
+              }
             />
           </label>
 
