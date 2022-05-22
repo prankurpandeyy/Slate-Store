@@ -9,10 +9,9 @@ function Address() {
     deleteAddress,
     state,
     dispatch,
-    alldata,
     toggleSubmit,
   } = useAdressContext();
-  const { fullname, email, phone, pincode, address } = state;
+  const { fullname, email, phone, pincode, address, fulladdressdata } = state;
 
   return (
     <div className="form-data">
@@ -108,7 +107,7 @@ function Address() {
           <th>delete/edit</th>
         </tr>
 
-        {alldata.map((d) => {
+        {fulladdressdata.map((d) => {
           return (
             <tr>
               <th>
