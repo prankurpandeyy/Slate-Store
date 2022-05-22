@@ -11,6 +11,8 @@ function ProductContextReducer({ children }) {
         return { ...state, wish: action.payload };
       case "COUPON":
         return { ...state, coupon: action.payload };
+      case "TOTALPRICE":
+        return { ...state, totalprice: action.payload };
       default:
         return state;
     }
@@ -20,6 +22,7 @@ function ProductContextReducer({ children }) {
     cart: [],
     wish: [],
     coupon: "",
+    totalprice: 0,
   });
 
   return (
