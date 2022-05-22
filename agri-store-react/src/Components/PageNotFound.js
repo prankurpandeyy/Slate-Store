@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Footer } from "./Footer/Footer";
 import { Header } from "./Header/Header";
 import "./PageNotFound.css";
+
 function PageNotFound() {
   const [counter, setCounter] = useState(12);
   const navigate = useNavigate();
