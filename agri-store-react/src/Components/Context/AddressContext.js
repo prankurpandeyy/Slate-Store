@@ -5,7 +5,6 @@ const adressContext = createContext();
 export const useAdressContext = () => useContext(adressContext);
 
 function AddressContext({ children }) {
-  const [alldata, setAlldata] = useState([]);
   const [toggleSubmit, setToggleSubmit] = useState(false);
   function adresssdataFn(state, action) {
     switch (action.type) {
@@ -19,6 +18,8 @@ function AddressContext({ children }) {
         return { ...state, pincode: action.payload };
       case "ADDRESS":
         return { ...state, address: action.payload };
+      case "ADDRESSDATA":
+        return { ...state, fulladdressdata: action.payload };
       default:
         return state;
     }
@@ -29,15 +30,20 @@ function AddressContext({ children }) {
     phone: "",
     pincode: "",
     address: "",
+    fulladdressdata: [],
   });
-  const { id, fullname, email, phone, pincode, address } = state;
+  const { id, fullname, email, phone, pincode, address, fulladdressdata } =
+    state;
 
   function formSubmitAddAdress(e) {
     e.preventDefault();
-    setAlldata([
-      ...alldata,
-      { id: uuid(), fullname, email, phone, pincode, address },
-    ]);
+    dispatch({
+      type: "ADDRESSDATA",
+      payload: [
+        ...fulladdressdata,
+        { id: uuid(), fullname, email, phone, pincode, address },
+      ],
+    });
     Toast({ type: "info", mesg: "Adress added " });
     dispatch({ type: "FULLNAME", payload: "" });
     dispatch({ type: "PHONE", payload: "" });
@@ -46,17 +52,16 @@ function AddressContext({ children }) {
     dispatch({ type: "ADDRESS", payload: "" });
   }
 
-  console.log("this is all adress data ", alldata);
-
   function editAddress(id) {
     Toast({ type: "info", mesg: "This Feature is coming soon" });
-    console.log("this feature is coming soon");
   }
   function saveEditedAddress() {}
   function deleteAddress(id) {
-    setAlldata(alldata.filter((f) => f.id !== id));
-    Toast({ type: " info", mesg: " Adress Removed " });
-    console.log("delete adress");
+    dispatch({
+      type: "ADDRESSDATA",
+      payload: fulladdressdata.filter((f) => f.id !== id),
+    });
+    Toast({ type: " info", mesg: " Address Removed " });
   }
   return (
     <div>
@@ -68,7 +73,6 @@ function AddressContext({ children }) {
           editAddress,
           saveEditedAddress,
           deleteAddress,
-          alldata,
           toggleSubmit,
         }}
       >
