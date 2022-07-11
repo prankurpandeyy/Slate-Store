@@ -32,37 +32,37 @@ function CatagoriesFilter({ children }) {
   //sort by category
   const categoryFunction = (productdata, category) => {
     const sortedproductdata = [...productdata];
-    if (category.men && category.women && category.baby) {
+    if (category.petrol && category.diesel && category.ev) {
       return sortedproductdata;
     }
-    if (category.men && category.women) {
+    if (category.petrol && category.diesel) {
       return sortedproductdata.filter(
-        (product) => product.categoryName !== "baby"
+        (product) => product.categoryName !== "ev"
       );
     }
-    if (category.baby && category.women) {
+    if (category.ev && category.petrol) {
       return sortedproductdata.filter(
-        (product) => product.categoryName !== "men"
+        (product) => product.categoryName !== "diesel"
       );
     }
-    if (category.baby && category.men) {
+    if (category.ev && category.diesel) {
       return sortedproductdata.filter(
-        (product) => product.categoryName !== "women"
+        (product) => product.categoryName !== "petrol"
       );
     }
-    if (category.men) {
+    if (category.diesel) {
       return sortedproductdata.filter(
-        (product) => product.categoryName === "men"
+        (product) => product.categoryName === "diesel"
       );
     }
-    if (category.women) {
+    if (category.petrol) {
       return sortedproductdata.filter(
-        (product) => product.categoryName === "women"
+        (product) => product.categoryName === "petrol"
       );
     }
-    if (category.baby) {
+    if (category.ev) {
       return sortedproductdata.filter(
-        (product) => product.categoryName === "baby"
+        (product) => product.categoryName === "ev"
       );
     }
     return sortedproductdata;

@@ -6,9 +6,13 @@ function Rating({ rating, onClick, style }) {
       {[...Array(5)].map((_, i) => (
         <span key={i} onClick={() => onClick(i)} style={style}>
           {rating > i ? (
-            <span class="material-icons ratingmi">star</span>
+            <span class="material-icons ratingmi" style={{ color: "black" }}>
+              star
+            </span>
           ) : (
-            <span class="material-icons ratingmi">star_border</span>
+            <span class="material-icons ratingmi" style={{ color: "black" }}>
+              star_border
+            </span>
           )}
         </span>
       ))}
