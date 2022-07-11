@@ -1,9 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useLoginContext } from "../Context/LoginPageContext";
+import { Link, useNavigate } from "react-router-dom";
+import { useLoginContext } from "../../Context/AllContextIndex";
+import { signUpHandler } from "../../Services/AuthServices";
 import "./SignupInputs.css";
 function SignupInputs() {
-  const { state, dispatch, signUpHandler } = useLoginContext();
+  const { dispatch, name, email, password, number } = useLoginContext();
+  const navigate = useNavigate();
+  function submitSignUpData(e) {
+    signUpHandler(e, name, number, email, password);
+    navigate("/LoginPage");
+  }
 
   return (
     <div>
@@ -15,7 +21,7 @@ function SignupInputs() {
             alt="user"
             className="user-icon"
           />
-          <form onSubmit={signUpHandler}>
+          <form onSubmit={submitSignUpData}>
             <label>
               <input
                 class="input__field"

@@ -1,15 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useCartContext } from "../Context/CartPageContext";
-import { useProductContext } from "../Context/ProductContextReducer";
-import { useWishlistContext } from "../Context/WishlistPageContext";
-import Rating from "../Rating";
+import {
+  useWishlistContext,
+  useCartContext,
+  useProductContext,
+} from "../../Context/AllContextIndex";
+import { addToCart, removeFromCart } from "../../Services/CartServices";
+import { addToWishlist, deleteWishList } from "../../Services/WishlistServices";
 import "./ProductCard.css";
 function ProductCard({ productCardData }) {
-  const { _id, image, title, price, rating, inStock } = productCardData;
-  const { addToWishlist, wish, deleteWishList } = useWishlistContext();
+  const { _id, image, title, price } = productCardData;
+  const { wish } = useWishlistContext();
   const { dispatch } = useProductContext();
-  const { deleteQty, cart, addToCart } = useCartContext();
+  const { cart } = useCartContext();
 
   return (
     <div className="horizontal-card ">
@@ -37,7 +40,7 @@ function ProductCard({ productCardData }) {
           {cart.some((prod) => prod._id === productCardData._id) ? (
             <button
               class="btn  btn-primary icon"
-              onClick={(_id) => deleteQty(productCardData._id)}
+              onClick={(_id) => removeFromCart(productCardData._id, dispatch)}
             >
               {" "}
               REMOVE FROM CART
@@ -55,7 +58,7 @@ function ProductCard({ productCardData }) {
           {wish.some((wishlist) => wishlist._id === productCardData._id) ? (
             <button
               class="btn btn-primary icon"
-              onClick={(_id) => deleteWishList(productCardData._id)}
+              onClick={(_id) => deleteWishList(productCardData._id, dispatch)}
             >
               REMOVE FROM WISHLIST
               <span class="material-icons buttonmi"> favorite_border </span>

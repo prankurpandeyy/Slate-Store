@@ -1,16 +1,9 @@
-import React, { createContext, useContext } from "react";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
-import { useCartContext } from "../Context/CartPageContext";
-import { useProductContext } from "../Context/ProductContextReducer";
-
+import { useCartContext } from "../../Context/AllContextIndex";
 import "./TotalPrice.css";
 
 function TotalPrice() {
-  const { totalprice, cart, applyCoupon, newTotalPrice, discount } =
-    useCartContext();
-  const { state, dispatch } = useProductContext();
-  const { coupon } = state;
+  const { totalprice, cart } = useCartContext();
 
   return (
     <div>
@@ -18,7 +11,7 @@ function TotalPrice() {
         <ul class="price">
           <li class="grey">Total Price:₹ {totalprice}</li>
           <li>Product Quantity : {cart.length}</li>
-          <li>Total Paybable amount :₹ {newTotalPrice}</li>
+          <li>Total Paybable amount :₹ {totalprice}</li>
           <li class="grey">
             <Link to="/Checkoutpage">
               <button className="checkout">Checkout</button>

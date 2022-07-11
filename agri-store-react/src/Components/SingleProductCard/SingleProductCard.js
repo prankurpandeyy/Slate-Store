@@ -2,21 +2,21 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
-import { useCartContext } from "../Context/CartPageContext";
-import { useProductContext } from "../Context/ProductContextReducer";
-import { useWishlistContext } from "../Context/WishlistPageContext";
-import Rating from "../Rating";
+import {
+  useWishlistContext,
+  useCartContext,
+  useProductContext,
+} from "../../Context/AllContextIndex";
+import { Rating } from "../../Components/AllComponentIndex";
 import "./SingleProductCard.css";
+import { addToCart, removeFromCart } from "../../Services/CartServices";
+import { addToWishlist, deleteWishList } from "../../Services/WishlistServices";
 function SingleProductCard() {
   // const { _id, image, title, price, rating, inStock } = productCardData;
-  const { addToWishlist, wish, deleteWishList } = useWishlistContext();
+  const { wish } = useWishlistContext();
   const { dispatch } = useProductContext();
-  const { deleteQty, cart, addToCart } = useCartContext();
+  const { cart } = useCartContext();
   const [singleProduct, setSingleProduct] = useState([]);
-  console.log(
-    "🚀 ~ file: SingleProductCard.js ~ line 14 ~ SingleProductCard ~ singleProduct",
-    singleProduct
-  );
 
   const productId = useParams();
 
@@ -28,10 +28,7 @@ function SingleProductCard() {
         setSingleProduct(res.data.product);
       })
       .catch((err) => {
-        console.log(
-          "🚀 ~ file: SingleProductCard.js ~ line 28 ~ SingleProductCard ~ err",
-          err
-        );
+        console.log(" err", err);
       });
   }
 
@@ -87,7 +84,7 @@ function SingleProductCard() {
               {cart.some((prod) => prod._id === singleProduct._id) ? (
                 <button
                   class="btn  btn-primary icon1"
-                  onClick={(_id) => deleteQty(singleProduct._id)}
+                  onClick={(_id) => removeFromCart(singleProduct._id, dispatch)}
                 >
                   {" "}
                   REMOVE FROM CART
@@ -107,7 +104,7 @@ function SingleProductCard() {
               {wish.some((wishlist) => wishlist._id === singleProduct._id) ? (
                 <button
                   class="btn btn-primary icon1"
-                  onClick={(_id) => deleteWishList(singleProduct._id)}
+                  onClick={(_id) => deleteWishList(singleProduct._id, dispatch)}
                 >
                   REMOVE FROM WISHLIST
                   <span class="material-icons buttonmi"> favorite_border </span>

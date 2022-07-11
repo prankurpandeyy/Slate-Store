@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useProductContext } from "../Context/ProductContextReducer";
+import { useProductContext } from "../../Context/AllContextIndex";
 import "./OrderConfirm.css";
 function OrderConfirm() {
   const { state, dispatch } = useProductContext();

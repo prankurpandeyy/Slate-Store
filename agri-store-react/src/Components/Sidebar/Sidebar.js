@@ -1,11 +1,10 @@
 import React from "react";
-import { useFilterContext } from "../Context/FilterContextReducer";
-import Rating from "../Rating";
+import { useFilterContext } from "../../Context/AllContextIndex";
+import { Rating } from "../../Components/AllComponentIndex";
 import "./Sidebar.css";
 
 function Sidebar() {
   const { state, dispatch } = useFilterContext();
-  console.log(state);
   const { rating, search, stock } = state;
 
   function clearState(e) {

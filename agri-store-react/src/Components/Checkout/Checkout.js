@@ -1,9 +1,10 @@
 import React from "react";
-import { useCartContext } from "../Context/CartPageContext";
-import Razorpay from "../Razorpay";
 import "./Checkout.css";
-import AddAddress from "../../AddAddress/AddAddress";
-import { useAdressContext } from "../Context/AddressContext";
+import { AddAddress, Razorpay } from "../../Components/AllComponentIndex";
+import {
+  useAdressContext,
+  useCartContext,
+} from "../../Context/AllContextIndex";
 function Checkout() {
   const { cart, totalprice, discount } = useCartContext();
   const { fulladdressdata } = useAdressContext();

@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { useCartContext } from "../Context/CartPageContext";
-import { useFilterContext } from "../Context/FilterContextReducer";
-import { useLoginContext } from "../Context/LoginPageContext";
-import { useWishlistContext } from "../Context/WishlistPageContext";
+import {
+  useCartContext,
+  useFilterContext,
+  useLoginContext,
+  useWishlistContext,
+} from "../../Context/AllContextIndex";
 import "./Header.css";
 
 function Header() {

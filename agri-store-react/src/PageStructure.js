@@ -1,13 +1,14 @@
 import App from "./App";
-import CatagoriesFilter from "./Components/CatagoriesFilter";
-import CartPageContext from "./Components/Context/CartPageContext";
-import FilterContextReducer from "./Components/Context/FilterContextReducer";
-import { ProductContextReducer } from "./Components/Context/ProductContextReducer";
-import ProductListingPageContext from "./Components/Context/ProductListingPageContext";
-import WishlistPageContext from "./Components/Context/WishlistPageContext";
-import { ToastContainer } from "react-toastify";
-import LoginPageContext from "./Components/Context/LoginPageContext";
-import AddressContext from "./Components/Context/AddressContext";
+import {
+  AddressContext,
+  CartPageContext,
+  FilterContextReducer,
+  LoginPageContext,
+  ProductContextReducer,
+  ProductListingPageContext,
+  WishlistPageContext,
+  CatagoriesFilter,
+} from "./Context/CoreContextFiles";
 import toast, { Toaster } from "react-hot-toast";
 
 export function PageStructure() {
@@ -31,7 +32,6 @@ export function PageStructure() {
           </ProductContextReducer>
         </LoginPageContext>
       </AddressContext>
-      {/* <ToastContainer position="top-right" /> */}
     </div>
   );
 }

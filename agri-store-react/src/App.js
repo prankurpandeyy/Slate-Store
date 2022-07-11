@@ -1,19 +1,19 @@
 import { Route, Routes } from "react-router-dom";
-import Homepage from "./Pages/Homepage";
-import LoginPage from "./Pages/LoginPage";
-import ProductlistingPage from "./Pages/ProductlistingPage";
-import SignupPage from "./Pages/SignupPage";
 import "./App.css";
-import { CartPage } from "./Pages/CartPage";
-import WishlistPage from "./Pages/WishlistPage";
-import Toast from "./Components/Toast/Toast";
-import AccountPage from "./Pages/AccountPage";
-import PageNotFound from "./Components/PageNotFound";
-import Authentication from "./Components/Authentication";
-import Checkoutpage from "./Pages/Checkoutpage";
-import Razorpay from "./Components/Razorpay";
-import OrderSuccessPage from "./Pages/OrderSuccessPage";
-import SingleProductPage from "./Pages/SingleProductPage";
+import {
+  Homepage,
+  LoginPage,
+  SignupPage,
+  ProductlistingPage,
+  Checkoutpage,
+  OrderSuccessPage,
+  SingleProductPage,
+  WishlistPage,
+  CartPage,
+  AccountPage,
+  Authentication,
+  PageNotFound,
+} from "./Pages/IndexAllPages";
 
 function App() {
   return (

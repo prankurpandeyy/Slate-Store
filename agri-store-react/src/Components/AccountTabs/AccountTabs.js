@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import Accountdetails from "../../Accountdetails/Accountdetails";
-import Address from "../Address";
 import Modal from "react-modal";
 import "./AccountTabs.css";
-import { useAdressContext } from "../Context/AddressContext";
-import { useProductContext } from "../Context/ProductContextReducer";
-import { useCartContext } from "../Context/CartPageContext";
+import {
+  useAdressContext,
+  useProductContext,
+  useCartContext,
+} from "../../Context/AllContextIndex";
+import { Accountdetails, Address } from "../../Components/AllComponentIndex";
+
 function AccountTabs() {
   const { fulladdressdata, editAddress, deleteAddress } = useAdressContext();
   const [isOpen, setIsOpen] = useState(false);

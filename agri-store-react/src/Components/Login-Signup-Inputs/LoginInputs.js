@@ -1,10 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useLoginContext } from "../Context/LoginPageContext";
+import { Link, useNavigate } from "react-router-dom";
+import { useLoginContext } from "../../Context/AllContextIndex";
+import { loginHandler } from "../../Services/AuthServices";
 import "./LoginInputs.css";
 
 function LoginInputs() {
-  const { state, dispatch, loginHandler } = useLoginContext();
+  const { dispatch, name, email, password, number } = useLoginContext();
+  const navigate = useNavigate();
+
+  function submitLoginData(e) {
+    loginHandler(e, email, password, dispatch);
+    navigate("/AccountPage");
+  }
 
   return (
     <div>
@@ -16,7 +23,7 @@ function LoginInputs() {
             alt="user"
             className="user-icon"
           />
-          <form onSubmit={loginHandler}>
+          <form onSubmit={submitLoginData}>
             <label>
               <input
                 class="input__field"
@@ -36,6 +43,7 @@ function LoginInputs() {
                 type="password"
                 name="input password"
                 placeholder="Password"
+                autoComplete="on"
                 required
                 minlength="6"
                 onChange={(e) =>
