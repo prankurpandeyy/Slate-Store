@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useReducer, useState } from "react";
+import toast from "react-hot-toast";
 import { v4 as uuid } from "uuid";
 import Toast from "../Toast/Toast";
 const adressContext = createContext();
@@ -52,16 +53,18 @@ function AddressContext({ children }) {
     dispatch({ type: "ADDRESS", payload: "" });
   }
 
-  function editAddress(id) {
-    Toast({ type: "info", mesg: "This Feature is coming soon" });
+  function editAddress() {
+    console.log(`edit `);
   }
-  function saveEditedAddress() {}
+  function saveEditedAddress() {
+    console.log(`edit `);
+  }
   function deleteAddress(id) {
     dispatch({
       type: "ADDRESSDATA",
       payload: fulladdressdata.filter((f) => f.id !== id),
     });
-    Toast({ type: " info", mesg: " Address Removed " });
+    toast.success("Address is removed !.");
   }
   return (
     <div>
@@ -74,6 +77,7 @@ function AddressContext({ children }) {
           saveEditedAddress,
           deleteAddress,
           toggleSubmit,
+          fulladdressdata,
         }}
       >
         {children}

@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { createContext, useContext, useReducer } from "react";
+import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+
 import Toast from "../Toast/Toast";
 
 const loginContext = createContext();
@@ -28,12 +30,10 @@ function LoginPageContext({ children }) {
         return { ...state, password: action.payload };
       case "LOGINDATA":
         return { ...state, loginData: action.payload };
-
       default:
         return state;
     }
   }
-  const { loginData } = state;
 
   const { name, email, password, number } = state;
   const loginHandler = async (e) => {
@@ -45,12 +45,13 @@ function LoginPageContext({ children }) {
       });
       // saving the encodedToken in the localStorage
       dispatch({ type: "LOGINDATA", payload: response.data.foundUser });
-      localStorage.getItem(`token`, response.data.encodedToken);
+      localStorage.setItem(`token`, response.data.encodedToken);
+      toast.success("Welcome!.");
 
-      Toast({
-        type: "success",
-        mesg: `welcome ! `,
-      });
+      // Toast({
+      //   type: "success",
+      //   mesg: `welcome ! `,
+      // });
 
       navigate("/AccountPage");
     } catch (error) {
@@ -69,20 +70,19 @@ function LoginPageContext({ children }) {
       });
       // saving the encodedToken in the localStorage
       localStorage.setItem(`token`, response.data.encodedToken);
-      Toast({ type: "success", mesg: "user signedup in " });
+      // Toast({ type: "success", mesg: "user signedup in " });
+      toast.success("Signup success!.");
     } catch (error) {
       console.log(error);
     }
+    navigate("/LoginPage");
   };
 
   const logoutHandler = (e) => {
     e.preventDefault();
     localStorage.clear();
-    Toast({
-      type: "info",
-      mesg: ` you had been logged out `,
-    });
-    window.location.reload(false);
+    toast.success("Logout success!.");
+    // window.location.reload(false);
     navigate("/");
   };
 

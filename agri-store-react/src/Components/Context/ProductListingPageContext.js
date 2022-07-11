@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { createContext, useContext, useEffect, useReducer } from "react";
+import toast from "react-hot-toast";
 
 const productDataContext = createContext();
 export const useProductDataContext = () => useContext(productDataContext);
@@ -32,14 +33,17 @@ function ProductListingPageContext({ children }) {
       }).then((response) =>
         dispatch({ type: "APIPRODUCTDATA", payload: response.data.products })
       );
+
       dispatch({ type: "LOADINGSPINNER", payload: false });
     } catch (erorr) {
+      toast.error(`Server is encountering some issues:`, erorr);
       console.log(`Server is encountering some issues:`, erorr);
     }
   }
   // API Call
   useEffect(() => {
     dispatch({ type: "LOADINGSPINNER", payload: true });
+    toast.success(" Data is being retrieved.");
     getProdcutsData();
   }, []);
   return (

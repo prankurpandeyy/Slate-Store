@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { createContext, useContext } from "react";
+import toast from "react-hot-toast";
 import Toast from "../Toast/Toast";
 import { useProductContext } from "./ProductContextReducer";
 const cartContext = createContext();
@@ -18,7 +19,7 @@ function CartPageContext({ children }) {
       data: { product: productdata },
     });
     dispatch({ type: "CART", payload: response.data.cart });
-    Toast({ type: "success", mesg: "added to cart" });
+    toast.success(" Added to cart.");
   };
 
   // delete data from cart
@@ -30,7 +31,8 @@ function CartPageContext({ children }) {
       data: { product: dispatch },
     });
     dispatch({ type: "CART", payload: response.data.cart });
-    Toast({ type: "info", mesg: "item removed from cart" });
+
+    toast.success(" Removed from cart.");
   }
 
   // increment /decrement quantity in cart
@@ -46,7 +48,7 @@ function CartPageContext({ children }) {
       },
     });
     dispatch({ type: "CART", payload: response.data.cart });
-    Toast({ type: "success", mesg: "quantity updated in cart" });
+    toast.success(" Item Qty is updated .");
   }
 
   // coupon

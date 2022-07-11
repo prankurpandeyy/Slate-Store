@@ -19,30 +19,30 @@ function FilterContextReducer({ children }) {
         return { ...state, search: action.payload };
       case "CATEGORY":
         return { ...state, category: action.payload };
-      case "men":
+      case "diesel":
         return {
           ...state,
           category: {
             ...state["category"],
-            men: !state.category.men,
+            diesel: !state.category.diesel,
           },
         };
 
-      case "women":
+      case "petrol":
         return {
           ...state,
           category: {
             ...state["category"],
-            women: !state.category.women,
+            petrol: !state.category.petrol,
           },
         };
 
-      case "baby":
+      case "ev":
         return {
           ...state,
           category: {
             ...state["category"],
-            baby: !state.category.baby,
+            ev: !state.category.ev,
           },
         };
 
@@ -58,9 +58,9 @@ function FilterContextReducer({ children }) {
     rating: false,
     search: "",
     category: {
-      men: false,
-      women: false,
-      baby: false,
+      diesel: false,
+      petrol: false,
+      ev: false,
     },
   });
 

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { createContext, useContext } from "react";
+import toast from "react-hot-toast";
 import Toast from "../Toast/Toast";
 import { useProductContext } from "./ProductContextReducer";
 
@@ -19,7 +20,7 @@ function WishlistPageContext({ children }) {
       data: { product: productdata },
     });
     dispatch({ type: "WISH", payload: response.data.wishlist });
-    Toast({ type: "success", mesg: "added to wishlist" });
+    toast.success(" Item is added to wishlist.");
   };
 
   // delete wishist
@@ -31,7 +32,7 @@ function WishlistPageContext({ children }) {
       data: { product: dispatch },
     });
     dispatch({ type: "WISH", payload: response.data.wishlist });
-    Toast({ type: "info", mesg: "removed from wishlist" });
+    toast.success(" Item is removed from wishlist.");
   };
 
   return (
