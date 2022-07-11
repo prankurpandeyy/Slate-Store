@@ -9,7 +9,11 @@ import WishlistPage from "./Pages/WishlistPage";
 import Toast from "./Components/Toast/Toast";
 import AccountPage from "./Pages/AccountPage";
 import PageNotFound from "./Components/PageNotFound";
-import Authantication from "./Components/Authantication";
+import Authentication from "./Components/Authentication";
+import Checkoutpage from "./Pages/Checkoutpage";
+import Razorpay from "./Components/Razorpay";
+import OrderSuccessPage from "./Pages/OrderSuccessPage";
+import SingleProductPage from "./Pages/SingleProductPage";
 
 function App() {
   return (
@@ -23,31 +27,38 @@ function App() {
           path="ProductListingPage"
           element={<ProductlistingPage />}
         />
+        <Route exact path="/Checkoutpage" element={<Checkoutpage />} />
+        <Route exact path="/ordersuccess/:id" element={<OrderSuccessPage />} />
+        <Route
+          exact
+          path="/Productdetails/:id"
+          element={<SingleProductPage />}
+        />
 
         <Route
           path="/CartPage"
           element={
-            <Authantication>
+            <Authentication>
               <CartPage />
-            </Authantication>
+            </Authentication>
           }
         />
         <Route
           exact
           path="/WishlistPage"
           element={
-            <Authantication>
+            <Authentication>
               <WishlistPage />
-            </Authantication>
+            </Authentication>
           }
         />
         <Route
           exact
           path="/AccountPage"
           element={
-            <Authantication>
+            <Authentication>
               <AccountPage />
-            </Authantication>
+            </Authentication>
           }
         />
         <Route exact path="*" element={<PageNotFound />} />

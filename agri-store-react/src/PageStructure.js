@@ -8,10 +8,12 @@ import WishlistPageContext from "./Components/Context/WishlistPageContext";
 import { ToastContainer } from "react-toastify";
 import LoginPageContext from "./Components/Context/LoginPageContext";
 import AddressContext from "./Components/Context/AddressContext";
+import toast, { Toaster } from "react-hot-toast";
 
 export function PageStructure() {
   return (
     <div>
+      <Toaster position="top-center" reverseOrder={false} />
       <AddressContext>
         <LoginPageContext>
           <ProductContextReducer>
@@ -29,7 +31,7 @@ export function PageStructure() {
           </ProductContextReducer>
         </LoginPageContext>
       </AddressContext>
-      <ToastContainer position="top-right" />
+      {/* <ToastContainer position="top-right" /> */}
     </div>
   );
 }
