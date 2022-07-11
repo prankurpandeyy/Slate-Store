@@ -17,24 +17,12 @@ function Header() {
   return (
     <div>
       <nav class="navigation-menu">
+        {/* <Link to="/"> */}
         <div class="navigation__left">
-          <Link to="/">
-            <div class="navigation__logo">Agri UI</div>
-          </Link>
+          <p class="navigation__logo">Slate Store</p>
         </div>
+        {/* </Link> */}
 
-        {!token ? (
-          <Link to="/LoginPage">
-            <button class="btn btn-warning">LogIn</button>
-          </Link>
-        ) : (
-          <Link to="/LoginPage">
-            <button class="btn btn-warning" onClick={logoutHandler}>
-              LogOut
-            </button>
-          </Link>
-        )}
-        {/* 
         <input
           type="search"
           class="navigation__input"
@@ -42,7 +30,7 @@ function Header() {
           onChange={(e) =>
             dispatch({ type: "SEARCHBAR", payload: e.target.value })
           }
-        /> */}
+        />
 
         <div class="navigation__right">
           <Link to="/ProductListingPage">
@@ -61,9 +49,22 @@ function Header() {
             </Link>
             <span class="nav__number-badge">{cart.length}</span>
           </div>
-          <Link to="/AccountPage">
-            <span class="material-icons navigationmi"> account_circle </span>
-          </Link>
+
+          {!token ? (
+            <Link to="/LoginPage">
+              <span class="material-icons navigationmi"> login </span>
+            </Link>
+          ) : (
+            <Link to="/Accountpage">
+              <span
+                class="material-icons navigationmi"
+                // onClick={logoutHandler}
+              >
+                {" "}
+                account_circle{" "}
+              </span>
+            </Link>
+          )}
         </div>
       </nav>
     </div>
