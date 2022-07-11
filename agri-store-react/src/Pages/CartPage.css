@@ -37,7 +37,9 @@ img.cart-image {
   width: 60%;
   margin-top: 5rem;
   margin-left: 4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 6rem;
+  overflow: auto;
+  height: auto;
 }
 
 #customers td,

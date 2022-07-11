@@ -4,14 +4,11 @@
 }
 .form-data {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 1rem;
-  background-color: rgb(84, 84, 87);
-  margin: 0 4rem 15rem 4rem;
-  color: rgb(0, 0, 0);
   border-radius: 0.5rem;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
-.forms {
-  margin-left: 2rem;
-}
+
+/* modal */

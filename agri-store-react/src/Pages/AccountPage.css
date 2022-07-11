@@ -1,4 +1,4 @@
-h1,
+/* h1,
 h2 {
   display: flex;
   justify-content: center;
@@ -8,19 +8,18 @@ h2 {
   margin-right: 2rem;
   align-items: center;
   text-align: center;
-}
+} */
 
 tr {
   text-align: center;
 }
 table {
-  font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 70%;
-  margin-left: 15rem;
+  width: 30%;
+  /* margin-left: 5.5rem; */
   text-align: center;
   padding: 1rem;
-  border: 2px solid black;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
 td,
@@ -29,10 +28,11 @@ th {
   text-align: left;
   padding: 8px;
   text-align: center;
+  background-color: #8a8c8f;
 }
 
 tr:nth-child(even) {
-  background-color: #8a8c8f;
+  /* background-color: #8a8c8f; */
   color: black;
   font-size: 1rem;
 }

@@ -1,4 +1,41 @@
-div.horizontal-card {
-  background-color: rgb(108, 170, 251);
-  width: 15rem;
+.horizontal-card {
+  height: auto;
+  width: auto;
+}
+img.card-img {
+  max-height: auto;
+  height: 12.5rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.card-actions button {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  width: 90%;
+}
+.card-contents {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  color: green;
+  font-size: 1.1rem;
+  font-weight: 800;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.price1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-left: 2rem;
+  display: flex;
+  color: rgb(199, 46, 46);
+}
+.previous-price {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: rgb(0, 0, 0);
+  margin-left: 0.5rem;
 }

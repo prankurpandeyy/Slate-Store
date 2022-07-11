@@ -1,18 +1,21 @@
 .catagory-items-page {
-  background-color: rgb(108, 170, 251);
-  width: 15rem;
+  background-color: rgb(255, 255, 255);
+  width: 15%;
   height: 100vh;
   padding: 0.5rem;
   position: fixed;
   left: 0;
+  color: black;
   font-size: 1rem;
   border-radius: 0.3rem;
-  box-shadow: 1px 1px 1px 1px black;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
 }
 
-hr {
+hr.sidebar-hr {
   margin: 0.7rem;
-  border: 1px solid rgb(79, 13, 145);
+  border: 1px solid gray;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 }
 input[type="checkbox"] {
   width: 1.1rem;
@@ -39,10 +42,59 @@ span.material-icons.ratingmi {
   cursor: pointer;
   font-weight: 800;
 }
-input.navigation__input {
-  width: 80%;
-  text-align: center;
-  font-weight: 600;
-  color: rebeccapurple;
+input[type="range"].input-range-type {
+  appearance: none;
+  margin: 0.5rem;
+  width: 100%;
+  height: 1.5rem;
+  border-radius: 0.3rem;
+
+  outline: none;
+  margin-bottom: 0.5rem;
+}
+.sortbyrange {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-direction: column;
+}
+.catagories-sort-by {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+}
+input[type="range"]::-webkit-slider-runnable-track {
   border: none;
+  opacity: 0.5;
+}
+.sort-by-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+}
+.out-of-stock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 70%;
+  height: auto;
+}
+.clear-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
 }
