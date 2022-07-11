@@ -4,7 +4,6 @@ import { Header } from "../Components/Header/Header";
 import { Footer } from "../Components/Footer/Footer";
 import { useCartContext } from "../Components/Context/CartPageContext";
 import { useWishlistContext } from "../Components/Context/WishlistPageContext";
-
 import TotalPrice from "../Components/TotalPrice /TotalPrice";
 
 function CartPage() {
