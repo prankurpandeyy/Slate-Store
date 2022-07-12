@@ -5,9 +5,10 @@ import {
   React,
 } from "../../Utils/CustomUtils";
 import { Footer, Header } from "../../Components/AllComponentIndex";
+import "./PageNotFoundPage.css";
 
 function PageNotFound() {
-  const [counter, setCounter] = useState(5);
+  const [counter, setCounter] = useState(3);
   const navigate = useNavigate();
   function componentDidMount() {
     setTimeout(() => {

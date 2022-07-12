@@ -2,14 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
-  height: 50vh;
+  height: 80%;
   width: 80%;
-
-  width: auto;
-  margin-top: 7rem;
+  margin: auto;
+  margin-top: 2rem;
 }
-.page-not-found-text {
-  margin-top: 10rem;
+h1.page-not-found-text {
+  margin-top: 8rem;
   text-align: center;
 }

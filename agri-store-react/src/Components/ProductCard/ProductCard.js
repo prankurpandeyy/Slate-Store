@@ -17,7 +17,10 @@ function ProductCard({ productCardData }) {
     <div className="horizontal-card ">
       <div class="card-wrapper basic-card">
         <div>
-          <Link to={`/Productdetails/${_id}`}>
+          <Link
+            to={`/Productdetails/${_id}`}
+            style={{ textDecoration: "none" }}
+          >
             {" "}
             <img src={image} class="card-img" alt="demo" />
             <h2 class="card-heading">{title}</h2>
