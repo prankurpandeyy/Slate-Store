@@ -1,7 +1,12 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import toast from "react-hot-toast";
-import { useParams } from "react-router-dom";
+import {
+  React,
+  useEffect,
+  useState,
+  axios,
+  toast,
+  useParams,
+} from "../../Utils/CustomUtils";
+
 import {
   useWishlistContext,
   useCartContext,

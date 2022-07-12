@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { React } from "../../Utils/CustomUtils";
 function Rating({ rating, onClick, style }) {
   return (
     <div>

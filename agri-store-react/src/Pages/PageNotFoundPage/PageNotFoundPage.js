@@ -1,5 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {
+  useEffect,
+  useNavigate,
+  useState,
+  React,
+} from "../../Utils/CustomUtils";
 import { Footer, Header } from "../../Components/AllComponentIndex";
 
 function PageNotFound() {

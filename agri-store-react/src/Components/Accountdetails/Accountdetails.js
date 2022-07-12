@@ -1,12 +1,13 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "../../Utils/CustomUtils";
+import "../../Utils/CustomCSSUtils.css";
+
 import {
   useLoginContext,
   useCartContext,
   useWishlistContext,
 } from "../../Context/AllContextIndex";
 import { logoutHandler } from "../../Services/AuthServices";
-import "./Accountdetails.css";
+
 function Accountdetails() {
   const { loginData } = useLoginContext();
   const { _id, name, email } = loginData;

@@ -1,29 +1,25 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { React, Link } from "../../Utils/CustomUtils";
 import {
   useCartContext,
   useFilterContext,
-  useLoginContext,
   useWishlistContext,
 } from "../../Context/AllContextIndex";
-import "./Header.css";
+import "../../Utils/CustomCSSUtils.css";
 
 function Header() {
   const { cart } = useCartContext();
   const { wish } = useWishlistContext();
-  const { logoutHandler } = useLoginContext();
-  const { state, dispatch } = useFilterContext();
-  const { search } = state;
+  const { dispatch } = useFilterContext();
 
   const token = window.localStorage.getItem("token");
   return (
     <div>
       <nav class="navigation-menu">
-        {/* <Link to="/"> */}
-        <div class="navigation__left">
-          <p class="navigation__logo">Slate Store</p>
-        </div>
-        {/* </Link> */}
+        <Link to="/">
+          <div class="navigation__left">
+            <p class="navigation__logo">Slate Store</p>
+          </div>
+        </Link>
 
         <input
           type="search"
@@ -58,13 +54,7 @@ function Header() {
             </Link>
           ) : (
             <Link to="/Accountpage">
-              <span
-                class="material-icons navigationmi"
-                // onClick={logoutHandler}
-              >
-                {" "}
-                account_circle{" "}
-              </span>
+              <span class="material-icons navigationmi"> account_circle </span>
             </Link>
           )}
         </div>

@@ -1,5 +1,5 @@
-import React from "react";
-import "./Checkout.css";
+import React from "../../Utils/CustomUtils";
+import "../../Utils/CustomCSSUtils.css";
 import { AddAddress, Razorpay } from "../../Components/AllComponentIndex";
 import {
   useAdressContext,

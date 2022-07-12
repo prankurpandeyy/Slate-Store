@@ -1,5 +1,11 @@
-import React, { createContext, useContext, useReducer, useState } from "react";
-import { v4 as uuid } from "uuid";
+import {
+  React,
+  createContext,
+  useContext,
+  useReducer,
+  useState,
+} from "../Utils/CustomUtils";
+
 const adressContext = createContext();
 export const useAdressContext = () => useContext(adressContext);
 

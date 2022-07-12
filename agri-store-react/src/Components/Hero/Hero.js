@@ -1,6 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import "./Hero.css";
+import { React, Link } from "../../Utils/CustomUtils";
+import "../../Utils/CustomCSSUtils.css";
+
 function Hero() {
   return (
     <div>

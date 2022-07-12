@@ -1,18 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import Modal from "react-modal";
-import "./AccountTabs.css";
+import {
+  useState,
+  Tabs,
+  TabList,
+  TabPanel,
+  Tab,
+  Modal,
+} from "../../Utils/CustomUtils";
+import "../../Utils/CustomCSSUtils.css";
 import {
   useAdressContext,
   useProductContext,
   useCartContext,
 } from "../../Context/AllContextIndex";
 import { Accountdetails, Address } from "../../Components/AllComponentIndex";
+import { deleteAddress, editAddress } from "../../Services/AddressServices";
 
 function AccountTabs() {
-  const { fulladdressdata, editAddress, deleteAddress } = useAdressContext();
+  const { fulladdressdata, dispatch } = useAdressContext();
   const [isOpen, setIsOpen] = useState(false);
-  const { state, dispatch } = useProductContext();
+  const { state } = useProductContext();
   const orderData = state;
   const { cart, totalprice, discount } = useCartContext();
 
@@ -73,7 +79,9 @@ function AccountTabs() {
                       <button
                         className="hcard decrease"
                         title="delete"
-                        onClick={() => deleteAddress(address.id)}
+                        onClick={() =>
+                          deleteAddress(address.id, dispatch, fulladdressdata)
+                        }
                       >
                         <span class="material-icons">delete</span>
                       </button>

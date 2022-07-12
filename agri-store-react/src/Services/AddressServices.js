@@ -1,5 +1,4 @@
-import toast from "react-hot-toast";
-import { v4 as uuid } from "uuid";
+import { React, toast } from "../Utils/CustomUtils";
 
 export function formSubmitAddAdress(e, addressData, fulladdressdata, dispatch) {
   e.preventDefault();
@@ -22,4 +21,7 @@ export function deleteAddress(id, dispatch, fulladdressdata) {
     payload: fulladdressdata.filter((f) => f.id !== id),
   });
   toast.success("Address is removed !.");
+}
+export function editAddress() {
+  toast.success("Feature is coming  !.");
 }

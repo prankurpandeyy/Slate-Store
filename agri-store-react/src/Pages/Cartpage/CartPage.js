@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from "../../Utils/CustomUtils";
 import "./CartPage.css";
 import { Header, Footer, TotalPrice } from "../../Components/AllComponentIndex";
 import {

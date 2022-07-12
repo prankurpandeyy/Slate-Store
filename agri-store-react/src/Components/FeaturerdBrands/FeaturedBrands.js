@@ -1,5 +1,5 @@
-import React from "react";
-import "./FeaturedBrands.css";
+import React from "../../Utils/CustomUtils";
+import "../../Utils/CustomCSSUtils.css";
 
 function FeaturedBrands() {
   return (

@@ -1,5 +1,4 @@
-import axios from "axios";
-import toast from "react-hot-toast";
+import { React, toast, axios } from "../Utils/CustomUtils";
 
 export const logoutHandler = () => {
   localStorage.clear();

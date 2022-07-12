@@ -1,6 +1,11 @@
-import axios from "axios";
-import React, { createContext, useContext, useEffect, useReducer } from "react";
-import toast from "react-hot-toast";
+import {
+  React,
+  createContext,
+  useContext,
+  useReducer,
+  useEffect,
+  toast,
+} from "../Utils/CustomUtils";
 import { getProdcutsData } from "../Services/ProductListingServices";
 
 const productDataContext = createContext();

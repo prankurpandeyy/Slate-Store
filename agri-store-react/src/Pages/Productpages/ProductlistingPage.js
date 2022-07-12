@@ -1,10 +1,8 @@
-import React, { useContext, useEffect } from "react";
+import { React, toast, useNavigate } from "../../Utils/CustomUtils";
 import {
-  filterContext,
   useCatagoriesFilterContext,
   useProductDataContext,
 } from "../../Context/AllContextIndex";
-
 import {
   Footer,
   Header,
@@ -14,8 +12,6 @@ import {
 } from "../../Components/AllComponentIndex";
 
 import "./ProductlistingPage.css";
-import { getProdcutsData } from "../../Services/ProductListingServices";
-import toast from "react-hot-toast";
 
 function ProductlistingPage() {
   const { state, dispatch } = useProductDataContext();

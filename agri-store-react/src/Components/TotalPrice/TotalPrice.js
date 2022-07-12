@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { React, Link } from "../../Utils/CustomUtils";
 import { useCartContext } from "../../Context/AllContextIndex";
-import "./TotalPrice.css";
+import "../../Utils/CustomCSSUtils.css";
 
 function TotalPrice() {
   const { totalprice, cart } = useCartContext();

@@ -1,7 +1,6 @@
-import React from "react";
 import { useFilterContext } from "../../Context/AllContextIndex";
 import { Rating } from "../../Components/AllComponentIndex";
-import "./Sidebar.css";
+import "../../Utils/CustomCSSUtils.css";
 
 function Sidebar() {
   const { state, dispatch } = useFilterContext();

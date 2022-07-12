@@ -1,5 +1,4 @@
-import axios from "axios";
-import toast from "react-hot-toast";
+import { React, toast, axios } from "../Utils/CustomUtils";
 
 export async function updateQty(actionType, _id, dispatch) {
   const response = await axios({
@@ -24,8 +23,7 @@ export async function removeFromCart(_id, dispatch) {
     data: { product: dispatch },
   });
   dispatch({ type: "CART", payload: response.data.cart });
-
-  toast.success(" Removed from cart.");
+  toast.success("Rrmoved from cart.");
 }
 
 export const addToCart = async (productdata, dispatch) => {
@@ -36,5 +34,5 @@ export const addToCart = async (productdata, dispatch) => {
     data: { product: productdata },
   });
   dispatch({ type: "CART", payload: response.data.cart });
-  toast.success(" Added to cart.");
+  toast.success("Added to cart.");
 };

@@ -17,7 +17,7 @@ import Razorpay from "./Others/Razorpay";
 import ProductCard from "./ProductCard/ProductCard";
 import { Sidebar } from "./Sidebar/Sidebar";
 import SingleProductCard from "./SingleProductCard/SingleProductCard";
-import TotalPrice from "./TotalPrice /TotalPrice";
+import TotalPrice from "./TotalPrice/TotalPrice";
 
 export {
   Accountdetails,

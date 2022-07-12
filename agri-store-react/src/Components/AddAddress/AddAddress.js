@@ -1,9 +1,6 @@
-import React, { useState } from "react";
-import { useAdressContext } from "../../Context/AllContextIndex";
 import { Address } from "../../Components/AllComponentIndex";
-import Modal from "react-modal";
+import { useState, Modal } from "../../Utils/CustomUtils";
 function AddAddress() {
-  const { fulladdressdata, editAddress, deleteAddress } = useAdressContext();
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleModal() {

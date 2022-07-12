@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from "react";
+import { React, createContext, useContext } from "../Utils/CustomUtils";
 import { useProductContext } from "./ProductContext";
 const wishlistContext = createContext();
 export const useWishlistContext = () => useContext(wishlistContext);

@@ -1,8 +1,8 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { React, Link, useNavigate } from "../../Utils/CustomUtils";
+import "../../Utils/CustomCSSUtils.css";
 import { useLoginContext } from "../../Context/AllContextIndex";
 import { signUpHandler } from "../../Services/AuthServices";
-import "./SignupInputs.css";
+
 function SignupInputs() {
   const { dispatch, name, email, password, number } = useLoginContext();
   const navigate = useNavigate();

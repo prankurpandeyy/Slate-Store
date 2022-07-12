@@ -1,6 +1,6 @@
 import { useAdressContext } from "../../Context/AllContextIndex";
-import "./Address.css";
-import { v4 as uuid } from "uuid";
+import "../../Utils/CustomCSSUtils.css";
+import { uuid } from "../../Utils/CustomUtils";
 import { formSubmitAddAdress } from "../../Services/AddressServices";
 function Address({ modalIsOpen, setModalIsOpen }) {
   const {

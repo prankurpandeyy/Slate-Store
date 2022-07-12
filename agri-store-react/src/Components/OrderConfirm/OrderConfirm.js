@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { React, Link } from "../../Utils/CustomUtils";
+import "../../Utils/CustomCSSUtils.css";
 import { useProductContext } from "../../Context/AllContextIndex";
-import "./OrderConfirm.css";
+
 function OrderConfirm() {
-  const { state, dispatch } = useProductContext();
+  const { state } = useProductContext();
   const orderData = state;
 
   return (

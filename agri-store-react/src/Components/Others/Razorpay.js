@@ -1,6 +1,5 @@
-import React from "react";
-import toast from "react-hot-toast";
-import { Navigate, useNavigate } from "react-router-dom";
+import { React, useNavigate, toast } from "../../Utils/CustomUtils";
+
 import {
   useProductContext,
   useCartContext,

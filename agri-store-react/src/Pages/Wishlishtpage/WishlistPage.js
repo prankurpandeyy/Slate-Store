@@ -1,8 +1,5 @@
-import { useContext } from "react";
-import {
-  useWishlistContext,
-  wishlistContext,
-} from "../../Context/AllContextIndex";
+import { React } from "../../Utils/CustomUtils";
+import { useWishlistContext } from "../../Context/AllContextIndex";
 import {
   Footer,
   Header,
