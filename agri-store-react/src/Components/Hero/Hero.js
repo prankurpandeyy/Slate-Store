@@ -18,7 +18,7 @@ function Hero() {
 
           <div class="btn btn-outline">
             <Link to="/ProductListingPage">
-              <button class="btn btn-success-outline">Shop Now</button>
+              <button class="btn btn-primary-outline">Shop Now</button>
             </Link>
           </div>
         </div>

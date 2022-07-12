@@ -1,7 +1,10 @@
-import React from "../../Utils/CustomUtils";
+import { React, Link } from "../../Utils/CustomUtils";
 import "../../Utils/CustomCSSUtils.css";
+import { useCatagoriesFilterContext } from "../../Context/CatagoriesFilterContext";
 
 function FeaturedBrands() {
+  const { searchbarData } = useCatagoriesFilterContext();
+  const featuredCars = searchbarData.slice(6, 10);
   return (
     <div>
       <section class="icons-container">
@@ -71,49 +74,22 @@ function FeaturedBrands() {
         <div class="featured-brands">
           <div class="h1">Featured Cars</div>
         </div>
-        <div class="brand-choice">
-          <div class="first-brand brand-logo">
-            <img
-              src="https://raw.githubusercontent.com/iprankurpandey/github-imagehosting/main/image/car-3.png"
-              alt="car1"
-            />
-            <div> Price : 500K Rating : 5</div>
-            <button className="btn btn-success">Buy</button>
-          </div>
-          <div class="second-brand brand-logo">
-            {" "}
-            <img
-              src="https://raw.githubusercontent.com/iprankurpandey/github-imagehosting/main/image/car-8.png"
-              alt="car1"
-            />
-            <div> Price : 500K Rating : 5</div>
-            <button className="btn btn-success">Buy</button>
-          </div>
-          <div class="third-brand brand-logo">
-            {" "}
-            <img
-              src="https://raw.githubusercontent.com/iprankurpandey/github-imagehosting/main/image/car-7.png"
-              alt="car1"
-            />
-            <div> Price : 500K Rating : 5</div>
-            <button className="btn btn-success">Buy</button>
-          </div>
-          <div class="fourth-brand brand-logo">
-            <img
-              src="https://raw.githubusercontent.com/iprankurpandey/github-imagehosting/main/image/car-8.png"
-              alt="car1"
-            />
-            <div> Price : 500K Rating : 5</div>
-            <button className="btn btn-success">Buy</button>
-          </div>
-          <div class="fifth-brand brand-logo">
-            <img
-              src="https://raw.githubusercontent.com/iprankurpandey/github-imagehosting/main/image/car-6.png"
-              alt="car1"
-            />
-            <div> Price : 500K Rating : 5</div>
-            <button className="btn btn-success">Buy</button>
-          </div>
+
+        {/* featured cars  */}
+
+        <div class="featured-cars">
+          {featuredCars.map((car) => (
+            <div class="car" key={car._id}>
+              <img src={car.image} alt="car" class="car-image" />
+              <div class="car-info">
+                <div class="car-name">{car.title}</div>
+                <div class="car-price">₹{car.price}K</div>
+                <Link to={`/Productdetails/${car._id}`}>
+                  <button className="btn btn-primary-outline">View</button>
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

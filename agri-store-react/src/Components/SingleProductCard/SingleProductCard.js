@@ -17,12 +17,21 @@ import "./SingleProductCard.css";
 import { addToCart, removeFromCart } from "../../Services/CartServices";
 import { addToWishlist, deleteWishList } from "../../Services/WishlistServices";
 function SingleProductCard() {
-  // const { _id, image, title, price, rating, inStock } = productCardData;
   const { wish } = useWishlistContext();
   const { dispatch } = useProductContext();
   const { cart } = useCartContext();
   const [singleProduct, setSingleProduct] = useState([]);
-
+  const {
+    _id,
+    inStock,
+    manufacturedBy,
+    image,
+    title,
+    rating,
+    price,
+    description,
+    categoryName,
+  } = singleProduct;
   const productId = useParams();
 
   // function to get the product  data from the product id
@@ -47,35 +56,24 @@ function SingleProductCard() {
       <div className="single-product-card">
         <div className="product-image">
           <img
-            src={singleProduct.image && singleProduct.image}
+            src={image && image}
             alt="demo"
             className="single-product-image"
           />
         </div>
         <div className="product-details">
           <div className="product-title">
-            <h2> {singleProduct.title && singleProduct.title} </h2>
+            <h2> {title && title} </h2>
           </div>
           <div className="product-description">
-            <p>
-              Description :{" "}
-              {singleProduct.description && singleProduct.description}
-            </p>
+            <p>Description : {description && description}</p>
             <div className="techincal-details">
-              <p>
-                Fuel Type :{" "}
-                {singleProduct.categoryName && singleProduct.categoryName}
-              </p>
-              <p> Price : {singleProduct.price && singleProduct.price}</p>
-              <p>
-                {" "}
-                ManufacturedBy :{" "}
-                {singleProduct.manufacturedBy && singleProduct.manufacturedBy}
-              </p>
-              Rating :{" "}
-              <Rating rating={singleProduct.rating && singleProduct.rating} />
+              <p>Fuel Type : {categoryName && categoryName}</p>
+              <p> Price : {price && price}</p>
+              <p> ManufacturedBy : {manufacturedBy && manufacturedBy}</p>
+              Rating : <Rating rating={rating && rating} />
               Stock :
-              {singleProduct.inStock ? (
+              {inStock ? (
                 <div style={{ fontSize: "1.5rem", color: "black" }}>
                   In Stock
                 </div>
@@ -86,10 +84,10 @@ function SingleProductCard() {
               )}
             </div>
             <div className="product-action-button">
-              {cart.some((prod) => prod._id === singleProduct._id) ? (
+              {cart.some((prod) => prod._id === _id) ? (
                 <button
                   class="btn  btn-primary icon1"
-                  onClick={(_id) => removeFromCart(singleProduct._id, dispatch)}
+                  onClick={(_id) => removeFromCart(_id, dispatch)}
                 >
                   {" "}
                   REMOVE FROM CART
@@ -106,10 +104,10 @@ function SingleProductCard() {
                   <span class="material-icons buttonmi"> shopping_cart</span>
                 </button>
               )}
-              {wish.some((wishlist) => wishlist._id === singleProduct._id) ? (
+              {wish.some((wishlist) => wishlist._id === _id) ? (
                 <button
                   class="btn btn-primary icon1"
-                  onClick={(_id) => deleteWishList(singleProduct._id, dispatch)}
+                  onClick={(_id) => deleteWishList(_id, dispatch)}
                 >
                   REMOVE FROM WISHLIST
                   <span class="material-icons buttonmi"> favorite_border </span>

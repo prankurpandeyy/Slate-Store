@@ -32,10 +32,10 @@
 
 .brand-choice {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 25%;
+  height: 50%;
   border-radius: 10px;
   color: white;
   font-weight: bold;
@@ -53,8 +53,8 @@
 }
 
 .brand-logo {
-  width: 80%;
-  height: 17rem;
+  width: 50%;
+  height: 5rem;
   background-color: var(--background-universal-color);
   border-radius: 10px;
   margin: 1rem;
@@ -106,51 +106,77 @@
 
 .icons-container .icons .content h3 {
   font-size: 2.5rem;
-  color: rgb(102, 200, 246);
+  color: rgb(23, 49, 61);
 }
 
 .icons-container .icons .content p {
   font-size: 1.5rem;
-  color: rgb(119, 151, 161);
 }
 
 .icons-container .icons:hover {
-  background: rgb(135, 135, 135);
+  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
 }
 
-.icons-container .icons:hover i {
-  background: yellowgreen;
-}
+/*  */
 
 .icons-container .icons:hover .content h3 {
   color: #fff;
 }
 
 .icons-container .icons:hover .content p {
-  color: #eee;
+  color: rgb(255, 254, 254);
+  font-size: 1.5rem;
+  font-weight: 800;
 }
 span.fbmi {
   font-size: 3rem;
 }
 
-.featured .featured-slider {
+.featured-cars {
+  font-weight: 800;
+  text-align: center;
+  margin: 3rem;
+  text-decoration: underline;
+  text-decoration-color: var(--golden-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.car {
+  width: 21rem;
+  height: 20rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  color: rgb(14, 14, 14);
+  box-shadow: 0px 0px 10px var(--dark-black-color);
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-size: cover;
+  cursor: pointer;
+  padding: 1rem;
 }
-
-.featured .featured-slider .box {
-  padding: 2rem;
-  text-align: center;
-  box-shadow: 0px 0px 10px black;
-  border-radius: 0.5rem;
-  height: auto;
+img.car-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-
-.featured .featured-slider .box img {
-  height: 15rem;
-}
-
-.featured .featured-slider .box:hover img {
+img.car-image:hover {
   transform: scale(0.9);
+}
+.car-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-size: cover;
 }

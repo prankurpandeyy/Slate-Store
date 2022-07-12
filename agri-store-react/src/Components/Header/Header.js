@@ -15,9 +15,12 @@ function Header() {
   return (
     <div>
       <nav class="navigation-menu">
-        <Link to="/">
+        <Link to="/" style={{ textDecoration: "none" }}>
           <div class="navigation__left">
-            <p class="navigation__logo">Slate Store</p>
+            <p class="navigation__logo">
+              Slate Store
+              <span class="material-icons navigationmi">time_to_leave</span>
+            </p>
           </div>
         </Link>
 
