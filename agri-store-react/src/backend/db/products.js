@@ -8,12 +8,26 @@ import { v4 as uuid } from "uuid";
 export const products = [
   {
     _id: uuid(),
+    title: "Nexon EV ",
+    price: 111,
+    inStock: true,
+    description: `The electric version of the Nexon was revealed on 19 December 2019. The Nexon EV uses components from Tata Motors' electric vehicle technology brand Ziptron. The electric motor produces 94.7 kW (127 hp; 129 PS) and 245 N⋅m (181 lbf⋅ft) of torque and 0 - 100 under 9.9 seconds. It has a 30.2 kWh battery with an ARAI rated range of up to 312 km.[16]
+The battery can be fully charged in under 8 hours using a complimentary AC charger. It can also be charged using a 15-ampere power cable that can be used at any place with the necessary power socket. DC 25 kW fast charging can be used to charge the battery from 0 to 80% in 1 hour.[17]
+Tata started a subscription plan for the Nexon EV in August 2020. It was reported that Nexon EV was the best-selling electric vehicle in India in 2020.[18]`,
+    categoryName: "ev",
+    manufacturedBy: "Tata",
+    image:
+      "https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/42611/nexon-ev-exterior-front-view.jpeg?q=75",
+    rating: 5,
+  },
+  {
+    _id: uuid(),
     title: " Mahindra Scorpio ",
     price: 105,
     inStock: true,
     description: `The Mahindra Scorpio is a mid-size SUV manufactured by the Indian automaker Mahindra & Mahindra since 2002. It was Mahindra's first model to be built for the global market.
 The Scorpio was conceptualized and designed by the in-house integrated design and manufacturing team of Mahindra & Mahindra. The car has been the recipient of three Indian awards, including the "Car of the Year" award from Business Standard Motoring as well as the "Best SUV of the Year" and the "Best Car of the Year" awards, both from BBC World's Wheels.[3]`,
-    categoryName: "diesel",
+    categoryName: "petrol",
     manufacturedBy: "Mahindra",
     image:
       "https://imgd.aeplcdn.com/664x374/n/cw/ec/31883/scorpio-exterior-right-front-three-quarter-2.jpeg?q=75",
@@ -21,7 +35,21 @@ The Scorpio was conceptualized and designed by the in-house integrated design an
   },
   {
     _id: uuid(),
-    title: "Mahindra Thar  ",
+    title: "Creta",
+    price: 109,
+    inStock: true,
+    description: `The Hyundai Creta, also known as Hyundai ix25 in China, is an automobile produced by Hyundai since 2014 mainly for emerging markets, particularly BRICS. A subcompact crossover SUV, it is positioned below the Tucson in Hyundai's SUV line-up.
+The first-generation model debuted as a near-production concept car in China in April 2014, while the second generation was first introduced in 2019. The second-generation model was also available in a longer derivative with three-row seating, which is known as the Hyundai Alcazar, Creta Grand or Grand Creta. The vehicle has been manufactured in China, India, Russia, Brazil, and Indonesia. For developed markets like South Korea, the United States, Canada, Europe and Australia, the Creta is not offered in favour of the smaller but more advanced Kona.[1][2]`,
+    categoryName: " diesel",
+    manufacturedBy: "Hyundai",
+    image:
+      "https://imgd.aeplcdn.com/1056x594/n/cw/ec/41564/hyundai-creta-right-front-three-quarter9.jpeg?q=75&wm=1",
+    rating: 5,
+  },
+
+  {
+    _id: uuid(),
+    title: "Mahindra Thar",
     price: 106,
     inStock: true,
     description: `The vehicle was launched in the Indian market on October 4, 2010[1] to fill the void left by its predecessor, the Mahindra MM540. The Thar has been voted one of the top-10 SUVs available in the Indian market. Three variants - DI 2WD, DI 4WD, and CRDe, are available with soft-top versions. The Thar also comes with a seven-seater option, though it can be converted into a two-seater.`,
@@ -31,6 +59,7 @@ The Scorpio was conceptualized and designed by the in-house integrated design an
       "https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/40087/thar-exterior-left-rear-three-quarter.jpeg?q=75",
     rating: 4,
   },
+
   {
     _id: uuid(),
     title: "Mahindra XUV700 ",
@@ -56,47 +85,22 @@ The name Fortuner is derived from the English word fortune.[1]`,
       "https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/44709/fortuner-exterior-left-front-three-quarter.jpeg?q=75",
     rating: 1,
   },
+
   {
     _id: uuid(),
-    title: "Creta",
-    price: 109,
-    inStock: true,
-    description: `The Hyundai Creta, also known as Hyundai ix25 in China, is an automobile produced by Hyundai since 2014 mainly for emerging markets, particularly BRICS. A subcompact crossover SUV, it is positioned below the Tucson in Hyundai's SUV line-up.
-The first-generation model debuted as a near-production concept car in China in April 2014, while the second generation was first introduced in 2019. The second-generation model was also available in a longer derivative with three-row seating, which is known as the Hyundai Alcazar, Creta Grand or Grand Creta. The vehicle has been manufactured in China, India, Russia, Brazil, and Indonesia. For developed markets like South Korea, the United States, Canada, Europe and Australia, the Creta is not offered in favour of the smaller but more advanced Kona.[1][2]`,
-    categoryName: " diesel",
-    manufacturedBy: "Hyundai",
-    image:
-      "https://imgd.aeplcdn.com/1056x594/n/cw/ec/41564/hyundai-creta-right-front-three-quarter9.jpeg?q=75&wm=1",
-    rating: 5,
-  },
-  {
-    _id: uuid(),
-    title: "Nexon  ",
+    title: "Nexon",
     price: 110,
     inStock: true,
     description: `The Nexon made its debut as a prototype exhibited at the Auto Expo 2014.[2] The final model was presented in February 2016.
 The Nexon is based on the revised Tata X1 platform debuted in 1998 with the Indica model and adopted by other Indian brand cars.[3] It uses independent MacPherson dual-path strut with coil spring front suspensions and rear twist-beam with coil spring and shock absorber. The wheelbase is measured at 2,498 mm (98.3 in). It is characterised by two-tone paint, LED headlamps and large chrome bands along the side.[4][5]
 `,
-    categoryName: " petrol",
+    categoryName: "petrol",
     manufacturedBy: "Tata",
     image:
       "https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/41645/nexon-exterior-left-front-three-quarter-2.jpeg?q=75",
     rating: 3,
   },
-  {
-    _id: uuid(),
-    title: "Nexon EV ",
-    price: 111,
-    inStock: true,
-    description: `The electric version of the Nexon was revealed on 19 December 2019. The Nexon EV uses components from Tata Motors' electric vehicle technology brand Ziptron. The electric motor produces 94.7 kW (127 hp; 129 PS) and 245 N⋅m (181 lbf⋅ft) of torque and 0 - 100 under 9.9 seconds. It has a 30.2 kWh battery with an ARAI rated range of up to 312 km.[16]
-The battery can be fully charged in under 8 hours using a complimentary AC charger. It can also be charged using a 15-ampere power cable that can be used at any place with the necessary power socket. DC 25 kW fast charging can be used to charge the battery from 0 to 80% in 1 hour.[17]
-Tata started a subscription plan for the Nexon EV in August 2020. It was reported that Nexon EV was the best-selling electric vehicle in India in 2020.[18]`,
-    categoryName: "ev",
-    manufacturedBy: "Tata",
-    image:
-      "https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/42611/nexon-ev-exterior-front-view.jpeg?q=75",
-    rating: 5,
-  },
+
   {
     _id: uuid(),
     title: "Land Rover ",

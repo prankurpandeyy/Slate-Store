@@ -1,28 +1,28 @@
 import { useFilterContext } from "../../Context/AllContextIndex";
 import { Rating } from "../../Components/AllComponentIndex";
 import "../../Utils/CustomCSSUtils.css";
+import { clearState } from "../../Services/AddressServices";
+import { useParams } from "react-router-dom";
 
 function Sidebar() {
   const { state, dispatch } = useFilterContext();
-  const { rating, search, stock } = state;
+  const { rating, stock, category } = state;
 
-  function clearState(e) {
-    dispatch({ type: "SORT", payload: true });
-    dispatch({ type: "SLIDER", payload: (e.target.value = 105) });
-    dispatch({ type: "STOCK", payload: "" });
-    dispatch({ type: "RATING", payload: false });
-    dispatch({
-      type: "CATEGORY",
-      payload: { men: false, women: false, baby: false },
-    });
-  }
+  const clearStateHandler = (e, dispatch) => {
+    clearState(e, dispatch);
+  };
+
+  const categoryUrl = useParams();
 
   return (
     <div>
       <div className="catagory-items-page">
         <nav className="side-item-container">
           <div className="clear-btn">
-            <button className="btn btn-primary" onClick={clearState}>
+            <button
+              className="btn btn-primary"
+              onClick={(e) => clearStateHandler(e, dispatch)}
+            >
               Clear All{" "}
             </button>
           </div>
@@ -86,8 +86,9 @@ function Sidebar() {
               type="checkbox"
               name="petrol"
               className="input-checkbox-type"
+              // checked={categoryUrl.categoryName.petrol === "petrol"}
               value="petrol"
-              onChange={(e) =>
+              onChange={() =>
                 dispatch({
                   type: "petrol",
                 })
@@ -98,6 +99,7 @@ function Sidebar() {
               type="checkbox"
               name="diesel"
               value="diesel"
+              // checked={categoryUrl.categoryName.includes("diesel")}
               className="input-checkbox-type"
               onChange={() =>
                 dispatch({
@@ -111,6 +113,7 @@ function Sidebar() {
               name="ev"
               className="input-checkbox-type"
               value="ev"
+              // checked={categoryUrl.categoryName.includes("ev")}
               onChange={() => dispatch({ type: "ev" })}
             />
             EV <br />

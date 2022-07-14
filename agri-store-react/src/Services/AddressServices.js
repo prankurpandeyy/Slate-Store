@@ -25,3 +25,14 @@ export function deleteAddress(id, dispatch, fulladdressdata) {
 export function editAddress() {
   toast.success("Feature is coming  !.");
 }
+
+export function clearState(e, dispatch) {
+  dispatch({ type: "SORT", payload: true });
+  dispatch({ type: "SLIDER", payload: (e.target.value = 105) });
+  dispatch({ type: "STOCK", payload: "" });
+  dispatch({ type: "RATING", payload: false });
+  dispatch({
+    type: "CATEGORY",
+    payload: { petrol: false, diesel: false, ev: false },
+  });
+}

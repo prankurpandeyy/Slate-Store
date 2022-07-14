@@ -24,7 +24,12 @@ function App() {
         <Route exact path="/SignupPage" element={<SignupPage />} />
         <Route
           exact
-          path="ProductListingPage"
+          path="/ProductListingPage"
+          element={<ProductlistingPage />}
+        />
+        <Route
+          exact
+          path="/ProductListingPage/:categoryName"
           element={<ProductlistingPage />}
         />
         <Route exact path="/Checkoutpage" element={<Checkoutpage />} />

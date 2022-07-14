@@ -5,6 +5,8 @@ import { useCatagoriesFilterContext } from "../../Context/CatagoriesFilterContex
 function FeaturedBrands() {
   const { searchbarData } = useCatagoriesFilterContext();
   const featuredCars = searchbarData.slice(6, 10);
+  const carsCatagory = searchbarData.slice(5, 8);
+
   return (
     <div>
       <section class="icons-container">
@@ -47,28 +49,47 @@ function FeaturedBrands() {
         </div>
 
         <div class="catagory-choice">
-          <div class="first-catagory box">
-            <img
-              src="https://raw.githubusercontent.com/iprankurpandey/github-imagehosting/main/image/car-3.png"
-              alt="car"
-            />
-            Petrol ⛽️
-          </div>
-          <div class="second-catagory box">
-            <img
-              src="https://raw.githubusercontent.com/iprankurpandey/github-imagehosting/main/image/car-2.png"
-              alt="car"
-            />
-            Diesel ⛽️
-          </div>
+          {carsCatagory.map((car) => (
+            <div>
+              <Link
+                to={`/ProductListingPage/${car.categoryName}`}
+                style={{ textDecoration: "none" }}
+              >
+                <div class="first-catagory box">
+                  <img
+                    src={car.image}
+                    alt="car"
+                    className="catagory-cars-image"
+                  />
+                  <h3 style={{ textTransform: "uppercase", padding: "0.5rem" }}>
+                    {car.categoryName}
+                  </h3>
+                </div>
+              </Link>
+            </div>
+          ))}
 
-          <div class="fourth-catagory box">
-            <img
-              src="https://raw.githubusercontent.com/iprankurpandey/github-imagehosting/main/image/car-5.png"
-              alt="car"
-            />
-            EV ⚡️
-          </div>
+          {/* <Link to="/" style={{ textDecoration: "none" }}>
+            <div class="second-catagory box">
+              <img
+                src="https://raw.githubusercontent.com/iprankurpandey/github-imagehosting/main/image/car-2.png"
+                alt="car"
+              />
+              Diesel ⛽️
+            </div>
+          </Link> */}
+          {/* <Link
+            to={`/ProductListingPage/${carsCatagory.categoryName}`}
+            style={{ textDecoration: "none" }}
+          >
+            <div class="fourth-catagory box">
+              <img
+                src="https://raw.githubusercontent.com/iprankurpandey/github-imagehosting/main/image/car-5.png"
+                alt="car"
+              />
+              EV ⚡️
+            </div>
+          </Link> */}
         </div>
 
         <div class="featured-brands">
