@@ -1,0 +1,14 @@
+.data-table {
+  margin: 0;
+  padding: 1rem;
+}
+.form-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+/* modal */

@@ -1,5 +1,5 @@
-import React from "react";
-import "./Spinner.css";
+import React from "../../Utils/CustomUtils";
+import "../../Utils/CustomCSSUtils.css";
 function Spinner() {
   return (
     <div>

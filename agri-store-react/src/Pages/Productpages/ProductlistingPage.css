@@ -1,0 +1,9 @@
+.productlisting-cards {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  margin-left: 18rem;
+}

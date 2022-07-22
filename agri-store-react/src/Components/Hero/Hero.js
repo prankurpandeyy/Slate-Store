@@ -1,22 +1,24 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import "./Hero.css";
+import { React, Link } from "../../Utils/CustomUtils";
+import "../../Utils/CustomCSSUtils.css";
+
 function Hero() {
   return (
     <div>
       <main class="main-container">
+        <img
+          src="https://raw.githubusercontent.com/iprankurpandey/github-imagehosting/main/image/home-img.png"
+          alt="hero"
+          className="hero-image"
+        />
         <div class="text-in-image">
-          <span class="mtext">
-            <div class="h1">Agri Store</div>
-          </span>
-          <span class="head-text"> by farmers ,to farmers. </span>
+          <span class="head-text">Everything's better with Cars. </span>
 
           <div class="logo-text">Summer Sale 2022</div>
 
-          <div class="subtext-image">All in one Market Place for Farmers</div>
           <div class="btn btn-outline">
             <Link to="/ProductListingPage">
-              <button class="btn btn-success-outline">Shop Now</button>
+              <button class="btn btn-primary-outline">Shop Now</button>
             </Link>
           </div>
         </div>

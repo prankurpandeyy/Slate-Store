@@ -1,73 +1,77 @@
-import React from "react";
-import { useFilterContext } from "../Context/FilterContextReducer";
-import Rating from "../Rating";
-import "./Sidebar.css";
+import { useFilterContext } from "../../Context/AllContextIndex";
+import { Rating } from "../../Components/AllComponentIndex";
+import "../../Utils/CustomCSSUtils.css";
+import { clearState } from "../../Services/AddressServices";
+import { useParams } from "react-router-dom";
 
 function Sidebar() {
   const { state, dispatch } = useFilterContext();
-  console.log(state);
-  const { rating, search, stock } = state;
+  const { rating, stock, category } = state;
 
-  function clearState(e) {
-    dispatch({ type: "SORT", payload: true });
-    dispatch({ type: "SLIDER", payload: (e.target.value = 105) });
-    dispatch({ type: "STOCK", payload: "" });
-    dispatch({ type: "RATING", payload: false });
-    dispatch({
-      type: "CATEGORY",
-      payload: { men: false, women: false, baby: false },
-    });
-  }
+  const clearStateHandler = (e, dispatch) => {
+    clearState(e, dispatch);
+  };
+
+  const categoryUrl = useParams();
 
   return (
     <div>
       <div className="catagory-items-page">
         <nav className="side-item-container">
-          <button className="btn btn-warning" onClick={clearState}>
-            Clear All{" "}
-          </button>
+          <div className="clear-btn">
+            <button
+              className="btn btn-primary"
+              onClick={(e) => clearStateHandler(e, dispatch)}
+            >
+              Clear All{" "}
+            </button>
+          </div>
           <hr />
-          <input
-            type="search"
-            class="navigation__input"
-            placeholder="search item"
-            search={search}
-            onChange={(e) =>
-              dispatch({ type: "SEARCHBAR", payload: e.target.value })
-            }
-          />
-          <hr />
-          <h3 className="Price-sort-by">Sort by Price : </h3>
-          <input
-            type="radio"
-            name="high"
-            onChange={() => dispatch({ type: "SORT", payload: false })}
-          />
-          High to Low <br />
-          <input
-            type="radio"
-            name="high"
-            onChange={() => dispatch({ type: "SORT", payload: true })}
-          />
-          Low to High <br />
-          <hr />
-          <div className="price-range">
-            <h3 className="Price-sort-by">Sort by Price : </h3>
-            {105}
-            <br />
+
+          <div className="Price-sort-by">
+            <h3>Sort by Price :</h3>
+          </div>
+          <div className="sort-by-price">
             <input
-              type="range"
-              max="120"
-              min="106"
-              onChange={(e) =>
-                dispatch({ type: "SLIDER", payload: e.target.value })
-              }
+              type="radio"
+              class="input-radio-type"
+              name="high"
+              onChange={() => dispatch({ type: "SORT", payload: false })}
             />
-            {120}
+            High to Low <br />
+            <input
+              type="radio"
+              class="input-radio-type"
+              name="high"
+              onChange={() => dispatch({ type: "SORT", payload: true })}
+            />
+            Low to High <br />
           </div>
           <hr />
           <div className="price-range">
-            Sort by Rating :(Above than) <br />
+            <div className="Price-sort-by ">
+              <h3>Sort by Price Range :</h3>
+            </div>
+            <div className="sortbyrange">
+              ₹{105}
+              <br />
+              <input
+                type="range"
+                class="input-range-type"
+                max="120"
+                min="106"
+                className="input-range"
+                onChange={(e) =>
+                  dispatch({ type: "SLIDER", payload: e.target.value })
+                }
+              />
+              ₹{120}
+            </div>
+          </div>
+          <hr />
+          <div className="price-range">
+            <h3>Sort by Rating :(Above than)</h3>
+            <br />
             <Rating
               rating={rating}
               onClick={(i) => dispatch({ type: "RATING", payload: i + 1 })}
@@ -76,46 +80,57 @@ function Sidebar() {
             <br />
           </div>
           <hr />
-          <h3 className="catagories-sort-by">Catagories sort by : </h3>
-          <input
-            type="checkbox"
-            name="women"
-            value="women"
-            onChange={(e) =>
-              dispatch({
-                type: "women",
-              })
-            }
-          />
-          women <br />
-          <input
-            type="checkbox"
-            name="men"
-            value="men"
-            onChange={() =>
-              dispatch({
-                type: "men",
-              })
-            }
-          />
-          men <br />
-          <input
-            type="checkbox"
-            name="baby"
-            value="baby"
-            onChange={() => dispatch({ type: "baby" })}
-          />
-          baby <br />
+          <h3>Catagories sort by : </h3>
+          <div className="catagories-sort-by">
+            <input
+              type="checkbox"
+              name="petrol"
+              className="input-checkbox-type"
+              // checked={categoryUrl.categoryName.petrol === "petrol"}
+              value="petrol"
+              onChange={() =>
+                dispatch({
+                  type: "petrol",
+                })
+              }
+            />
+            Petrol <br />
+            <input
+              type="checkbox"
+              name="diesel"
+              value="diesel"
+              // checked={categoryUrl.categoryName.includes("diesel")}
+              className="input-checkbox-type"
+              onChange={() =>
+                dispatch({
+                  type: "diesel",
+                })
+              }
+            />
+            Diesel <br />
+            <input
+              type="checkbox"
+              name="ev"
+              className="input-checkbox-type"
+              value="ev"
+              // checked={categoryUrl.categoryName.includes("ev")}
+              onChange={() => dispatch({ type: "ev" })}
+            />
+            EV <br />
+          </div>
           <hr />
           <h3 className="rating-sort-by">Filters : </h3>
-          <input
-            type="checkbox"
-            checked={stock}
-            onChange={(e) =>
-              dispatch({ type: "STOCK", payload: e.target.checked })
-            }
-          />
-          Exclude Out of Stock <br />
+          <div className="out-of-stock">
+            <input
+              type="checkbox"
+              className="input-checkbox-type"
+              checked={stock}
+              onChange={(e) =>
+                dispatch({ type: "STOCK", payload: e.target.checked })
+              }
+            />
+            Exclude Out of Stock <br />
+          </div>
           <hr />
         </nav>
       </div>

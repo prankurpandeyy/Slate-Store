@@ -1,15 +1,19 @@
 import { Route, Routes } from "react-router-dom";
-import Homepage from "./Pages/Homepage";
-import LoginPage from "./Pages/LoginPage";
-import ProductlistingPage from "./Pages/ProductlistingPage";
-import SignupPage from "./Pages/SignupPage";
 import "./App.css";
-import { CartPage } from "./Pages/CartPage";
-import WishlistPage from "./Pages/WishlistPage";
-import Toast from "./Components/Toast/Toast";
-import AccountPage from "./Pages/AccountPage";
-import PageNotFound from "./Components/PageNotFound";
-import Authantication from "./Components/Authantication";
+import {
+  Homepage,
+  LoginPage,
+  SignupPage,
+  ProductlistingPage,
+  Checkoutpage,
+  OrderSuccessPage,
+  SingleProductPage,
+  WishlistPage,
+  CartPage,
+  AccountPage,
+  Authentication,
+  PageNotFound,
+} from "./Pages/IndexAllPages";
 
 function App() {
   return (
@@ -20,34 +24,46 @@ function App() {
         <Route exact path="/SignupPage" element={<SignupPage />} />
         <Route
           exact
-          path="ProductListingPage"
+          path="/ProductListingPage"
           element={<ProductlistingPage />}
+        />
+        <Route
+          exact
+          path="/ProductListingPage/:categoryName"
+          element={<ProductlistingPage />}
+        />
+        <Route exact path="/Checkoutpage" element={<Checkoutpage />} />
+        <Route exact path="/ordersuccess/:id" element={<OrderSuccessPage />} />
+        <Route
+          exact
+          path="/Productdetails/:id"
+          element={<SingleProductPage />}
         />
 
         <Route
           path="/CartPage"
           element={
-            <Authantication>
+            <Authentication>
               <CartPage />
-            </Authantication>
+            </Authentication>
           }
         />
         <Route
           exact
           path="/WishlistPage"
           element={
-            <Authantication>
+            <Authentication>
               <WishlistPage />
-            </Authantication>
+            </Authentication>
           }
         />
         <Route
           exact
           path="/AccountPage"
           element={
-            <Authantication>
+            <Authentication>
               <AccountPage />
-            </Authantication>
+            </Authentication>
           }
         />
         <Route exact path="*" element={<PageNotFound />} />
