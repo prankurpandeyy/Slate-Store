@@ -67,7 +67,7 @@ function AccountTabs() {
                       <p>Email :{address.email}</p>
                     </div>
                     <div className="phone">
-                      <p>Phone : {address.phone}</p>
+                      <p>Phone: {address.phone}</p>
                     </div>
                     <div className="pincode">
                       <p>Pincode: {address.pincode}</p>
@@ -85,13 +85,13 @@ function AccountTabs() {
                       >
                         <span class="material-icons">delete</span>
                       </button>
-                      <button
+                      {/* <button
                         className="hcard decrease"
                         title="edit"
                         onClick={editAddress}
                       >
                         <span class="material-icons">edit</span>
-                      </button>
+                      </button> */}
                     </div>
                     <hr />
                   </div>

@@ -1,14 +1,18 @@
 import { React, toast, axios } from "../Utils/CustomUtils";
 
 export const addToWishlist = async (productdata, dispatch) => {
-  const response = await axios({
-    method: "POST",
-    url: `/api/user/wishlist`,
-    headers: { authorization: localStorage.getItem("token") },
-    data: { product: productdata },
-  });
-  dispatch({ type: "WISH", payload: response.data.wishlist });
-  toast.success(" Item is added to wishlist.");
+  try {
+    const response = await axios({
+      method: "POST",
+      url: `/api/user/wishlist`,
+      headers: { authorization: localStorage.getItem("token") },
+      data: { product: productdata },
+    });
+    dispatch({ type: "WISH", payload: response.data.wishlist });
+    toast.success(" Item is added to wishlist.");
+  } catch (error) {
+    toast.error("login first");
+  }
 };
 
 export const deleteWishList = async (_id, dispatch) => {

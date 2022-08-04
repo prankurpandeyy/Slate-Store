@@ -4,22 +4,16 @@ import {
   useContext,
   useReducer,
 } from "../Utils/CustomUtils";
-import { useNavigate } from "react-router-dom";
-
 const loginContext = createContext();
 export const useLoginContext = () => useContext(loginContext);
 
 function LoginPageContext({ children }) {
-  const navigate = useNavigate();
-
   function reducerFn(state, action) {
     switch (action.type) {
       case "NAME":
         return { ...state, name: action.payload };
       case "EMAIL":
         return { ...state, email: action.payload };
-      case "NUMBER":
-        return { ...state, number: action.payload };
       case "PASSWORD":
         return { ...state, password: action.payload };
       case "LOGINDATA":
@@ -31,11 +25,10 @@ function LoginPageContext({ children }) {
   const [state, dispatch] = useReducer(reducerFn, {
     name: "",
     email: "",
-    number: "",
     password: "",
     loginData: [],
   });
-  const { name, email, password, number, loginData } = state;
+  const { name, email, password, loginData } = state;
 
   return (
     <div>
@@ -46,7 +39,6 @@ function LoginPageContext({ children }) {
           name,
           email,
           password,
-          number,
           loginData,
         }}
       >

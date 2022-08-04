@@ -2,7 +2,7 @@ import { useAdressContext } from "../../Context/AllContextIndex";
 import "../../Utils/CustomCSSUtils.css";
 import { uuid } from "../../Utils/CustomUtils";
 import { formSubmitAddAdress } from "../../Services/AddressServices";
-function Address({ modalIsOpen, setModalIsOpen }) {
+function Address({ isOpen, setIsOpen }) {
   const {
     dispatch,
     toggleSubmit,
@@ -26,6 +26,7 @@ function Address({ modalIsOpen, setModalIsOpen }) {
   function addressSubmit(e) {
     e.preventDefault();
     formSubmitAddAdress(e, addressData, fulladdressdata, dispatch);
+    setIsOpen(!isOpen);
   }
 
   return (
@@ -97,19 +98,19 @@ function Address({ modalIsOpen, setModalIsOpen }) {
               }
             />
           </label>{" "}
-          {toggleSubmit ? (
+          {/* {toggleSubmit ? (
             <button class="btn btn-success">Save New </button>
-          ) : (
-            <label>
-              <input
-                class="input__field"
-                type="submit"
-                name="submitbtn"
-                placeholder="submit"
-                required
-              />
-            </label>
-          )}
+          ) : ( */}
+          <label>
+            <input
+              class="input__field"
+              type="submit"
+              name="submitbtn"
+              placeholder="submit"
+              required
+            />
+          </label>
+          {/* )} */}
         </form>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { React, toast, axios } from "../Utils/CustomUtils";
 
+const token = localStorage.getItem("token");
 export async function updateQty(actionType, _id, dispatch) {
   const response = await axios({
     method: "POST",
@@ -27,12 +28,17 @@ export async function removeFromCart(_id, dispatch) {
 }
 
 export const addToCart = async (productdata, dispatch) => {
-  const response = await axios({
-    method: "POST",
-    url: `/api/user/cart`,
-    headers: { authorization: localStorage.getItem("token") },
-    data: { product: productdata },
-  });
-  dispatch({ type: "CART", payload: response.data.cart });
-  toast.success("Added to cart.");
+  try {
+    const response = await axios({
+      method: "POST",
+      url: `/api/user/cart`,
+      headers: { authorization: localStorage.getItem("token") },
+      data: { product: productdata },
+    });
+
+    dispatch({ type: "CART", payload: response.data.cart });
+    toast.success("Added to cart.");
+  } catch (error) {
+    toast.error("login first");
+  }
 };
