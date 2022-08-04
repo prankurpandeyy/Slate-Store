@@ -10,8 +10,11 @@
   display: flex;
   height: auto;
   align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  width: 50%;
   justify-content: center;
-  background-color: gray;
+  background-color: rgb(255, 255, 255);
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
 }
 .login-page-title {
@@ -31,4 +34,66 @@
 }
 input:valid {
   border: 1px solid green;
+}
+
+input[type="submit"] {
+  width: 20rem;
+  height: 2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  padding: 1rem;
+  text-align: center;
+  padding: 0.2rem;
+  display: flex;
+  outline: none;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: white;
+  background-color: blue;
+}
+input[type="submit"]:hover {
+  width: 20rem;
+  height: 2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  padding: 1rem;
+  text-align: center;
+  padding: 0.2rem;
+  display: flex;
+  outline: none;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: white;
+  background-color: blue;
+}
+button.btn-guest-login {
+  width: 20rem;
+  height: 2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  padding: 1rem;
+  text-align: center;
+  padding: 0.2rem;
+  display: flex;
+  outline: none;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: white;
+  background-color: blue;
+}
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }

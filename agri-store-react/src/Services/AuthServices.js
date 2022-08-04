@@ -3,10 +3,10 @@ import { React, toast, axios } from "../Utils/CustomUtils";
 export const logoutHandler = () => {
   localStorage.clear();
   toast.success("Logout success!.");
+  window.location.reload();
 };
 
-export const signUpHandler = async (e, name, number, email, password) => {
-  e.preventDefault();
+export const signUpHandler = async (name, number, email, password) => {
   try {
     const response = await axios.post(`/api/auth/signup`, {
       name: name,
@@ -22,8 +22,7 @@ export const signUpHandler = async (e, name, number, email, password) => {
   }
 };
 
-export const loginHandler = async (e, email, password, dispatch) => {
-  e.preventDefault();
+export const loginHandler = async (email, password, dispatch) => {
   try {
     const response = await axios.post(`/api/auth/login`, {
       email: email,

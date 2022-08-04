@@ -17,11 +17,26 @@ function OrderConfirm() {
       <div className="order-success-details">
         <div className="order-success-text">
           <h1>Order Successful !</h1>
-          <h3>Order Id : {orderData.orderData.order_id}</h3>
+          <h3 style={{ marginTop: "1rem" }}>
+            Order Id : {orderData.orderData.order_id}
+          </h3>
           <h3>
             Product Quantity :{" "}
             {orderData.orderData.cart && orderData.orderData.cart.length}
           </h3>
+          <h3>
+            Order to be Delivered At :{" "}
+            {console.log(orderData.orderData.address)}
+            {orderData.orderData.address.map((pata) => (
+              <div className="delivery-address">
+                <div>Name : {pata.fullname} ,</div>
+                <div>Phone: {pata.phone} ,</div>
+                <div>Address: {pata.address} ,</div>
+                <div>Pincode:{pata.pincode} </div>
+              </div>
+            ))}
+          </h3>
+
           <h2>Total Paid amount : {orderData.orderData.amount}</h2>
           <h4> Product Ordered List : </h4>
         </div>

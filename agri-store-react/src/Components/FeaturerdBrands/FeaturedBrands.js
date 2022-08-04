@@ -104,7 +104,7 @@ function FeaturedBrands() {
               <img src={car.image} alt="car" class="car-image" />
               <div class="car-info">
                 <div class="car-name">{car.title}</div>
-                <div class="car-price">₹{car.price}K</div>
+                <div class="car-price">${car.price}K</div>
                 <Link to={`/Productdetails/${car._id}`}>
                   <button className="btn btn-primary-outline">View</button>
                 </Link>

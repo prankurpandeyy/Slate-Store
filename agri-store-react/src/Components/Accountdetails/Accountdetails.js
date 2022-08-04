@@ -18,6 +18,7 @@ function Accountdetails() {
   function logOutUserFromApp() {
     logoutHandler();
     navigate("/");
+    window.location.reload();
   }
 
   return (

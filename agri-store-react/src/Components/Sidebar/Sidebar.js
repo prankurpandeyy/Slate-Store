@@ -53,7 +53,7 @@ function Sidebar() {
               <h3>Sort by Price Range :</h3>
             </div>
             <div className="sortbyrange">
-              ₹{105}
+              ${105}K
               <br />
               <input
                 type="range"
@@ -65,7 +65,7 @@ function Sidebar() {
                   dispatch({ type: "SLIDER", payload: e.target.value })
                 }
               />
-              ₹{120}
+              ${120}K
             </div>
           </div>
           <hr />

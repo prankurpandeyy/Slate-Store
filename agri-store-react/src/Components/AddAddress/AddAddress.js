@@ -13,6 +13,7 @@ function AddAddress() {
       </button>
       <Modal
         isOpen={isOpen}
+        setIsOpen={setIsOpen}
         onRequestClose={toggleModal}
         contentLabel="My dialog"
         className="modal"

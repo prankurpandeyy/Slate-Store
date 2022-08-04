@@ -5,11 +5,11 @@ function Rating({ rating, onClick, style }) {
       {[...Array(5)].map((_, i) => (
         <span key={i} onClick={() => onClick(i)} style={style}>
           {rating > i ? (
-            <span class="material-icons ratingmi" style={{ color: "black" }}>
+            <span class="material-icons ratingmi" style={{ color: "#39489a" }}>
               star
             </span>
           ) : (
-            <span class="material-icons ratingmi" style={{ color: "black" }}>
+            <span class="material-icons ratingmi" style={{ color: "#39489a" }}>
               star_border
             </span>
           )}

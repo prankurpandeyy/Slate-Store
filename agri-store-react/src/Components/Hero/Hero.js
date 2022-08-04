@@ -9,7 +9,7 @@ function Hero() {
         <img
           src="https://raw.githubusercontent.com/iprankurpandey/github-imagehosting/main/image/home-img.png"
           alt="hero"
-          className="hero-image"
+          style={{ width: "70%" }}
         />
         <div class="text-in-image">
           <span class="head-text">Everything's better with Cars. </span>
