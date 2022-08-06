@@ -14,8 +14,7 @@ import {
 import "./ProductlistingPage.css";
 
 function ProductlistingPage() {
-  const { state, dispatch } = useProductDataContext();
-  const { isLoading } = state;
+  const { isLoading } = useProductDataContext();
   const { searchbarData } = useCatagoriesFilterContext();
 
   return (
