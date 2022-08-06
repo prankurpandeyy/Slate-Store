@@ -11,6 +11,10 @@ import { logoutHandler } from "../../Services/AuthServices";
 function Accountdetails() {
   const { loginData } = useLoginContext();
   const { _id, name, email } = loginData;
+  console.log(
+    "🚀 ~ file: Accountdetails.js ~ line 14 ~ Accountdetails ~ loginData",
+    loginData
+  );
 
   const { cart } = useCartContext();
   const { wish } = useWishlistContext();

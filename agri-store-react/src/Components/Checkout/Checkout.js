@@ -37,20 +37,20 @@ function Checkout() {
         <hr className="hr-checkout-page" />
         <div className="total-checkout-price">
           <div> Total Price</div>
-          <div> ₹{totalprice}</div>
+          <div> ${totalprice}</div>
         </div>
         <div className="total-discount">
           <div> Total Discount</div>
-          <div> ₹{discount}</div>
+          <div> ${discount}</div>
         </div>
         <div className="total-delivery-charge">
           <div> Delivery Charge</div>
-          <div>₹ 50</div>
+          <div>$ 50</div>
         </div>
         <hr className="hr-checkout-page" />
         <div className="grand-total">
           <div> Grand Total</div>
-          <div> ₹{totalprice + 50 - discount}</div>
+          <div> ${totalprice + 50 - discount}</div>
         </div>
         <hr className="hr-checkout-page" />
         <h2> Delivery Details</h2>

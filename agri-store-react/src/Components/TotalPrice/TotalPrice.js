@@ -9,9 +9,9 @@ function TotalPrice() {
     <div>
       <div class="columns">
         <ul class="price">
-          <li class="grey">Total Price:₹ {totalprice}</li>
+          <li class="grey">Total Price:$ {totalprice}</li>
           <li>Product Quantity : {cart.length}</li>
-          <li>Total Paybable amount :₹ {totalprice}</li>
+          <li>Total Paybable amount :$ {totalprice}</li>
           <li class="grey">
             <Link to="/Checkoutpage">
               <button className="checkout">Checkout</button>

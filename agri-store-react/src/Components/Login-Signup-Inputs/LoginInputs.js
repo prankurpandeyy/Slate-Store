@@ -11,13 +11,13 @@ import { useLoginContext } from "../../Context/AllContextIndex";
 import { loginHandler } from "../../Services/AuthServices";
 
 function LoginInputs() {
-  const { dispatch, email, password } = useLoginContext();
+  const { dispatch, email, password, name } = useLoginContext();
   const navigate = useNavigate();
 
   function submitLoginData() {
     // e.preventDefault();
     loginHandler(email, password, dispatch);
-    navigate("/AccountPage");
+    navigate("/ProductListingPage");
   }
 
   const [error, setError] = useState("");
@@ -36,8 +36,10 @@ function LoginInputs() {
     e.preventDefault();
     const email = "6prankur@gmail.com";
     const password = "12345678";
+    const name = `Guest`;
     dispatch({ type: "EMAIL", payload: email });
     dispatch({ type: "PASSWORD", payload: password });
+    dispatch({ type: "NAME", payload: name });
   }
   return (
     <div>

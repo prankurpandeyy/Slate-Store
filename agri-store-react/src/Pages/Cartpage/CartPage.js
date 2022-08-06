@@ -46,7 +46,7 @@ function CartPage() {
                 <img src={prod.image} alt="image_text" className="cart-image" />
               </td>
               <td>
-                <h3> ₹ {prod.price}</h3>
+                <h3> $ {prod.price}</h3>
               </td>
               <td>
                 <div className="cart-btn">
