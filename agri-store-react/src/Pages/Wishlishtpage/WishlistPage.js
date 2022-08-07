@@ -1,19 +1,27 @@
 import { React } from "../../Utils/CustomUtils";
-import { useWishlistContext } from "../../Context/AllContextIndex";
+import {
+  useProductDataContext,
+  useWishlistContext,
+} from "../../Context/AllContextIndex";
 import {
   Footer,
   Header,
   ProductCard,
+  Spinner,
 } from "../../Components/AllComponentIndex";
 
 import "./Wishlist.css";
 function WishlistPage() {
   const { wish } = useWishlistContext();
+  const { isLoading } = useProductDataContext();
 
   return (
     <div>
       <Header />
-      {wish.length === 0 ? (
+
+      {isLoading ? (
+        <Spinner />
+      ) : wish.length === 0 ? (
         <div className="cart-mesg"> there are no items in Wishlist </div>
       ) : (
         <div className="wishlist-cards">
@@ -27,6 +35,7 @@ function WishlistPage() {
           })}
         </div>
       )}
+
       <Footer />
     </div>
   );

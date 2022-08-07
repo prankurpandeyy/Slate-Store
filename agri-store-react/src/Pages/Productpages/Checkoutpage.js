@@ -1,12 +1,19 @@
 import React from "react";
-import { Footer, Header, Checkout } from "../../Components/AllComponentIndex";
+import {
+  Footer,
+  Header,
+  Checkout,
+  Spinner,
+} from "../../Components/AllComponentIndex";
+import { useProductDataContext } from "../../Context/ProductListingPageContext";
 
 import "./Checkoutpage.css";
 function Checkoutpage() {
+  const { isLoading } = useProductDataContext();
   return (
     <div>
       <Header />
-      <Checkout />
+      {isLoading ? <Spinner /> : <Checkout />}
       <Footer />
     </div>
   );

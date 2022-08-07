@@ -28,7 +28,7 @@ function ProductListingPageContext({ children }) {
     }
   }
 
-  const { productdata } = state;
+  const { productdata, isLoading } = state;
 
   useEffect(() => {
     dispatch({ type: "LOADINGSPINNER", payload: true });
@@ -37,7 +37,9 @@ function ProductListingPageContext({ children }) {
   }, []);
   return (
     <div>
-      <productDataContext.Provider value={{ productdata, state, dispatch }}>
+      <productDataContext.Provider
+        value={{ productdata, state, isLoading, dispatch }}
+      >
         {children}
       </productDataContext.Provider>
     </div>

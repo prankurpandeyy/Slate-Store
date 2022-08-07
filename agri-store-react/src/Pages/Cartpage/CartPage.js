@@ -1,8 +1,14 @@
 import { useEffect } from "../../Utils/CustomUtils";
 import "./CartPage.css";
-import { Header, Footer, TotalPrice } from "../../Components/AllComponentIndex";
+import {
+  Header,
+  Footer,
+  TotalPrice,
+  Spinner,
+} from "../../Components/AllComponentIndex";
 import {
   useCartContext,
+  useProductDataContext,
   useWishlistContext,
 } from "../../Context/AllContextIndex";
 import { removeFromCart, updateQty } from "../../Services/CartServices";
@@ -10,6 +16,7 @@ import { addToWishlist, deleteWishList } from "../../Services/WishlistServices";
 
 function CartPage() {
   const { dispatch, wish } = useWishlistContext();
+  const { isLoading } = useProductDataContext();
   const { cart, state, totalprice } = useCartContext();
 
   useEffect(() => {
@@ -26,7 +33,9 @@ function CartPage() {
     <div>
       <Header cart={cart} />
 
-      {cart.length === 0 ? (
+      {isLoading ? (
+        <Spinner />
+      ) : cart.length === 0 ? (
         <div className="cart-mesg"> there are no items in Cart </div>
       ) : (
         <table id="customers">
@@ -46,7 +55,7 @@ function CartPage() {
                 <img src={prod.image} alt="image_text" className="cart-image" />
               </td>
               <td>
-                <h3> ₹ {prod.price}</h3>
+                <h3> $ {prod.price}</h3>
               </td>
               <td>
                 <div className="cart-btn">

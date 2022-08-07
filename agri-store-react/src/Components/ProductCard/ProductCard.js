@@ -32,7 +32,7 @@ function ProductCard({ productCardData }) {
 
         <div class="card-contents">
           <div class="product-price">
-            <div class="price1">$ {price}0(K)</div>
+            <div class="price1">$ {price}(K)</div>
             <div class="previous-price">
               $<s>1499K</s>
             </div>

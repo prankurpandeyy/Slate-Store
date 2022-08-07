@@ -5,14 +5,23 @@ import {
   Header,
   Hero,
   FeaturedBrands,
+  Spinner,
 } from "../../Components/AllComponentIndex";
+import { useProductDataContext } from "../../Context/ProductListingPageContext";
 
 function Homepage() {
+  const { isLoading } = useProductDataContext();
   return (
     <div>
       <Header />
-      <Hero />
-      <FeaturedBrands />
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <div>
+          <Hero />
+          <FeaturedBrands />
+        </div>
+      )}
       <Footer />
     </div>
   );

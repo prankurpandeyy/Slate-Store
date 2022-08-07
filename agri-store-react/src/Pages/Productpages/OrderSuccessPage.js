@@ -3,13 +3,16 @@ import {
   Footer,
   Header,
   OrderConfirm,
+  Spinner,
 } from "../../Components/AllComponentIndex";
+import { useProductDataContext } from "../../Context/ProductListingPageContext";
 
 function OrderSuccessPage() {
+  const { isLoading } = useProductDataContext();
   return (
     <div>
       <Header />
-      <OrderConfirm />
+      {isLoading ? <Spinner /> : <OrderConfirm />}
       <Footer />
     </div>
   );
