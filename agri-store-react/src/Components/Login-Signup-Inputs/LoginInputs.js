@@ -133,7 +133,6 @@ function LoginInputs() {
 
           <div class="mt-10">
             <form onSubmit={submitLoginData}>
-              <div class="flex flex-col mb-5"></div>
               <div class="flex flex-col mb-5">
                 <label
                   for="email"
@@ -233,9 +232,8 @@ function LoginInputs() {
               </div>
 
               <div class="flex w-full">
-                <button
+                <input
                   type="submit"
-                  disabled={isDisabled}
                   class="
                   flex
                   mt-2
@@ -251,29 +249,13 @@ function LoginInputs() {
                   w-full
                   transition
                   duration-150
-                  ease-in
-                "
-                >
-                  <span class="mr-2 uppercase">Login</span>
-                  <span>
-                    <svg
-                      class="h-6 w-6"
-                      fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </span>
-                </button>
+                  ease-in"
+                  value="LOGIN"
+                />
               </div>
 
               <div class="flex w-full">
                 <button
-                  type="submit"
                   class="
                   flex
                   mt-2
@@ -291,6 +273,7 @@ function LoginInputs() {
                   duration-150
                   ease-in
                 "
+                  onClick={setGuestLoginData}
                 >
                   <span class="mr-2 uppercase">Guest Login</span>
                   <span>
@@ -312,7 +295,7 @@ function LoginInputs() {
           </div>
         </div>
         <div class="flex justify-center items-center mt-6">
-          <a
+          <span
             href="#"
             target="_blank"
             class="
@@ -333,7 +316,7 @@ function LoginInputs() {
                 Signup
               </Link>{" "}
             </span>
-          </a>
+          </span>
         </div>
       </div>
     </div>

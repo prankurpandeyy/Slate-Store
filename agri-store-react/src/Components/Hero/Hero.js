@@ -114,10 +114,10 @@ function Hero() {
             <div class="hidden px-4 lg:block lg:w-1/12"></div>
             <div class="w-full px-4 lg:w-6/12">
               <div class="lg:ml-auto lg:text-right">
-                <div class="relative z-10 inline-block pt-11 lg:pt-0">
+                <div class="relative z-10 inline-block pt-4 overflow-hidden lg:pt-0">
                   <img
                     // src="https://cdn.tailgrids.com/2.0/image/marketing/images/hero/hero-image-01.png"
-                    src="https://media.istockphoto.com/photos/generic-suv-car-on-white-background-picture-id471192202?k=20&m=471192202&s=612x612&w=0&h=iVhuOMyCEP3a8HL3Rnw0SY1jZVeBxagZddI6ieXjsRc="
+                    src="https://www.pngall.com/wp-content/uploads/11/White-Tesla-PNG-HD-Image.png"
                     alt="hero"
                     class="max-w-full lg:ml-auto"
                   />

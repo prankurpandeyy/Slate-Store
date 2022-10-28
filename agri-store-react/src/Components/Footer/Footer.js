@@ -3,7 +3,7 @@ import "../../Utils/CustomCSSUtils.css";
 function Footer() {
   return (
     <div>
-      <footer class="bg-white dark:bg-gray-800 w-full py-8">
+      <footer class="bg-white dark:bg-gray-800 w-full p-2 bottom-0 fixed-bottom">
         <div class="max-w-screen-xl mx-auto px-4">
           <ul class="max-w-screen-md mx-auto text-lg font-light flex flex-wrap justify-between">
             <li class="my-2">

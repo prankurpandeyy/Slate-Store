@@ -17,7 +17,7 @@ function Homepage() {
       {isLoading ? (
         <Spinner />
       ) : (
-        <div>
+        <div className="mt-12">
           <Hero />
           <FeaturedBrands />
         </div>
