@@ -248,6 +248,7 @@ function LoginInputs() {
                   py-2
                   w-full
                   transition
+                  cursor-pointer
                   duration-150
                   ease-in"
                   value="LOGIN"

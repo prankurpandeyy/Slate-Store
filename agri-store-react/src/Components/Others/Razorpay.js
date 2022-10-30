@@ -64,8 +64,12 @@ function Razorpay() {
 
   return (
     <div>
-      <button onClick={handlePay} className="btn btn-primary">
-        Pay Now
+      <button
+        type="button"
+        onClick={handlePay}
+        class="first-line:py-2 px-4  bg-red-500 focus:ring-offset-red-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
+      >
+        PAY NOW
       </button>
     </div>
   );
