@@ -6,9 +6,9 @@ function TotalPrice() {
 
   return (
     <div>
-      <div class="shadow-lg px-4 py-6 mt-16 w-full bg-gray-300 dark:bg-gray-800 relative">
+      <div class="shadow-lg px-4 w-72 py-6 mt-16  bg-gray-300 dark:bg-gray-800 ">
         <p class="text-sm w-max text-gray-700 dark:text-white font-semibold border-b border-gray-200">
-          Project Reffered
+          Cart Manager
         </p>
         <div class="flex items-end space-x-2 my-6">
           <p class="text-3xl text-black dark:text-white font-bold">
@@ -38,14 +38,20 @@ function TotalPrice() {
             <div class="flex items-end text-xs">{cart && cart.length}</div>
           </div>
           <div class="flex items-center text-sm space-x-12 md:space-x-24 justify-between">
-            <button
-              type="button"
-              class="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
-            >
-              <Link to="/Checkoutpage">
-                <button className="checkout">Checkout</button>
-              </Link>
-            </button>
+            {cart && cart.length === 0 ? (
+              <p className="text-black text-sm font-bold">
+                Please add items to proceed !
+              </p>
+            ) : (
+              <button
+                type="button"
+                class="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+              >
+                <Link to="/Checkoutpage">
+                  <button className="checkout">Checkout</button>
+                </Link>
+              </button>
+            )}
           </div>
         </div>
       </div>

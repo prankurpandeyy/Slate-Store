@@ -32,13 +32,16 @@ function CartPage() {
   return (
     <>
       <Header cart={cart} />
-      <div className="flex justify-start items-center ">
+      <div className="flex justify-center items-center w-full ">
         {isLoading ? (
           <Spinner />
         ) : cart.length === 0 ? (
-          <div className="cart-mesg"> there are no items in Cart </div>
+          <div className="mr-12 text-xl font-bold">
+            {" "}
+            there are no items in Cart{" "}
+          </div>
         ) : (
-          <div class="container  px-4 sm:px-8 max-w-3xl mt-12">
+          <div class="container px-4 h-screen overflow-auto sm:px-8 max-w-3xl mt-12">
             <div class="">
               <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 flex justify-center items-center  overflow-x-auto">
                 <div class="flex justify-center items-center min-w-full shadow rounded-lg overflow-hidden">
@@ -116,7 +119,7 @@ function CartPage() {
                                 onClick={() =>
                                   updateQty("increment", prod._id, dispatch)
                                 }
-                                class="p-1 h-auto w-10 font-semibold rounded-full text-white dark:bg-green-400"
+                                class="p-1 h-auto w-10  bg-gray-800 font-semibold rounded-full text-white dark:bg-green-400"
                               >
                                 ++
                               </button>
@@ -126,7 +129,7 @@ function CartPage() {
                                 onClick={() =>
                                   updateQty("decrement", prod._id, dispatch)
                                 }
-                                class="p-1 h-auto w-10 font-semibold rounded-full text-white dark:bg-red-400"
+                                class="p-1 h-auto bg-gray-800 w-10 font-semibold rounded-full text-white dark:bg-red-400"
                               >
                                 --
                               </button>
@@ -178,7 +181,6 @@ function CartPage() {
             </div>
           </div>
         )}
-
         <TotalPrice />
       </div>
 
