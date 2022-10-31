@@ -14,7 +14,9 @@ function Header() {
   return (
     <div>
       <div class=" flex flex-row items-center justify-between   w-full p-2 sm:px-4 shadow-xl shadow-xs bg-gray-700 fixed-top top">
-        <div class="ml-8 text-lg text-white hidden md:flex">Tail-kit</div>
+        <Link to="/">
+          <div class="ml-8 text-lg text-white hidden md:flex">Car-kit</div>
+        </Link>
         <span class="w-full md:w-1/3 h-10 cursor-pointer border border-gray-300 text-sm rounded-full flex">
           <input
             type="search"
