@@ -6,12 +6,12 @@ function TotalPrice() {
 
   return (
     <div>
-      <div class="shadow-lg px-4 py-6 mt-16 w-full bg-white dark:bg-gray-800 relative">
+      <div class="shadow-lg px-4 py-6 mt-16 w-full bg-gray-300 dark:bg-gray-800 relative">
         <p class="text-sm w-max text-gray-700 dark:text-white font-semibold border-b border-gray-200">
           Project Reffered
         </p>
         <div class="flex items-end space-x-2 my-6">
-          <p class="text-5xl text-black dark:text-white font-bold">
+          <p class="text-3xl text-black dark:text-white font-bold">
             {totalprice}
           </p>
           <span class="text-green-500 text-xl font-bold flex items-center">

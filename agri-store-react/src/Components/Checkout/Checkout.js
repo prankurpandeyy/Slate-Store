@@ -17,7 +17,7 @@ function Checkout() {
 
   return (
     <div>
-      <div className="flex justify-start items-start mt-12">
+      <div className="flex justify-start items-start  mt-12">
         <div class="container px-4 sm:px-8 max-w-3xl">
           <div class="">
             <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 flex justify-center items-center  overflow-x-auto">
@@ -88,9 +88,9 @@ function Checkout() {
         </div>
 
         <div className="flex flex-col justify-center items-center">
-          <div class="shadow-lg p-4 mt-4 w-auto bg-white dark:bg-gray-800 relative">
+          <div class="shadow-lg p-4 mt-4 w-auto bg-gray-300 dark:bg-gray-800 relative">
             <div class="flex items-end space-x-2 my-6">
-              <p class="text-5xl text-black dark:text-white font-bold">
+              <p class="text-3xl text-black dark:text-white font-bold">
                 {totalprice}
               </p>
               <span class="text-green-500 text-xl font-bold flex items-center">
