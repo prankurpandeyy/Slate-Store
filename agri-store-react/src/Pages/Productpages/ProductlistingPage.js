@@ -18,10 +18,10 @@ function ProductlistingPage() {
   const { searchbarData } = useCatagoriesFilterContext();
 
   return (
-    <div>
+    <div className="bg-gray-200 h-screen">
       <Header />
       <Sidebar />
-      <div className="productlisting-cards">
+      <div className="flex flex-wrap ml-56 mt-12 mb-16 justify-center items-center">
         {isLoading ? (
           <Spinner />
         ) : (

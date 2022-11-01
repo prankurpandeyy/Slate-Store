@@ -1,4 +1,4 @@
-.columns {
+/* .columns {
   width: 40%;
   margin-right: 8rem;
 }
@@ -32,7 +32,7 @@
     width: 100%;
   }
 }
-/* input[type="text"] {
+input[type="text"] {
   background-color: aqua;
   border: none;
   transition: width 0.4s ease-in-out;
@@ -42,13 +42,13 @@
   font-size: 0.9rem;
   font-weight: 800;
   height: 3rem;
-} */
-/* input[type="text"]:focus {
+}
+input[type="text"]:focus {
   width: 100%;
   margin: auto 0;
-} */
+}
 
-/* button {
+button {
   height: 3rem;
   width: 4rem;
   text-align: center;
@@ -59,7 +59,7 @@
   font-weight: 800;
   border-radius: 0.4rem;
   margin-top: 0.5rem;
-} */
+}
 button.checkout {
   height: 3rem;
   width: 100%;
@@ -72,4 +72,4 @@ button.checkout {
   border-radius: 0.4rem;
   margin-top: 0.5rem;
   cursor: pointer;
-}
+} */

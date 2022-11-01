@@ -1,4 +1,4 @@
-.increase,
+/* .increase,
 .decrease {
   display: flex;
   align-items: center;
@@ -31,7 +31,6 @@ img.cart-image {
   margin-bottom: 4rem;
 }
 
-/* new css */
 
 #customers {
   border-collapse: collapse;
@@ -78,18 +77,17 @@ img.cart-image {
   color: darkblue;
   padding: 7rem;
 
-  background: #ff0000; /* fallback for old browsers */
+  background: #ff0000; 
   background: -webkit-linear-gradient(
     to right,
     #ff0000,
     #9932cc
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  ); 
   background: linear-gradient(
     to right,
     #ff0000,
     #9932cc
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  -webkit-background-clip: text;
+  );
   background-clip: text;
   color: transparent;
-}
+} */

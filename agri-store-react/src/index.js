@@ -4,7 +4,7 @@ import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
 import { PageStructure } from "./PageStructure";
 import { Toaster } from "react-hot-toast";
-
+import "./index.css";
 // Call make Server
 makeServer();
 

@@ -1,4 +1,4 @@
-.featured-catagories {
+/* .featured-catagories {
   font-weight: 800;
   text-align: center;
   margin: 3rem;
@@ -102,7 +102,7 @@
   width: 100%;
 }
 
-/*  */
+
 
 .icons-container .icons .content h3 {
   font-size: 2.5rem;
@@ -117,7 +117,7 @@
   background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
 }
 
-/*  */
+
 
 .icons-container .icons:hover .content h3 {
   color: #fff;
@@ -184,4 +184,4 @@ img.catagory-cars-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
+} */
