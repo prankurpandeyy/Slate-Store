@@ -1,0 +1,187 @@
+/* .featured-catagories {
+  font-weight: 800;
+  text-align: center;
+  margin: 3rem;
+  text-decoration: underline;
+  text-decoration-color: var(--golden-color);
+}
+
+.catagory-choice {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.box {
+  width: 21rem;
+  height: 15rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(14, 14, 14);
+  box-shadow: 0px 0px 10px var(--dark-black-color);
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-size: cover;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.brand-choice {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 25%;
+  height: 50%;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-size: cover;
+}
+
+.featured-brands {
+  font-weight: 800;
+  text-align: center;
+  margin: 3rem;
+  text-decoration: underline;
+  text-decoration-color: var(--golden-color);
+}
+
+.brand-logo {
+  width: 50%;
+  height: 5rem;
+  background-color: var(--background-universal-color);
+  border-radius: 10px;
+  margin: 1rem;
+  box-shadow: 0px 0px 10px var(--dark-black-color);
+  object-fit: cover;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.brand-logo:hover {
+  transform: scale(0.9);
+}
+
+.featured-products {
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 5rem;
+  width: 100%;
+  background: #eee;
+}
+
+.icons-container .icons {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  gap: 1.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 100%;
+}
+
+
+
+.icons-container .icons .content h3 {
+  font-size: 2.5rem;
+  color: rgb(23, 49, 61);
+}
+
+.icons-container .icons .content p {
+  font-size: 1.5rem;
+}
+
+.icons-container .icons:hover {
+  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
+}
+
+
+
+.icons-container .icons:hover .content h3 {
+  color: #fff;
+}
+
+.icons-container .icons:hover .content p {
+  color: rgb(255, 254, 254);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+span.fbmi {
+  font-size: 3rem;
+}
+
+.featured-cars {
+  font-weight: 800;
+  text-align: center;
+  margin: 3rem;
+  text-decoration: underline;
+  text-decoration-color: var(--golden-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.car {
+  width: 21rem;
+  height: 20rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(14, 14, 14);
+  box-shadow: 0px 0px 10px var(--dark-black-color);
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-size: cover;
+  cursor: pointer;
+  padding: 1rem;
+}
+img.car-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+img.car-image:hover {
+  transform: scale(0.9);
+}
+.car-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-size: cover;
+}
+img.catagory-cars-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */

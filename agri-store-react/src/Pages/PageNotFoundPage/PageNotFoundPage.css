@@ -1,0 +1,13 @@
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+}
+h1.page-not-found-text {
+  margin-top: 8rem;
+  text-align: center;
+}

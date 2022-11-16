@@ -1,0 +1,41 @@
+/* img.order-success {
+  width: 30%;
+  position: fixed;
+  top: 20%;
+  right: 65%;
+}
+.order-success-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.order-success-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 8rem;
+  margin-bottom: 6rem;
+  overflow: auto;
+}
+.order-success-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  width: auto;
+  margin: 1rem;
+  height: 20rem;
+}
+.delivery-address {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid gray;
+} */

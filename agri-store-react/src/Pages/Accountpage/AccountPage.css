@@ -1,0 +1,26 @@
+/* 
+tr {
+  text-align: center;
+}
+table {
+  border-collapse: collapse;
+  width: 30%;
+
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+td,
+th {
+  border: 1px solid #070606;
+  text-align: left;
+  padding: 8px;
+  text-align: center;
+  background-color: #8a8c8f;
+}
+
+tr:nth-child(even) {
+  color: black;
+  font-size: 1rem;
+} */

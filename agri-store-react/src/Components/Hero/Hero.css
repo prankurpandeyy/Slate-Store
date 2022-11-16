@@ -1,0 +1,47 @@
+/* @import "https://deploy-preview-13--agri-component.netlify.app/css/components.css";
+
+body {
+  background-color: #d9afd9;
+  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
+}
+.main-container {
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  width: 100%;
+  margin-top: 4rem;
+  padding: 4rem;
+
+  background-color: #d9afd9;
+  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
+  border-radius: 0.3rem;
+  box-shadow: 1px 1px 1px 1px black;
+}
+
+.head-text {
+  font-size: 2.1rem;
+  font-weight: 800;
+  background-color: #d9afd9;
+  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+.logo-text {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin: 3rem;
+  padding: 1rem;
+}
+
+.text-in-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+} */
