@@ -26,74 +26,9 @@ function SignupInputs() {
 
   return (
     <div>
-      {/* <h3 className="login-page-title"> Signup Page</h3>
-      <div className="Signup-Form">
-        <div class="form-control">
-          <form onSubmit={submitSignUpData}>
-            <label for="name">Name*</label>{" "}
-            <input
-              class="input__field"
-              type="text"
-              name="name"
-              placeholder="Name"
-              required
-              onChange={(e) =>
-                dispatch({ type: "NAME", payload: e.target.value })
-              }
-            />
-            <label for="name">Email*</label>{" "}
-            <input
-              class="input__field"
-              type="email"
-              name="email"
-              placeholder="Email"
-              required
-              onChange={(e) =>
-                dispatch({ type: "EMAIL", payload: e.target.value })
-              }
-            />
-            <label for="name">Password*</label>{" "}
-            <input
-              class="input__field"
-              type="password"
-              name="input password"
-              placeholder="Password"
-              required
-              minlength="6"
-              onChange={(e) =>
-                dispatch({ type: "PASSWORD", payload: e.target.value })
-              }
-            />
-            <p>
-              {" "}
-              <kbd style={{ fontSize: "1.2rem", padding: "1rem" }}>
-                * are important.
-              </kbd>{" "}
-            </p>
-            <label>
-              <input
-                class="input__field"
-                type="submit"
-                name="input submit"
-                required
-                disabled={isDisabled}
-              />
-            </label>
-            <span style={{ color: "red" }}>{error}</span>
-          </form>
 
-          <h4 className="login-instruction">
-            Already member ?{" "}
-            <Link to="/LoginPage" style={{ margin: "0.5rem" }}>
-              {" "}
-              Login{" "}
-            </Link>{" "}
-            here
-          </h4>
-        </div>
-      </div> */}
 
-      <div class="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+      {/* <div class="min-h-screen flex flex-col items-center justify-center bg-gray-100">
         <div
           class="
           flex flex-col
@@ -328,8 +263,80 @@ function SignupInputs() {
             </span>
           </span>
         </div>
-      </div>
-    </div>
+      </div> */}
+      <section class="text-gray-400 bg-gray-900 body-font">
+        <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
+          <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+            <h1 class="title-font font-medium text-3xl text-white">Slow-carb next level shoindxgoitch ethical authentic, poko scenester</h1>
+            <p class="leading-relaxed mt-4">Poke slow-carb mixtape knausgaard, typewriter street art gentrify hammock starladder roathse. Craies vegan tousled etsy austin.</p>
+          </div>
+          <div class="lg:w-2/6 md:w-1/2 bg-gray-800 bg-opacity-50 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+            <h2 class="text-white text-lg font-medium title-font mb-5">Log In</h2>
+            <div>
+
+
+              <form onSubmit={submitSignUpData}>
+
+
+                <div class="relative ">
+                  <label for="full-name" class="leading-7 text-sm text-gray-400">Name</label>
+                  <input type="text"
+                    name="text"
+                    required
+                    onChange={(e) =>
+                      dispatch({ type: "NAME", payload: e.target.value })
+                    }
+                    class="w-full bg-gray-600 bg-opacity-20 focus:bg-transparent focus:ring-2 focus:ring-red-900 rounded border border-gray-600 focus:border-red-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    placeholder="Enter your email"
+                  />
+                </div>
+
+                <label for="full-name" class="leading-7 text-sm text-gray-400">Email</label>
+                <input id="email"
+                  type="email"
+                  value={email}
+                  name="email"
+                  onChange={(e) =>
+                    dispatch({ type: "EMAIL", payload: e.target.value })
+                  } class="w-full bg-gray-600 bg-opacity-20 focus:bg-transparent focus:ring-2 focus:ring-red-900 rounded border border-gray-600 focus:border-red-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  placeholder="Enter your email"
+                />
+
+                <div class="relative mb-4">
+                  <label for="email" class="leading-7 text-sm text-gray-400">Password</label>
+                  <input id="password"
+                    type="password"
+                    name="password"
+                    value={password}
+                    placeholder="enter your password"
+                    onChange={(e) =>
+                      dispatch({ type: "PASSWORD", payload: e.target.value })
+                    } class="w-full bg-gray-600 bg-opacity-20 focus:bg-transparent focus:ring-2 focus:ring-red-900 rounded border border-gray-600 focus:border-red-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                </div>
+                <div className="flex flex-col">
+
+
+                  <input type='submit' class="text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg cursor-pointer" />
+
+
+                </div>
+              </form>
+            </div>
+
+
+            <p class="text-xs mt-3">Literally you probably haven't heard of them jean shorts.
+              <Link
+                to="/SignupPage"
+                class="text-xs ml-2 text-blue-500 font-semibold"
+              >
+                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">SignUp</a>
+              </Link>
+
+            </p>
+          </div>
+        </div >
+      </section >
+    </div >
   );
 }
 

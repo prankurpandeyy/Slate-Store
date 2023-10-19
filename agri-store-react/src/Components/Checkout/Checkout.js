@@ -17,12 +17,12 @@ function Checkout() {
 
   return (
     <div>
-      <div className="flex justify-start items-start  mt-12">
+      <div className="flex justify-start items-start  mt-12 ">
         <div class="container px-4 sm:px-8 max-w-3xl">
           <div class="">
-            <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 flex justify-center items-center  overflow-x-auto">
+            <div class="-mx-4  sm:-mx-8 px-4 sm:px-8 py-4 flex justify-center items-center  overflow-x-auto">
               <div class="flex justify-center items-center min-w-full shadow rounded-lg overflow-hidden">
-                <table class="min-w-full leading-normal">
+                <table class="min-w-full leading-normal ">
                   <thead>
                     <tr>
                       <th

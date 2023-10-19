@@ -18,24 +18,27 @@ function ProductlistingPage() {
   const { searchbarData } = useCatagoriesFilterContext();
 
   return (
-    <div className="bg-gray-200 h-screen">
+    <div className="bg-gray-700 h-screen">
       <Header />
-      <Sidebar />
-      <div className="flex flex-wrap ml-56 mt-12 mb-16 justify-center items-center">
-        {isLoading ? (
-          <Spinner />
-        ) : (
-          searchbarData.map((productCardData) => {
-            return (
-              <ProductCard
-                productCardData={productCardData}
-                key={productCardData._id}
-              />
-            );
-          })
-        )}
+      <div className="flex justify-start items-start">
+
+        <Sidebar />
+        <div className="flex flex-wrap   ml-64 mt-24 mb-8  items-center justify-center">
+          {isLoading ? (
+            <Spinner />
+          ) : (
+            searchbarData.map((productCardData) => {
+              return (
+                <ProductCard
+                  productCardData={productCardData}
+                  key={productCardData._id}
+                />
+              );
+            })
+          )}
+        </div>
       </div>
-      <Footer />
+
     </div>
   );
 }

@@ -6,6 +6,7 @@ import {
 } from "../../Utils/CustomUtils";
 import { Footer, Header } from "../../Components/AllComponentIndex";
 import "./PageNotFoundPage.css";
+import NoDataFound from "../../Components/Others/NoDataFound";
 
 function PageNotFound() {
   const [counter, setCounter] = useState(3);
@@ -25,16 +26,7 @@ function PageNotFound() {
   return (
     <div>
       <Header />
-      <h1 className="page-not-found-text">
-        {" "}
-        Page Not Found (will be redirected to Homepage in :{counter} s){" "}
-      </h1>
-      <div className="img">
-        <img
-          src="https://raw.githubusercontent.com/iprankurpandey/github-imagehosting/main/undraw_page_not_found_re_e9o6%20(1).svg"
-          alt="404"
-        />
-      </div>
+      <NoDataFound />
 
       <Footer />
     </div>

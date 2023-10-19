@@ -18,6 +18,9 @@ function ProductCard({ productCardData }) {
 
   return (
     <div>
+
+
+
       <div class="w-full h-full flex justify-center items-center">
         <div class="relative  p-4 flex justify-center rounded-xl cursor-pointer">
           <div class="top-0 left-0 mt-3 px-2 rounded-lg absolute z-30 bg-green-500 text-gray-100 text-xs md:text-sm font-medium md:block">
@@ -33,9 +36,6 @@ function ProductCard({ productCardData }) {
                 alt=""
               />
 
-              <div class="bottom-0 right-0 mb-2 mr-2 px-2 rounded-lg absolute bg-yellow-500 text-gray-100 text-xs font-medium">
-                Recommended
-              </div>
             </div>
             <div class="px-2 py-1">
               <Link to={`/Productdetails/${_id}`}>
@@ -78,7 +78,7 @@ function ProductCard({ productCardData }) {
                   </button>
                 ) : (
                   <button
-                    class="p-1 flex mb-2 justify-center items-center bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+                    class="p-1 flex mb-2 justify-center items-center bg-gray-700 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
                     onClick={() => addToCart(productCardData, dispatch)}
                   >
                     CART+
@@ -100,7 +100,7 @@ function ProductCard({ productCardData }) {
                   </button>
                 ) : (
                   <button
-                    class="p-1 flex justify-center items-center bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+                    class="p-1 flex justify-center items-center bg-gray-700 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
                     onClick={() => addToWishlist(productCardData, dispatch)}
                   >
                     WISHLIST+
@@ -112,7 +112,8 @@ function ProductCard({ productCardData }) {
           </div>
         </div>
       </div>
-    </div>
+
+    </div >
   );
 }
 

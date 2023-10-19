@@ -1,166 +1,34 @@
-import "./Hero.css";
 import { React, Link } from "../../Utils/CustomUtils";
-// import "../../Utils/CustomCSSUtils.css";
+
 
 function Hero() {
   return (
     <div>
-      {/* <main class="main-container">
-        <img
-          src="https://raw.githubusercontent.com/iprankurpandey/github-imagehosting/main/image/home-img.png"
-          alt="hero"
-          style={{ width: "70%" }}
-        />
-        <div class="text-in-image">
-          <span class="head-text">Everything's better with Cars. </span>
 
-          <div class="logo-text">Summer Sale 2022</div>
+      <div class="mt-[-56px]">
 
-          <div class="btn btn-outline">
-            <Link to="/ProductListingPage">
-              <button class="btn btn-primary-outline">Shop Now</button>
-            </Link>
-          </div>
-        </div>
-      </main> */}
-
-      <div class="relative bg-white mt-4">
-        <div class="container mx-auto">
-          <div class="-mx-4 flex flex-wrap">
-            <div class="w-full px-4 lg:w-5/12">
-              <div class="hero-content">
-                <h1 class="text-dark mb-3 text-4xl font-bold leading-snug sm:text-[42px] lg:text-[40px] xl:text-[42px]">
-                  Kickstart <br />
-                  Startup Website <br />
-                  with TailGrids.
-                </h1>
-                <p class="text-body-color mb-8 max-w-[480px] text-base">
-                  With TailGrids, business and students thrive together.
-                  Business can perfectly match their staffing to changing demand
-                  throughout the dayed.
-                </p>
-                <ul class="flex flex-wrap items-center">
-                  <li>
-                    <span class="bg-primary inline-flex items-center justify-center rounded-lg py-4 px-6 text-center text-base font-normal text-white hover:bg-opacity-90 sm:px-10 lg:px-8 xl:px-10">
-                      Get Started
-                    </span>
-                  </li>
-                  <li>
-                    <a
-                      href="javascript:void(0)"
-                      class="text-body-color hover:text-primary inline-flex items-center justify-center py-4 px-6 text-center text-base font-normal sm:px-10 lg:px-8 xl:px-10"
-                    >
-                      <span class="mr-2">
-                        <svg
-                          width="22"
-                          height="22"
-                          viewBox="0 0 22 22"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle cx="11" cy="11" r="11" fill="#3056D3" />
-                          <rect
-                            x="6.90906"
-                            y="13.3636"
-                            width="8.18182"
-                            height="1.63636"
-                            fill="white"
-                          />
-                          <rect
-                            x="10.1818"
-                            y="6"
-                            width="1.63636"
-                            height="4.09091"
-                            fill="white"
-                          />
-                          <path
-                            d="M11 12.5454L13.8343 9.47726H8.16576L11 12.5454Z"
-                            fill="white"
-                          />
-                        </svg>
-                      </span>
-                      Download App
-                    </a>
-                  </li>
-                </ul>
-                <div class="clients pt-16">
-                  <h6 class="text-body-color mb-2 flex items-center text-xs font-normal">
-                    Some Of Our Clients
-                    <span class="bg-body-color ml-2 inline-block h-[1px] w-8"></span>
-                  </h6>
-                  <div class="flex items-center">
-                    <div class="mr-4 w-full py-3">
-                      <img
-                        src="https://cdn.tailgrids.com/2.0/image/assets/images/brands/ayroui.svg"
-                        alt="ayroui"
-                      />
-                    </div>
-                    <div class="mr-4 w-full py-3">
-                      <img
-                        src="https://cdn.tailgrids.com/2.0/image/assets/images/brands/graygrids.svg"
-                        alt="graygrids"
-                      />
-                    </div>
-                    <div class="mr-4 w-full py-3">
-                      <img
-                        src="https://cdn.tailgrids.com/2.0/image/assets/images/brands/uideck.svg"
-                        alt="uideck"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <section class="text-gray-400 bg-gray-900 body-font">
+          <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0 mb-10">
+              <img class="object-cover object-center rounded" alt="hero" src="https://svgshare.com/i/y5h.svg" />
             </div>
-            <div class="hidden px-4 lg:block lg:w-1/12"></div>
-            <div class="w-full px-4 lg:w-6/12">
-              <div class="lg:ml-auto lg:text-right">
-                <div class="relative z-10 inline-block pt-4 overflow-hidden lg:pt-0">
-                  <img
-                    // src="https://cdn.tailgrids.com/2.0/image/marketing/images/hero/hero-image-01.png"
-                    src="https://www.pngall.com/wp-content/uploads/11/White-Tesla-PNG-HD-Image.png"
-                    alt="hero"
-                    class="max-w-full lg:ml-auto"
-                  />
-                  <span class="absolute -left-8 -bottom-8 z-[-1]">
-                    <svg
-                      width="93"
-                      height="93"
-                      viewBox="0 0 93 93"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle cx="2.5" cy="2.5" r="2.5" fill="#3056D3" />
-                      <circle cx="2.5" cy="24.5" r="2.5" fill="#3056D3" />
-                      <circle cx="2.5" cy="46.5" r="2.5" fill="#3056D3" />
-                      <circle cx="2.5" cy="68.5" r="2.5" fill="#3056D3" />
-                      <circle cx="2.5" cy="90.5" r="2.5" fill="#3056D3" />
-                      <circle cx="24.5" cy="2.5" r="2.5" fill="#3056D3" />
-                      <circle cx="24.5" cy="24.5" r="2.5" fill="#3056D3" />
-                      <circle cx="24.5" cy="46.5" r="2.5" fill="#3056D3" />
-                      <circle cx="24.5" cy="68.5" r="2.5" fill="#3056D3" />
-                      <circle cx="24.5" cy="90.5" r="2.5" fill="#3056D3" />
-                      <circle cx="46.5" cy="2.5" r="2.5" fill="#3056D3" />
-                      <circle cx="46.5" cy="24.5" r="2.5" fill="#3056D3" />
-                      <circle cx="46.5" cy="46.5" r="2.5" fill="#3056D3" />
-                      <circle cx="46.5" cy="68.5" r="2.5" fill="#3056D3" />
-                      <circle cx="46.5" cy="90.5" r="2.5" fill="#3056D3" />
-                      <circle cx="68.5" cy="2.5" r="2.5" fill="#3056D3" />
-                      <circle cx="68.5" cy="24.5" r="2.5" fill="#3056D3" />
-                      <circle cx="68.5" cy="46.5" r="2.5" fill="#3056D3" />
-                      <circle cx="68.5" cy="68.5" r="2.5" fill="#3056D3" />
-                      <circle cx="68.5" cy="90.5" r="2.5" fill="#3056D3" />
-                      <circle cx="90.5" cy="2.5" r="2.5" fill="#3056D3" />
-                      <circle cx="90.5" cy="24.5" r="2.5" fill="#3056D3" />
-                      <circle cx="90.5" cy="46.5" r="2.5" fill="#3056D3" />
-                      <circle cx="90.5" cy="68.5" r="2.5" fill="#3056D3" />
-                      <circle cx="90.5" cy="90.5" r="2.5" fill="#3056D3" />
-                    </svg>
-                  </span>
-                </div>
+            <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+              <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">Before they sold out
+                <br class="hidden lg:inline-block" />All Super Cars
+              </h1>
+              <p class="mb-8 leading-relaxed">Try the new edge technology at cheap cost , selling the cars at best possible price in market.</p>
+              <div class="flex justify-center">
+                <button class="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">
+                  <Link to='/ProductListingPage'>
+                    Explore Cars
+                  </Link>
+
+                </button>
+                {/* <button class="ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg">Button</button> */}
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );

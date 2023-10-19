@@ -26,7 +26,7 @@ function Address({ isOpen, setIsOpen }) {
   function addressSubmit(e) {
     e.preventDefault();
     formSubmitAddAdress(e, addressData, fulladdressdata, dispatch);
-    setIsOpen(!isOpen);
+    // setIsOpen(!isOpen);
   }
 
   return (
@@ -104,17 +104,7 @@ function Address({ isOpen, setIsOpen }) {
           </div>
 
           <div class="flex justify-end mt-6">
-            {/* <button
-              type="submit"
-              value="Save"
-              class="px-8 
-              cursor-pointer
-              mr-2
-              py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-red-600 focus:outline-none focus:bg-gray-600"
-            >
-              {" "}
-              Close{" "}
-            </button> */}
+
             <input
               type="submit"
               value="Save"
@@ -125,85 +115,7 @@ function Address({ isOpen, setIsOpen }) {
           </div>
         </form>
       </section>
-      {/* <div className="form-data">
-        <form onSubmit={addressSubmit} className="forms">
-          <label>
-            <input
-              class="input__field"
-              type="text"
-              name="fullname"
-              value={fullname}
-              placeholder="fullname"
-              required
-              onChange={(e) =>
-                dispatch({ type: "FULLNAME", payload: e.target.value })
-              }
-            />
-          </label>
-          <label>
-            <input
-              class="input__field"
-              type="email"
-              name="email"
-              value={email}
-              placeholder="Email"
-              required
-              onChange={(e) =>
-                dispatch({ type: "EMAIL", payload: e.target.value })
-              }
-            />
-          </label>
-          <label>
-            <input
-              class="input__field"
-              type="tel"
-              name="number"
-              value={phone}
-              placeholder="number"
-              required
-              onChange={(e) =>
-                dispatch({ type: "PHONE", payload: e.target.value })
-              }
-            />
-          </label>
-          <label>
-            <input
-              class="input__field"
-              type="number"
-              name="pincode"
-              value={pincode}
-              placeholder="pincode"
-              required
-              onChange={(e) =>
-                dispatch({ type: "PINCODE", payload: e.target.value })
-              }
-            />
-          </label>
-          <label>
-            <input
-              class="input__field"
-              type="text"
-              name="address"
-              value={address}
-              placeholder="address"
-              required
-              onChange={(e) =>
-                dispatch({ type: "ADDRESS", payload: e.target.value })
-              }
-            />
-          </label>{" "}
-        
-          <label>
-            <input
-              class="input__field"
-              type="submit"
-              name="submitbtn"
-              placeholder="submit"
-              required
-            />
-          </label>
-        </form>
-      </div> */}
+
     </div>
   );
 }
